@@ -15,7 +15,7 @@ namespace Aufgabe0
          
         var name = prompt ("Gebe deinen Namen ein:");
         var node : any = document.getElementById("Inhalt");
-       
+        var innerHTML : string;
           
         node.innerHTML += "Hallo ";
         node.innerHTML += name;

@@ -11,6 +11,7 @@ var Aufgabe0;
     function writeHTML() {
         var name = prompt("Gebe deinen Namen ein:");
         var node = document.getElementById("Inhalt");
+        var innerHTML;
         node.innerHTML += "Hallo ";
         node.innerHTML += name;
         node.innerHTML += ", schoen dich zu sehen! ";
