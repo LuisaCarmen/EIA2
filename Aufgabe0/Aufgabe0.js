@@ -8,8 +8,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 **/
 var Aufgabe0;
 (function (Aufgabe0) {
-    var name = "";
-    function box() {
+    function writeHTML() {
         var name = prompt("Gebe deinen Namen ein:");
         var node = document.getElementById("Inhalt");
         node.innerHTML += "Hallo ";
@@ -17,6 +16,6 @@ var Aufgabe0;
         node.innerHTML += ", schoen dich zu sehen! ";
         console.log("Hallo", name, ", schoen dich zu sehen!");
     }
-    document.addEventListener('DOMContentLoaded', box);
+    document.addEventListener('DOMContentLoaded', writeHTML);
 })(Aufgabe0 || (Aufgabe0 = {}));
 //# sourceMappingURL=Aufgabe0.js.map

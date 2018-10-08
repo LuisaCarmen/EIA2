@@ -11,11 +11,12 @@ namespace Aufgabe0
 
 {
     
-    var name : string ="";
-    function box(){
+     function writeHTML() : void {
+         
         var name = prompt ("Gebe deinen Namen ein:");
-        var node : any= document.getElementById("Inhalt");
-        
+        var node : any = document.getElementById("Inhalt");
+       
+          
         node.innerHTML += "Hallo ";
         node.innerHTML += name;
         node.innerHTML += ", schoen dich zu sehen! ";
@@ -24,7 +25,7 @@ namespace Aufgabe0
         
        }
         
-document.addEventListener('DOMContentLoaded',box);
+document.addEventListener('DOMContentLoaded',writeHTML);
 }
 
 
