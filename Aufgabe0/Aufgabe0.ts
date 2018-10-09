@@ -14,7 +14,7 @@ namespace Aufgabe0
      function writeHTML() : void {
          
         var name = prompt ("Gebe deinen Namen ein:");
-        var node : any = document.getElementById("Inhalt");
+        var node : HTMLElement = document.getElementById("Inhalt");
         var innerHTML : string;
           
         node.innerHTML += "Hallo ";
