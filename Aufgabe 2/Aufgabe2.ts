@@ -217,7 +217,7 @@ namespace Aufgabe2 {
 
         let c: string = "";
 
-        for (let i : number = 0; i < Anzahl; i++) { //wenn d kleiner ist als a dann wird bei jeder Wiederholung d plus 1 gerechnet!
+        for (let i : number = 0; i < Anzahl; i++) { //wenn i kleiner ist als Anzahl dann wird bei jeder Wiederholung d plus 1 gerechnet!
 
 
             let Kartenzahl: number = Zufall(15); //Funktion oben wird aufgegriffen um zufällig aus den Karten zu wählen
