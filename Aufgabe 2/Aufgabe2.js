@@ -205,23 +205,6 @@ var Aufgabe2;
                     }
             }
         }
-        //Stylesheet vom Stapel
-        function Stapel() {
-            let div = document.createElement("div");
-            document.body.appendChild(div);
-            div.setAttribute("id", "Unostapel");
-            document.getElementById("Unostapel").innerHTML += "Unostapel";
-            let s = div.style;
-            s.border = " solid black";
-            s.textAlign = "center";
-            s.position = "absolute";
-            s.backgroundColor = "#EFFBF2";
-            s.width = 150 + "px";
-            s.height = 200 + "px";
-            s.left = 550 + "px";
-            s.top = 20 + "px";
-            s.borderRadius = 20 + "px";
-        }
         //Stylesheet der Ablage
         function Ablage() {
             let div = document.createElement("div");
@@ -236,6 +219,23 @@ var Aufgabe2;
             s.width = 150 + "px";
             s.height = 200 + "px";
             s.right = 550 + "px";
+            s.top = 20 + "px";
+            s.borderRadius = 20 + "px";
+        }
+        //Stylesheet vom Stapel
+        function Stapel() {
+            let div = document.createElement("div");
+            document.body.appendChild(div);
+            div.setAttribute("id", "Unostapel");
+            document.getElementById("Unostapel").innerHTML += "Unostapel";
+            let s = div.style;
+            s.border = " solid black";
+            s.textAlign = "center";
+            s.position = "absolute";
+            s.backgroundColor = "#EFFBF2";
+            s.width = 150 + "px";
+            s.height = 200 + "px";
+            s.left = 550 + "px";
             s.top = 20 + "px";
             s.borderRadius = 20 + "px";
         }
