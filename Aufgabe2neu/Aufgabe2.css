@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+
+#Stapel {background-color: #FBF5EF;
+         width: 150px;
+         height: 200px;
+         margin-left: 20em;
+         margin-top: 1em;
+         border: 2px solid black;
+         border-radius: 20px;
+         text-align: center;
+         font-size: 1.5em;
+         position: absolute;}
+         
+#Stapel p {margin-top: 3.5em; }
+
+#Ablage {background-color: #F2F2F2;
+         width: 150px;
+         height: 200px;
+         margin-left: 30em;
+         margin-top: 1em;
+         border: 2px dotted black;
+         border-radius: 20px;
+         text-align: center;
+         font-size: 1.5em;
+         position: absolute;}
+         
+         
+#Ablage p {margin-top: 3.5em; }   
+
+#Spielerkarten {border: 2px solid black;
+                margin-top: 25em;
+                margin-left: 4.5em;
+                position: absolute;
+                width: 1300px;
+                height: 300px;
+                background-color: #D8D8D8;} 
+
+         
