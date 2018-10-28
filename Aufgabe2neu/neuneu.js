@@ -461,7 +461,7 @@ var Aufgabe2neu;
             s.width = 150 + "px";
             s.height = 200 + "px";
             s.left = (Eingabe + 1) * 160 + "px"; //Abstand zwischen den Spielkarten nach jeder Wiederholung
-            s.bottom = 95 + "px";
+            s.bottom = 130 + "px";
             s.textAlign = "center";
             s.borderRadius = 20 + "px";
             //Schriftfarbe wird festgelegt falls Hintergrund zu dunkel ist
