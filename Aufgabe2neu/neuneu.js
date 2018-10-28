@@ -1,6 +1,9 @@
 var Aufgabe2neu;
 (function (Aufgabe2neu) {
     function game() {
+        var TypeNumber;
+        var ChooseCards = prompt("Gebe ein mit wie vielen Karten du spielen moechtest");
+        TypeNumber = Number(ChooseCards); //Kartenauswahl wird in Anzahl zurückgegeben damit man eine zahl eingeben kann
         //rote Karten
         var r1 = {
             color: "#DF0101",
@@ -444,9 +447,6 @@ var Aufgabe2neu;
             b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25,
             s1, s2, s3, s4, s5, s6, s7, s8];
         function random(Zufall) { return Math.floor(Math.random() * Math.floor(Zufall)); }
-        var TypeNumber;
-        var ChooseCards = prompt("Gebe ein mit wie vielen Karten du spielen moechtest");
-        TypeNumber = Number(ChooseCards); //Kartenauswahl wird in Anzahl zurückgegeben damit man eine zahl eingeben kann
         //function placeDiv, erstellt Dokument in HTML, div ist kind von body
         function placeDiv(_color, Karte, Eingabe) {
             var div = document.createElement("div");
