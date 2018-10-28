@@ -156,7 +156,7 @@ namespace Aufgabe2 {
 
         //Zusammenfügung von allen Karten in einem einzigen Array
         let AllCards: Cards[] = [cardzero, cardone, cardtwo, cardthree, cardfour, cardfive, cardsix, cardseven,
-            cardnine, cardplustwo, cardretour, cardtimeout, cardwish, cardplusfour]
+            cardnine, cardplustwo, cardretour, cardtimeout, cardwish, cardplusfour];
 
 
         //Deklaration der Zufalls(random) Funktion damit später zufällig aus den Karten gewählt werden kann.

@@ -1,7 +1,7 @@
 var Aufgabe2;
 (function (Aufgabe2) {
     function game() {
-        let cardzero = {
+        var cardzero = {
             card: "0",
             red: 1,
             green: 1,
@@ -9,7 +9,7 @@ var Aufgabe2;
             yellow: 1,
             black: 0
         };
-        let cardone = {
+        var cardone = {
             card: "1",
             red: 2,
             green: 2,
@@ -17,7 +17,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardtwo = {
+        var cardtwo = {
             card: "2",
             red: 2,
             green: 2,
@@ -25,7 +25,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardthree = {
+        var cardthree = {
             card: "3",
             red: 2,
             green: 2,
@@ -33,7 +33,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardfour = {
+        var cardfour = {
             card: "4",
             red: 2,
             green: 2,
@@ -41,7 +41,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardfive = {
+        var cardfive = {
             card: "5",
             red: 2,
             green: 2,
@@ -49,7 +49,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardsix = {
+        var cardsix = {
             card: "6",
             red: 2,
             green: 2,
@@ -57,7 +57,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardseven = {
+        var cardseven = {
             card: "7",
             red: 2,
             green: 2,
@@ -65,7 +65,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardeight = {
+        var cardeight = {
             card: "8",
             red: 2,
             green: 2,
@@ -73,7 +73,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardnine = {
+        var cardnine = {
             card: "9",
             red: 2,
             green: 2,
@@ -81,7 +81,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardplustwo = {
+        var cardplustwo = {
             card: "+2",
             red: 2,
             green: 2,
@@ -89,7 +89,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardretour = {
+        var cardretour = {
             card: "retour",
             red: 2,
             green: 2,
@@ -97,7 +97,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardtimeout = {
+        var cardtimeout = {
             card: "timeout",
             red: 2,
             green: 2,
@@ -105,7 +105,7 @@ var Aufgabe2;
             yellow: 2,
             black: 0
         };
-        let cardwish = {
+        var cardwish = {
             card: "wish",
             red: 0,
             green: 0,
@@ -113,7 +113,7 @@ var Aufgabe2;
             yellow: 0,
             black: 4
         };
-        let cardplusfour = {
+        var cardplusfour = {
             card: "+4",
             red: 0,
             green: 0,
@@ -122,19 +122,19 @@ var Aufgabe2;
             black: 4
         };
         //Zusammenfügung von allen Karten in einem einzigen Array
-        let AllCards = [cardzero, cardone, cardtwo, cardthree, cardfour, cardfive, cardsix, cardseven,
+        var AllCards = [cardzero, cardone, cardtwo, cardthree, cardfour, cardfive, cardsix, cardseven,
             cardnine, cardplustwo, cardretour, cardtimeout, cardwish, cardplusfour];
         //Deklaration der Zufalls(random) Funktion damit später zufällig aus den Karten gewählt werden kann.
         function Zufall(Nummer) { return Math.floor(Math.random() * Math.floor(Nummer)); }
         ;
         //function placeDiv, erstellt Dokument in HTML, div ist kind von body
         function placeDiv(_color, Karte, Eingabe) {
-            let div = document.createElement("div");
+            var div = document.createElement("div");
             document.body.appendChild(div);
             div.setAttribute("id", "a" + Eingabe);
             document.getElementById("a" + Eingabe).innerHTML += Karte;
             //CSS Style Deklaration
-            let s = div.style;
+            var s = div.style;
             s.border = "solid black";
             s.position = "absolute";
             s.backgroundColor = _color;
@@ -156,13 +156,13 @@ var Aufgabe2;
             }
         }
         //Pop up, spieler gibt ein mit wie vielen Karten er spielen möchte
-        let Anzahl;
-        let Kartenauswahl = prompt("Gebe ein mit wie vielen Karten du spielen moechtest");
+        var Anzahl;
+        var Kartenauswahl = prompt("Gebe ein mit wie vielen Karten du spielen moechtest");
         Anzahl = Number(Kartenauswahl); //Kartenauswahl wird in Anzahl zurückgegeben damit man eine zahl eingeben kann
-        let c = "";
-        for (let i = 0; i < Anzahl; i++) {
-            let Kartenzahl = Zufall(15); //Funktion oben wird aufgegriffen um zufällig aus den Karten zu wählen
-            let Farben = Zufall(5);
+        var c = "";
+        for (var i = 0; i < Anzahl; i++) {
+            var Kartenzahl = Zufall(15); //Funktion oben wird aufgegriffen um zufällig aus den Karten zu wählen
+            var Farben = Zufall(5);
             switch (Farben) {
                 case 0:
                     c = "#DF0101";
@@ -207,11 +207,11 @@ var Aufgabe2;
         }
         //Stylesheet der Ablage
         function Ablage() {
-            let div = document.createElement("div");
+            var div = document.createElement("div");
             document.body.appendChild(div);
             div.setAttribute("id", "Kartenablage");
             document.getElementById("Kartenablage").innerHTML += "Kartenablage";
-            let s = div.style;
+            var s = div.style;
             s.border = "solid black";
             s.textAlign = "center";
             s.position = "absolute";
@@ -224,11 +224,11 @@ var Aufgabe2;
         }
         //Stylesheet vom Stapel
         function Stapel() {
-            let div = document.createElement("div");
+            var div = document.createElement("div");
             document.body.appendChild(div);
             div.setAttribute("id", "Unostapel");
             document.getElementById("Unostapel").innerHTML += "Unostapel";
-            let s = div.style;
+            var s = div.style;
             s.border = " solid black";
             s.textAlign = "center";
             s.position = "absolute";
