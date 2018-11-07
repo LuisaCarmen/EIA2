@@ -4,14 +4,14 @@ namespace Aufgabe2neu {
     
 
 
- function game() {
-
-
-       let TypeNumber: number;
+ let TypeNumber: number;
         let ChooseCards: string = prompt("Gebe ein mit wie vielen Karten du spielen moechtest");
         TypeNumber = Number(ChooseCards); //Kartenauswahl wird in Anzahl zurückgegeben damit man eine zahl eingeben kann
 
 
+
+
+     
 
      
      
@@ -612,13 +612,15 @@ namespace Aufgabe2neu {
 
 
    
+
     
     
         function random(Zufall: number) { return Math.floor(Math.random() * Math.floor(Zufall)) }
 
 
-       
-
+    function game(){
+    
+        
 
 
 
@@ -663,14 +665,14 @@ namespace Aufgabe2neu {
 
 
 
+}
 
 
-
-    }
+  
     document.addEventListener("DOMContentLoaded", (game))
 
 
-
-
-
 }
+
+
+
