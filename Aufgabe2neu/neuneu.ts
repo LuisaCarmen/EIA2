@@ -151,7 +151,7 @@ namespace Aufgabe2neu {
     }
 
     //Grüneten
-     let g1: Cards = {
+    let g1: Cards = {
         color: "81F79F",
         cardname: "0"
     }
@@ -292,7 +292,7 @@ namespace Aufgabe2neu {
 
 
     //Gelbe Kar  
-     let y1: Cards = {
+    let y1: Cards = {
         color: "#F3F781",
         cardname: "0"
     }
@@ -426,7 +426,7 @@ namespace Aufgabe2neu {
 
 
     //Blaue Ka  
-     let b1: Cards = {
+    let b1: Cards = {
         color: "#2E9AFE",
         cardname: "0"
     }
@@ -559,7 +559,7 @@ namespace Aufgabe2neu {
 
 
     //Schwarze Kn 
-     let s1: Cards = {
+    let s1: Cards = {
         color: "black",
         cardname: "+4"
     }
@@ -606,7 +606,7 @@ namespace Aufgabe2neu {
 
 
 
-    
+
 
     //Hauptfunktion
     function game() {
@@ -624,40 +624,40 @@ namespace Aufgabe2neu {
         }
     }
 
-function ZufaelligeNummer(Zufall: number) {
+    function ZufaelligeNummer(Zufall: number) {
         return Math.floor(Math.random() * Math.floor(Zufall))
     }
 
-   //function placeDiv, erstellt Dokument in HTML, div ist kind von body
-        function placeDiv(_color: string, Karte: string, Eingabe: number): void {
-            let div: HTMLDivElement = document.createElement("div");
-            document.body.appendChild(div);
+    //function placeDiv, erstellt Dokument in HTML, div ist kind von body
+    function placeDiv(_color: string, Karte: string, Eingabe: number): void {
+        let div: HTMLDivElement = document.createElement("div");
+        document.body.appendChild(div);
 
-            div.setAttribute("id", "a" + Eingabe);
-            document.getElementById("a" + Eingabe).innerHTML += Karte;
-            //CSS Style Deklaration
-            let s: CSSStyleDeclaration = div.style;
-            s.border = "solid black";
-            s.position = "absolute";
-            s.backgroundColor = _color;
-            s.width = 150 + "px";
-            s.height = 200 + "px";
-            s.left = (Eingabe + 1) * 160 + "px"; //Abstand zwischen den Spielkarten nach jeder Wiederholung
-            s.bottom = 130 + "px";
-            s.textAlign = "center";
-            s.borderRadius = 20 + "px";
+        div.setAttribute("id", "a" + Eingabe);
+        document.getElementById("a" + Eingabe).innerHTML += Karte;
+        //CSS Style Deklaration
+        let s: CSSStyleDeclaration = div.style;
+        s.border = "solid black";
+        s.position = "absolute";
+        s.backgroundColor = _color;
+        s.width = 150 + "px";
+        s.height = 200 + "px";
+        s.left = (Eingabe + 1) * 160 + "px"; //Abstand zwischen den Spielkarten nach jeder Wiederholung
+        s.bottom = 130 + "px";
+        s.textAlign = "center";
+        s.borderRadius = 20 + "px";
 
 
 
-            //Schriftfarbe wird festgelegt falls Hintergrund zu dunkel ist
+        //Schriftfarbe wird festgelegt falls Hintergrund zu dunkel ist
 
-            if (_color == "black") { s.color = "white"; }
+        if (_color == "black") { s.color = "white"; }
 
-            if (_color == "#2E9AFE") { s.color = "white"; }
+        if (_color == "#2E9AFE") { s.color = "white"; }
 
-            if (_color == "#DF0101") { s.color = "white"; }
+        if (_color == "#DF0101") { s.color = "white"; }
 
-        }
+    }
 
 
 
