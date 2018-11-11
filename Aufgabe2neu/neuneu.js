@@ -1,8 +1,5 @@
 var Aufgabe2neu;
 (function (Aufgabe2neu) {
-    var TypeNumber;
-    var ChooseCards = prompt("Gebe ein mit wie vielen Karten du spielen moechtest");
-    TypeNumber = Number(ChooseCards); //Kartenauswahl wird in Anzahl zurückgegeben damit man eine zahl eingeben kann
     //rote Karten
     var r1 = {
         color: "#DF0101",
@@ -445,41 +442,47 @@ var Aufgabe2neu;
         y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, y20, y21, y22, y23, y24, y25,
         b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25,
         s1, s2, s3, s4, s5, s6, s7, s8];
-    function random(Zufall) { return Math.floor(Math.random() * Math.floor(Zufall)); }
+    //Hauptfunktion
     function game() {
-        //function placeDiv, erstellt Dokument in HTML, div ist kind von body
-        function placeDiv(_color, Karte, Eingabe) {
-            var div = document.createElement("div");
-            document.body.appendChild(div);
-            div.setAttribute("id", "a" + Eingabe);
-            document.getElementById("a" + Eingabe).innerHTML += Karte;
-            //CSS Style Deklaration
-            var s = div.style;
-            s.border = "solid black";
-            s.position = "absolute";
-            s.backgroundColor = _color;
-            s.width = 150 + "px";
-            s.height = 200 + "px";
-            s.left = (Eingabe + 1) * 160 + "px"; //Abstand zwischen den Spielkarten nach jeder Wiederholung
-            s.bottom = 130 + "px";
-            s.textAlign = "center";
-            s.borderRadius = 20 + "px";
-            //Schriftfarbe wird festgelegt falls Hintergrund zu dunkel ist
-            if (_color == "black") {
-                s.color = "white";
-            }
-            if (_color == "#2E9AFE") {
-                s.color = "white";
-            }
-            if (_color == "#DF0101") {
-                s.color = "white";
-            }
-        }
-        for (var i = 0; i < TypeNumber; i++) {
-            var loeschen = random(AllCards.length);
-            placeDiv(AllCards[loeschen].color, AllCards[loeschen].cardname, i);
-            AllCards.splice(loeschen, 1);
+        var Anzahl;
+        var Eingabe = prompt("Gebe ein mit wie vielen Karten du spielen möchtest!");
+        Anzahl = Number(Eingabe);
+        for (var Zahl = 0; Zahl < Anzahl; Zahl++) {
+            var randomKarte = ZufaelligeNummer(AllCards.length);
+            placeDiv(AllCards[randomKarte].color, AllCards[randomKarte].cardname, Zahl);
+            AllCards.splice(randomKarte, 1);
             continue;
+        }
+    }
+    function ZufaelligeNummer(Zufall) {
+        return Math.floor(Math.random() * Math.floor(Zufall));
+    }
+    //function placeDiv, erstellt Dokument in HTML, div ist kind von body
+    function placeDiv(_color, Karte, Eingabe) {
+        var div = document.createElement("div");
+        document.body.appendChild(div);
+        div.setAttribute("id", "a" + Eingabe);
+        document.getElementById("a" + Eingabe).innerHTML += Karte;
+        //CSS Style Deklaration
+        var s = div.style;
+        s.border = "solid black";
+        s.position = "absolute";
+        s.backgroundColor = _color;
+        s.width = 150 + "px";
+        s.height = 200 + "px";
+        s.left = (Eingabe + 1) * 160 + "px"; //Abstand zwischen den Spielkarten nach jeder Wiederholung
+        s.bottom = 130 + "px";
+        s.textAlign = "center";
+        s.borderRadius = 20 + "px";
+        //Schriftfarbe wird festgelegt falls Hintergrund zu dunkel ist
+        if (_color == "black") {
+            s.color = "white";
+        }
+        if (_color == "#2E9AFE") {
+            s.color = "white";
+        }
+        if (_color == "#DF0101") {
+            s.color = "white";
         }
     }
     document.addEventListener("DOMContentLoaded", (game));
