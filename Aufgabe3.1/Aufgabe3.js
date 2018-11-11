@@ -537,8 +537,8 @@ var Aufgabe3aufgabe;
         var div = document.createElement("div");
         document.getElementById("stack").appendChild(div);
         div.setAttribute("id", "cardstack" + typein);
-        document.getElementById("a" + typein).innerHTML += card;
-        //CSS Style Deklaration
+        div.setAttribute("class", "cardstack");
+        document.getElementById("cardstack" + typein).innerHTML += card;
         var s = div.style;
         s.border = "solid black";
         s.position = "absolute";

@@ -754,8 +754,10 @@ namespace Aufgabe3aufgabe {
         let div: HTMLDivElement = document.createElement("div");
         document.getElementById("stack").appendChild(div);
         div.setAttribute("id", "cardstack" + typein);
-        document.getElementById("a" + typein).innerHTML += card;
-        //CSS Style Deklaration
+        div.setAttribute("class", "cardstack");
+        document.getElementById("cardstack" + typein).innerHTML += card;
+       
+        
         let s: CSSStyleDeclaration = div.style;
         s.border = "solid black";
         s.position = "absolute";
