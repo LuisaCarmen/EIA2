@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+
+#Pile {background-color: #FBF5EF;
+         width: 150px;
+         height: 200px;
+         margin-left: 20em;
+         margin-top: 1em;
+         border: 2px solid black;
+         border-radius: 20px;
+         text-align: center;
+         font-size: 1.5em;
+         position: absolute;}
+         
+#Pile p {margin-top: 3.5em; }
+
+#stack {background-color: #F2F2F2;
+         width: 150px;
+         height: 200px;
+         margin-left: 30em;
+         margin-top: 1em;
+         border: 2px dotted black;
+         border-radius: 20px;
+         text-align: center;
+         font-size: 1.5em;
+         position: absolute;}
+         
+         
+#stack p {margin-top: 3.5em; }   
+
+#Spielerkarten {border: 2px solid black;
+                margin-top: 20em;
+                margin-left: 4.5em;
+                position: absolute;
+                width: 1300px;
+                height: 420px;
+                background-color: #D8D8D8;} 
+
+
+#button {position: absolute;
+         width: 130px;
+         height: 40px;
+         border: solid black;
+         margin-left: 57em;
+         margin-top: 30em;}
