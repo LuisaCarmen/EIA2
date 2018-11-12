@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+#pilehtml {
+	background-color: #FBF5EF;
+	width: 150px;
+	height: 200px;
+	margin-left: 20em;
+	margin-top: 1em;
+	border: 2px solid black;
+	border-radius: 20px;
+	text-align: center;
+	font-size: 1.5em;
+	position: absolute;
+}
+
+#pilehtml p {
+	margin-top: 3.5em;
+}
+
+#cardTrayhtml {
+	background-color: #F2F2F2;
+	width: 150px;
+	height: 200px;
+	margin-left: 30em;
+	margin-top: 1em;
+	border: 2px dotted black;
+	border-radius: 20px;
+	text-align: center;
+	font-size: 1.5em;
+	position: absolute;
+}
+
+#cardTrayhtml p {
+	margin-top: 3.5em;
+}
+
+#playerCardshtml {
+	border: 2px solid black;
+	margin-top: 20em;
+	margin-left: 4.5em;
+	position: absolute;
+	width: 1300px;
+	height: 430px;
+	background-color: #D8D8D8;
+}
+
+#buttonhtml {
+	position: absolute;
+	background-color: #A4A4A4;
+	color: white;
+	width: 130px;
+	height: 21px;
+	border: solid black;
+	margin-left: 38em;
+	margin-top: 18em;
+	text-align: center;
+}
+
+.playerCardshtml {
+	display: inline-block;
+	bottom: 0px;
+	margin: 5px;
+}
+
+.yellow {
+	background-color: #F3F781;
+	width: 150px;
+	height: 200px;
+	text-align: center;
+	border: solid black;
+	color: black;
+	border-radius: 20px;
+}
+
+.red {
+	background-color: #DF0101;
+	width: 150px;
+	height: 200px;
+	text-align: center;
+	border: solid black;
+	color: white;
+	border-radius: 20px;
+}
+
+.blue {
+	background-color: #2E9AFE;
+	width: 150px;
+	height: 200px;
+	text-align: center;
+	border: solid black;
+	color: white;
+	border-radius: 20px;
+}
+
+.green {
+	background-color: #81F79F;
+	width: 150px;
+	height: 200px;
+	text-align: center;
+	border: solid black;
+	color: black;
+	border-radius: 20px;
+}
+
+.black {
+	background-color: black;
+	width: 150px;
+	height: 200px;
+	text-align: center;
+	border: solid white;
+	color: white;
+	border-radius: 20px;
+}
