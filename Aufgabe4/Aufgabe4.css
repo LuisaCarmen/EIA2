@@ -2,7 +2,7 @@
 	display: block;
 	vertical-align: top
 }
-input[type="radio"], input[type="checkbox"], label {
+input[type="radio"], input[type="checkbox"], label 
 	display: inline;
 }
 label::after {
