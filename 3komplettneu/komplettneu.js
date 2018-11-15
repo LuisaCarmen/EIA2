@@ -79,7 +79,7 @@ var Aufgabe3NEU;
     function layDownCard(_event) {
         document.getElementById("cardTrayhtml").innerHTML = "";
         var chosenCard = _event.target;
-        var index = parseInt(chosenCard.id); //nimmt Zeichenkette und wandelt Sie in eine Ganzzahl um.
+        var index = parseInt(chosenCard.id); //nimmt Zeichenkette und wandelt Sie in eine Ganzzahl um mit der unten gearbeitet wird.
         cardTray.push(playerCards[index]);
         var div = document.createElement("div");
         document.getElementById("cardTrayhtml").appendChild(div);
