@@ -1,6 +1,6 @@
 namespace Aufgabe4{
-    window.addEventListener("load", init);
-
+    window.addEventListener("load", init); 
+  
     function init(_event: Event): void {
         console.log("Init");
         let fieldsets: NodeListOf<HTMLFieldSetElement> = 
