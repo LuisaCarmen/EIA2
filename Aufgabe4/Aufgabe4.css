@@ -1,6 +1,6 @@
 * {
 	display: block;
-	vertical-align: top
+	vertical-align: top 
 }
 input[type="radio"], input[type="checkbox"], label 
 	display: inline;
