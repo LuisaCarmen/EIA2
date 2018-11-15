@@ -107,7 +107,7 @@ namespace Aufgabe3NEU {
     function layDownCard(_event: MouseEvent): void {
         document.getElementById("cardTrayhtml").innerHTML = "";
         let chosenCard: HTMLElement = <HTMLElement>_event.target;
-        let index: number = parseInt(chosenCard.id);
+        let index: number = parseInt(chosenCard.id);        //nimmt Zeichenkette und wandelt Sie in eine Ganzzahl um.
         cardTray.push(playerCards[index]);
         let div: HTMLElement = document.createElement("div");
         document.getElementById("cardTrayhtml").appendChild(div);
