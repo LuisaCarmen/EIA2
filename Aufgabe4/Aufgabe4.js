@@ -1,5 +1,5 @@
-var L04_FormElements;
-(function (L04_FormElements) {
+var Aufgabe4;
+(function (Aufgabe4) {
     window.addEventListener("load", init);
     function init(_event) {
         console.log("Init");
@@ -15,5 +15,5 @@ var L04_FormElements;
         var target = _event.target;
         console.log("Changed " + target.name + " to " + target.value);
     }
-})(L04_FormElements || (L04_FormElements = {}));
+})(Aufgabe4 || (Aufgabe4 = {}));
 //# sourceMappingURL=Aufgabe4.js.map
