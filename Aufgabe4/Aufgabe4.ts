@@ -26,12 +26,14 @@ namespace A4 {
     let treePrice: number = 0;
     let ballPrice: number = 0;
     let candlePrice: number = 0;
+    let ornamentPrice: number = 0
     let lamettaPrice: number = 0;
     let standPrice: number = 0;
     let deliveryPrice: number = 0;
 
     let ballAmount: number = 0;
     let candleAmount: number = 0;
+    let ornamentAmount: number = 0;
     let lamettaAmount: number = 0;
 
     let firstname: string = "";
@@ -55,7 +57,7 @@ namespace A4 {
 
         //Create Trees
         HTML += "<fieldset>";
-        HTML += "<legend>Choose your tree</legend>";
+        HTML += "<legend>Design your tree</legend>";
         HTML += "<select name='Select' id='trees'>";
         for (let arrayNumber: number = 0; arrayNumber < christmasTree.length; arrayNumber++) {
 
@@ -101,6 +103,25 @@ namespace A4 {
         HTML += "</select>";
         HTML += "<br><br>";
         HTML += "<select name='Select' id='amountCandles'>";
+        for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
+
+            HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
+        }
+        HTML += "</select>";
+        HTML += "</fieldset>";
+        HTML += "<br>";
+        
+        //Create ornaments
+        HTML += "<fieldset>";
+        HTML += "<legend>Ornaments</legend>";
+        HTML += "<select name='Select' id='ornaments'>";
+        for (let arrayNumber: number = 0; arrayNumber < ornaments.length; arrayNumber++) {
+
+            HTML += "<option value='" + arrayNumber + ornaments[arrayNumber].name + " " + ornaments[arrayNumber].price + " €'>" + ornaments[arrayNumber].name + " " + ornaments[arrayNumber].price + " €</option>";
+        }
+        HTML += "</select>";
+        HTML += "<br><br>";
+        HTML += "<select name='Select' id='amountOrnaments'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -281,6 +302,39 @@ namespace A4 {
             node.innerHTML = HTML;
         }
 
+        
+        //Ornaments
+        if (target.id == "ornaments") {
+            let node: HTMLElement = document.getElementById("ornamenthtml");
+            let value: string = target.value;
+            let _price: number = parseInt(value.substr(0, 1));
+            ornamentPrice = ornaments[_price].price;
+
+            let HTML: string;
+
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+
+            node.innerHTML = HTML;
+        }
+
+        if (target.id == "amountOrnaments") {
+            let node: HTMLElement = document.getElementById("ornamentamounthtml");
+            let value: string = target.value;
+            let _number: number = parseInt(value.substr(1, 2));
+            ornamentAmount = _number;
+
+            let HTML: string;
+
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+
+            node.innerHTML = HTML;
+        }
 
         //Lametta
         if (target.id == "Lametta") {
@@ -433,8 +487,8 @@ namespace A4 {
 
         HTML = "";
         HTML += "<a>";
-        HTML += (treePrice + (ballPrice * ballAmount) + (candlePrice * candleAmount) + (lamettaPrice * lamettaAmount) + standPrice + deliveryPrice);
-        HTML += " Euro";
+        HTML += (treePrice + (ballPrice * ballAmount) + (candlePrice * candleAmount) + (ornamentPrice * ornamentAmount) + (lamettaPrice * lamettaAmount) + standPrice + deliveryPrice);
+        HTML += " €";
         HTML += "</a>";
         node.innerHTML = HTML;
     }

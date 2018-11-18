@@ -17,11 +17,13 @@ var A4;
     var treePrice = 0;
     var ballPrice = 0;
     var candlePrice = 0;
+    var ornamentPrice = 0;
     var lamettaPrice = 0;
     var standPrice = 0;
     var deliveryPrice = 0;
     var ballAmount = 0;
     var candleAmount = 0;
+    var ornamentAmount = 0;
     var lamettaAmount = 0;
     var firstname = "";
     var surname = "";
@@ -35,7 +37,7 @@ var A4;
         var HTML;
         //Create Trees
         HTML += "<fieldset>";
-        HTML += "<legend>Choose your tree</legend>";
+        HTML += "<legend>Design your tree</legend>";
         HTML += "<select name='Select' id='trees'>";
         for (var arrayNumber = 0; arrayNumber < A4.christmasTree.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A4.christmasTree[arrayNumber].name + " " + A4.christmasTree[arrayNumber].price + " €'>" + A4.christmasTree[arrayNumber].name + " " + A4.christmasTree[arrayNumber].price + " €</option>";
@@ -68,6 +70,22 @@ var A4;
         HTML += "</select>";
         HTML += "<br><br>";
         HTML += "<select name='Select' id='amountCandles'>";
+        for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
+            HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
+        }
+        HTML += "</select>";
+        HTML += "</fieldset>";
+        HTML += "<br>";
+        //Create ornaments
+        HTML += "<fieldset>";
+        HTML += "<legend>Ornaments</legend>";
+        HTML += "<select name='Select' id='ornaments'>";
+        for (var arrayNumber = 0; arrayNumber < A4.ornaments.length; arrayNumber++) {
+            HTML += "<option value='" + arrayNumber + A4.ornaments[arrayNumber].name + " " + A4.ornaments[arrayNumber].price + " €'>" + A4.ornaments[arrayNumber].name + " " + A4.ornaments[arrayNumber].price + " €</option>";
+        }
+        HTML += "</select>";
+        HTML += "<br><br>";
+        HTML += "<select name='Select' id='amountOrnaments'>";
         for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -192,12 +210,12 @@ var A4;
             HTML_4 += "</a>";
             node_5.innerHTML = HTML_4;
         }
-        //Lametta
-        if (target.id == "Lametta") {
-            var node_6 = document.getElementById("lamettahtml");
+        //Ornaments
+        if (target.id == "ornaments") {
+            var node_6 = document.getElementById("ornamenthtml");
             var value = target.value;
             var _price = parseInt(value.substr(0, 1));
-            lamettaPrice = A4.lametta[_price].price;
+            ornamentPrice = A4.ornaments[_price].price;
             var HTML_5;
             HTML_5 = "";
             HTML_5 += "<a>";
@@ -205,11 +223,11 @@ var A4;
             HTML_5 += "</a>";
             node_6.innerHTML = HTML_5;
         }
-        if (target.id == "amountLametta") {
-            var node_7 = document.getElementById("lamettaamounthtml");
+        if (target.id == "amountOrnaments") {
+            var node_7 = document.getElementById("ornamentamounthtml");
             var value = target.value;
             var _number = parseInt(value.substr(1, 2));
-            lamettaAmount = _number;
+            ornamentAmount = _number;
             var HTML_6;
             HTML_6 = "";
             HTML_6 += "<a>";
@@ -217,12 +235,12 @@ var A4;
             HTML_6 += "</a>";
             node_7.innerHTML = HTML_6;
         }
-        //tree stands
-        if (target.name == "Radiogroup") {
-            var node_8 = document.getElementById("standhtml");
+        //Lametta
+        if (target.id == "Lametta") {
+            var node_8 = document.getElementById("lamettahtml");
             var value = target.value;
             var _price = parseInt(value.substr(0, 1));
-            standPrice = A4.treeStands[_price].price;
+            lamettaPrice = A4.lametta[_price].price;
             var HTML_7;
             HTML_7 = "";
             HTML_7 += "<a>";
@@ -230,43 +248,48 @@ var A4;
             HTML_7 += "</a>";
             node_8.innerHTML = HTML_7;
         }
-        //delivery options
-        if (target.name == "Radiogroup1") {
-            var node_9 = document.getElementById("deliveryhtml");
+        if (target.id == "amountLametta") {
+            var node_9 = document.getElementById("lamettaamounthtml");
             var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
-            deliveryPrice = A4.delivery[_price].price;
+            var _number = parseInt(value.substr(1, 2));
+            lamettaAmount = _number;
             var HTML_8;
             HTML_8 = "";
             HTML_8 += "<a>";
-            HTML_8 += " " + value.substr(1);
+            HTML_8 += " " + target.value;
             HTML_8 += "</a>";
             node_9.innerHTML = HTML_8;
         }
-        //Buyer information
-        if (target.id == "adress") {
-            var node_10 = document.getElementById("adresshtml");
-            adress = target.value;
+        //tree stands
+        if (target.name == "Radiogroup") {
+            var node_10 = document.getElementById("standhtml");
+            var value = target.value;
+            var _price = parseInt(value.substr(0, 1));
+            standPrice = A4.treeStands[_price].price;
             var HTML_9;
             HTML_9 = "";
             HTML_9 += "<a>";
-            HTML_9 += " " + target.value;
+            HTML_9 += " " + value.substr(1);
             HTML_9 += "</a>";
             node_10.innerHTML = HTML_9;
         }
-        if (target.id == "surname") {
-            var node_11 = document.getElementById("surnamehtml");
-            surname = target.value;
+        //delivery options
+        if (target.name == "Radiogroup1") {
+            var node_11 = document.getElementById("deliveryhtml");
+            var value = target.value;
+            var _price = parseInt(value.substr(0, 1));
+            deliveryPrice = A4.delivery[_price].price;
             var HTML_10;
             HTML_10 = "";
             HTML_10 += "<a>";
-            HTML_10 += " " + target.value;
+            HTML_10 += " " + value.substr(1);
             HTML_10 += "</a>";
             node_11.innerHTML = HTML_10;
         }
-        if (target.id == "firstname") {
-            var node_12 = document.getElementById("firstnamehtml");
-            firstname = target.value;
+        //Buyer information
+        if (target.id == "adress") {
+            var node_12 = document.getElementById("adresshtml");
+            adress = target.value;
             var HTML_11;
             HTML_11 = "";
             HTML_11 += "<a>";
@@ -274,9 +297,9 @@ var A4;
             HTML_11 += "</a>";
             node_12.innerHTML = HTML_11;
         }
-        if (target.id == "mail") {
-            var node_13 = document.getElementById("mailhtml");
-            mail = target.value;
+        if (target.id == "surname") {
+            var node_13 = document.getElementById("surnamehtml");
+            surname = target.value;
             var HTML_12;
             HTML_12 = "";
             HTML_12 += "<a>";
@@ -284,9 +307,9 @@ var A4;
             HTML_12 += "</a>";
             node_13.innerHTML = HTML_12;
         }
-        if (target.id == "extra") {
-            var node_14 = document.getElementById("extrahtml");
-            extra = target.value;
+        if (target.id == "firstname") {
+            var node_14 = document.getElementById("firstnamehtml");
+            firstname = target.value;
             var HTML_13;
             HTML_13 = "";
             HTML_13 += "<a>";
@@ -294,13 +317,33 @@ var A4;
             HTML_13 += "</a>";
             node_14.innerHTML = HTML_13;
         }
+        if (target.id == "mail") {
+            var node_15 = document.getElementById("mailhtml");
+            mail = target.value;
+            var HTML_14;
+            HTML_14 = "";
+            HTML_14 += "<a>";
+            HTML_14 += " " + target.value;
+            HTML_14 += "</a>";
+            node_15.innerHTML = HTML_14;
+        }
+        if (target.id == "extra") {
+            var node_16 = document.getElementById("extrahtml");
+            extra = target.value;
+            var HTML_15;
+            HTML_15 = "";
+            HTML_15 += "<a>";
+            HTML_15 += " " + target.value;
+            HTML_15 += "</a>";
+            node_16.innerHTML = HTML_15;
+        }
         //Berechnung des Gesamtpreises
         var node = document.getElementById("endpricehtml");
         var HTML;
         HTML = "";
         HTML += "<a>";
-        HTML += (treePrice + (ballPrice * ballAmount) + (candlePrice * candleAmount) + (lamettaPrice * lamettaAmount) + standPrice + deliveryPrice);
-        HTML += " Euro";
+        HTML += (treePrice + (ballPrice * ballAmount) + (candlePrice * candleAmount) + (ornamentPrice * ornamentAmount) + (lamettaPrice * lamettaAmount) + standPrice + deliveryPrice);
+        HTML += " €";
         HTML += "</a>";
         node.innerHTML = HTML;
     }
