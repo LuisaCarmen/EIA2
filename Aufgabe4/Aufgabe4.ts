@@ -16,7 +16,7 @@ namespace A4 {
     document.addEventListener("DOMContentLoaded", createAllProducts);
     document.addEventListener("DOMContentLoaded", changedMind);
 
- function changedMind(_event: Event): void {
+    function changedMind(_event: Event): void {
         let fieldset: HTMLElement = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
     }
@@ -33,7 +33,7 @@ namespace A4 {
     let ballAmount: number = 0;
     let candleAmount: number = 0;
     let lamettaAmount: number = 0;
-    
+
     let firstname: string = "";
     let surname: string = "";
     let adress: string = "";
@@ -77,7 +77,7 @@ namespace A4 {
         }
         HTML += "</select>";
         HTML += "<br><br>";
-       
+
         HTML += "<select name='Select' id='amountBalls'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
@@ -144,7 +144,7 @@ namespace A4 {
 
 
         //delivery options
-       HTML += "<fieldset>";
+        HTML += "<fieldset>";
         HTML += "<legend>Delivery options</legend>";
         for (let arrayNumber: number = 0; arrayNumber < delivery.length; arrayNumber++) {
             HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
@@ -152,26 +152,26 @@ namespace A4 {
         }
         HTML += "</fieldset>";
         HTML += "<br>";
-        
-        
+
+
 
         //buyer info
         HTML += "<fieldset>";
         HTML += "<legend>Buyer Information</legend>";
-        
+
         HTML += "<input id='surname' type='text' name='Surname' placeholder='Surname'/>";
         HTML += "<br><br>";
-        
+
         HTML += "<input id='firstname' type='text' name='name' placeholder='Name'/>";
         HTML += "<br><br>";
-        
+
         HTML += "<input id='mail' type='email' name='mail' placeholder='E-mail'/>";
         HTML += "<br><br>";
-       
+
         HTML += "<textarea id='adress' name='Area' cols='30' rows='4' placeholder='Please enter your adress' >";
         HTML += "</textarea>";
         HTML += "<br><br>";
-        
+
         HTML += "<textarea id='extra' name='Area' cols='30' rows='4' placeholder='Extra information for the seller' >";
         HTML += "</textarea>";
 
@@ -187,17 +187,17 @@ namespace A4 {
     }
 
 
- 
 
 
-  
+
+
 
     //Handle Change Funktionen  
     function handleChange(_event: Event): void {
 
 
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
-       //trees
+        //trees
         if (target.id == "trees") {
             let node: HTMLElement = document.getElementById("treeshtml");
             let value: string = target.value;
@@ -433,12 +433,12 @@ namespace A4 {
 
         HTML = "";
         HTML += "<a>";
-        HTML += (treePrice + (ballPrice * ballAmount) + (candlePrice *  candleAmount) + (lamettaPrice * lamettaAmount) + standPrice  + deliveryPrice);
+        HTML += (treePrice + (ballPrice * ballAmount) + (candlePrice * candleAmount) + (lamettaPrice * lamettaAmount) + standPrice + deliveryPrice);
         HTML += " Euro";
         HTML += "</a>";
         node.innerHTML = HTML;
     }
-        
+
 
 
     //Progress. Wurde schon alles ausgewählt? Wenn ja--> nichts, wenn nein--> I'm sorry....
