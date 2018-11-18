@@ -307,7 +307,7 @@ var A4;
     //Progress. Wurde schon alles ausgewählt? Wenn ja--> nichts, wenn nein--> I'm sorry....
     function checkProgress(_event) {
         if (mail == "" || extra == "" || firstname == "" || surname == "" || adress == "" || treePrice == 0 || standPrice == 0 || ballPrice == 0 || lamettaPrice == 0 || candlePrice == 0 || deliveryPrice == 0 || ballAmount == 0 || lamettaAmount == 0 || candleAmount == 0) {
-            document.getElementById("notSelectedYet").innerHTML = "I'm sorry, you still need to select some things!";
+            document.getElementById("notSelectedYet").innerHTML = "I'm sorry, you need to fill out a few more things!";
         }
         else {
             document.getElementById("notSelectedYet").innerHTML = "";
