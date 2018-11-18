@@ -26,7 +26,7 @@ namespace A4 {
     let treePrice: number = 0;
     let ballPrice: number = 0;
     let candlePrice: number = 0;
-    let ornamentPrice: number = 0
+    let ornamentPrice: number = 0;
     let lamettaPrice: number = 0;
     let standPrice: number = 0;
     let deliveryPrice: number = 0;
