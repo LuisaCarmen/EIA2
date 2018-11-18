@@ -2,13 +2,13 @@
 
 @charset "UTF-8";
 
-body {
-	background-Color: #0B610B;
-}
+
 
 h1 {
-	margin-left: 9em;
+	margin-top: 2.5em;
+	margin-left: 7em;
 	color: white;
+	
 }
 
 #h3 {margin-top: 1em;
@@ -22,11 +22,12 @@ h3 {
 
 #fieldset {
 	margin-top: 2em;
-	margin-left: 3em;
-	width: 900px;
+	margin-left: 13em;
+	width: 600px;
 	border: thin solid black;
-	background-Color: #CEF6D8;
+	background-Color: #B40404;
 	border-radius: 20px;
+	color: white;
 }
 
 legend {
@@ -37,19 +38,20 @@ legend {
 
 #div {
 	position: absolute;
-	top: 100px;
+	top: 105px;
 	left: 1010px;
 	width: 300px;
 	border: thin solid black;
 	padding-bottom: 170px;
 	padding-left: 15px;
-	background-Color: #CEF6D8;
+	background-Color: #B40404;
 	position: fixed;
 	border-radius: 20px;
+	color: white;
 }
 
-button {background-color:#0B610B;
-color: white;
+button {background-color:white;
+color: black;
 border-radius: 20px;
 height: 2em;
 	position: absolute;
@@ -79,4 +81,5 @@ label::after {
 }
 
 select {border-radius: 20px;
-width: 30em;;}
+width: 30em;
+}
