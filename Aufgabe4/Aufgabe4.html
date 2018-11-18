@@ -1,8 +1,8 @@
 <!--
-Aufgabe: 4ii
+Aufgabe: Aufgabe 4
 Name: Luisa Neininger
 Matrikel: 259314 
-Datum: 14.10.2018
+Datum: 15.10.2018
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 -->
@@ -13,277 +13,90 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 <head>
 <meta charset="UTF-8" />
 <title>Weihnachtsbaumkonfigurator</title>
-<link rel="stylesheet" href="Aufgabe4.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="Aufgabe4.css" type="text/css"
+	media="screen" />
 <script src="Aufgabe4.js" type="text/javascript" charset="utf-8"></script>
+<script src="seller.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
 
 
-<!-- Informationen des Benutzers/Käufers -->
+	<h1>Design your own christmas tree :)</h1>
 
-<fieldset id="userInformation">
+	<fieldset id="fieldset">
+	
+	</fieldset>
 
-		<legend> Buyer Information </legend>
+	<div id="div">
+		<h3 id="h3">Order Overview</h3>
+		
+		
+		<a>Christmas tree:</a>
+		<a id="treeshtml" ></a> <br>
+		
+		
+
+		<a>Christmas Balls:</a>
+		<a id="ballhtml" ></a>
+		<a id="ballamounthtml" ></a><br> 
+		
+		
+		<a>Candles:</a>
+		<a id="candlehtml" ></a>
+		<a id="candleamounthtml" ></a> <br>
 		 
-		 Name
-		<input type="text" name="name" placeholder="type here" required/>
-		<hr/>
 		
-		Surname
-		<input type="text" name="surname" placeholder="type here"/>
-		<hr/>
-		
-		Adress
-		<textarea name="adress" cols="30" rows="3" placeholder="type here"></textarea>
-		<hr/>
-		
-		Mail
-		<input type="email" name="mail" placeholder="place @ between"/>
-		<hr/>
-		
-		Extra information for the seller
-		<textarea name="extra" cols="30" rows="7" placeholder="type here"></textarea>
-		
-		<hr/>
-		
-		<legend>Lieferoptionen </legend>
-		<input type="checkbox" name="Checkbox1" value="check1" id="DHL"/>
-		<label for="check1">DHL </label>
-		<input type="checkbox" name="Checkbox2" value="check2" id="DPD"/>
-		<label for="check2">DPD</label>
-		<input type="checkbox" name="Checkbox3" value="check3" id="Hermes"/>
-		<label for="check3">Hermes</label>
-	
-		
-		
-		</fieldset>
-		
+		<a>Lametta:</a>
+		<a id="lamettahtml" ></a>
+		<a id="lamettaamounthtml" ></a><br>
 
-
-
-	
-	
-<fieldset id="treeDesign">
-<legend> Design your very own Christmas tree :) </legend>
-<fieldset id="choose">
 		
 		
-<!-- Baum auswählen -->		
-		<legend> Choose your tree </legend>
-		
-		Select your tree
-		<select name="selectTree" id="selectTree" >
-		
-		   <option value="option0" ></option>
-			<optgroup label="Spruce" ></optgroup>
-	        <option value="option1" >White Spruce</option>
-			<option value="option2" >Serbian Spruce</option>
-			<option value="option3" >Colorado Blue Spruce</option>
-			
-			<optgroup label="Pine"></optgroup>
-			<option value="option4">Scots Pine</option>
-			<option value="option5">White Pine</option>
-			
-			<optgroup label="Fir"></optgroup>
-			<option value="option6">Balsam Fir</option>
-			<option value="option7" >Fraser Fir</option>
-			<option value="option8" >Douglas Fir</option>
-			<option value="option9" >Canaan Fir</option>
-			<option value="option10" >Concolor Fir</option>
-			
+		<a>Tree stand:</a>
+		<a id="standhtml" ></a> <br>
 		
 		
-		</select>
-		<hr/>
-		
-<!-- Größe des Baumes auswählen -->		
-				
-		Select height
-		<select name="selectHeight" id="selectHeight">
-		   
-		    <option value="option0" ></option>
-			<optgroup label="Height"></optgroup>
-			<option value="option11">100cm, 20€</option>
-			<option value="option12" >125cm, 30€</option>
-			<option value="option13" >150cm, 40€</option>
-			<option value="option14">175cm, 50€</option>
-			<option value="option15">200cm, 60€</option>
-			<option value="option16">225cm, 70€</option>
-			
-			
-		
-		
-		</select>
-		<hr/>
-	
-	</fieldset>
-	
-	
-	<fieldset id="accessories">
-	
-	<legend> Accessorize your tree </legend>
-	
-<!-- Weihnachskugeln auswählen -->	
-
-	<div id="allBalls">
-	
-		<label>Christmas Balls</label>
-		<select name="balls" id="balls">
-		   
-		    <option value="option0" ></option>
-			<optgroup label="Colors with glitter"></optgroup>
-			<option value="option17">red, 2,99€</option>
-			<option value="option18" >green, 2,99€</option>
-			<option value="option19">blue, 2,99€</option>
-			<option value="option20" >gold, 3,99€</option>
-			<option value="option21" >silver, 3,99€</option>
-			<option value="option22">white, 2,99€</option>
-			
-			
-			 
-			<optgroup label="Colors without glitter"></optgroup>
-			<option value="option23">red, 1,99€</option>
-			<option value="option24" >green, 1,99€ </option>
-			<option value="option25">blue, 1,99€</option>
-			<option value="option26" >gold, 2,99€</option>
-			<option value="option27" >silver, 2,99€</option>
-			<option value="option28">white, 1,99€</option>
-			
-			
-		</select>
-
-<!-- Anzahl der Weihnachtskugeln auswählen-->		
-		<label>How many?</label>
-		<input type="number" name="ballStepper" step="1" min="0" max="10" value="0"/>
-		</div>	
-		<hr/>
-		
-		
-<!-- Lamettafarben auswählen -->		
-	    <div id="allLametta">
-		
-		<label>Lametta</label>
-		<select name="lametta" id="lametta">
-		   
-		    <option value="option0" ></option>
-			<optgroup label="Colors with glitter"></optgroup>
-			<option value="option29">red, 3,99€</option>
-			<option value="option30" >green, 3,99€</option>
-			<option value="option31">blue, 3,99€</option>
-			<option value="option32" >gold, 4,99€</option>
-			<option value="option33" >silver, 4,99€</option>
-			<option value="option34">white, 3,99€</option>
-			
-			 
-			<optgroup label="Colors without glitter"></optgroup>
-			<option value="option35">red, 2,99€</option>
-			<option value="option36" >green, 2,99€</option>
-			<option value="option37">blue, 2,99€</option>
-			<option value="option38" >gold, 3,99€</option>
-			<option value="option39" >silver, 3,99€</option>
-			<option value="option40">white, 2,99€</option>
-			
-			
-		</select>
-		<label >How many packs?</label>
-		<input type="number" name="ballStepper" step="1" min="0" max="10" value="0"/>
-		</div>
-		<hr/>
-		
-		
-<!-- Kerzen auswählen -->		
-		<div id= "allCandles">
-		
-		<label >Candles</label>
-		
-		<select name="candles" id="candles">
-		   
-		    <option value="option0" ></option>
-			<optgroup label="Candles"></optgroup>
-			<option value="option41">red, 1,19€</option>
-			<option value="option42" >green, 1,19€</option>
-			<option value="option43">blue, 1,19€</option>
-			<option value="option44" >gold, 1,49€</option>
-			<option value="option45" >silver, 1,49€</option>
-			<option value="option46">white, 1,19€</option>
-		
-			
-			
-		</select>
-
-<!-- Kerzenanzahl auswählen -->		
-		<label >How many?</label>
-		<input type="number" name="ballStepper" step="1" min="0" max="10" value="0"/>
-		
-		</div>
-		<hr/>
-		
-		
-<!-- Ornamente auswählen -->		
-		<div id="allOrnaments">
-		
-		<label>Ornaments</label>
-		
-		<select name="ornaments" id="ornaments">
-		   
-		    <option value="option0" ></option>
-			<optgroup label="Ornaments"></optgroup>
-			<option value="option47">Snowflake, 3,99€</option>
-			<option value="option48" >Gingerbread man, 3,99€</option>
-			<option value="option49" >Santa Claus, 3,99€</option>
-			<option value="option50">Angel, 3,99€</option>
-			<option value="option51">Candy Cane, 3,99€</option>
-			<option value="option52">Star, 3,99€</option>
-			<option value="option53">Bell, 3,99€</option>
-			<option value="option54">Shooting Star, 3,99€</option>
-			<option value="option55">Present, 3,99€</option>
-		</select>
-		
-<!-- Ornamentanzahl auswählen -->		
-		<label >How many?</label>
-		<input type="number" name="ballStepper" step="1" min="0" max="10" value="0"/>
-		
-		</div>
-		<hr/>
+		<a>Delivery option:</a>
+		<a id="deliveryhtml" ></a> <br> 
 		
 		
 		
 		
 		
-		<div id="allStands">
+		<h4>Buyer Information:</h4>
 		
-		<label >Tree Stand</label>
+		<a>Surname:</a>
+		<a id="surnamehtml" ></a>
 		
-		<select name="treeStand" id="treeStand">
-		     
-		    <option value="option0" ></option>
-			<optgroup label="Color options"></optgroup>
-			<option value="option56">red, 10,99€</option>
-			<option value="option57" >green, 10,99€</option>
-			<option value="option58" >brown, 10,99€</option>
-			<option value="option59">blue, 10,99€</option>
-			<option value="option60" >gold, 13,99€</option>
-			<option value="option61" >silver, 13,99€</option>
-			<option value="option62">white, 10,99€</option>
-	 	   
-		</select>
+		<br>
 		
-		</div>
+		<a>First name:</a>
+		<a id="firstnamehtml" ></a> 
 		
-	</fieldset>
-	
-	
-	</fieldset>	
-	
-	<fieldset id="orderOverview">
-	
-	<button name="button" type="button">Order Overview</button>
-	
-	</fieldset>
-	
-	
-	
-	</body>
+		
+		<br>
+		
+		<a>Mail adress:</a>
+		<a id="mailhtml"></a> 
+		
+		<br>
+		
+		<a>Adress:</a>
+		<a id="adresshtml"></a> 
+		
+		<br>
+		
+		<a>Extra info:</a>
+		<a id="extrahtml"></a> 
+		
+		
+		
+		<br><br> <a>Full Price:</a>
+		<a id="endpricehmtl"></a>
+		
+	</div>
+	<button id="button">Check progress</button>
+	<div id="notSelectedYet"></div>
+</body>
 </html>
-		
