@@ -11,50 +11,50 @@ var A5;
     document.addEventListener("DOMContentLoaded", createAllProducts);
     document.addEventListener("DOMContentLoaded", changedMind);
     function changedMind(_event) {
-        var fieldset = document.getElementById("fieldset");
+        let fieldset = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
     }
-    var treePrice = 0;
-    var ballPrice = 0;
-    var ballPrice1 = 0;
-    var ballPrice2 = 0;
-    var ballAmount = 0;
-    var ballAmount1 = 0;
-    var ballAmount2 = 0;
-    var candlePrice = 0;
-    var candlePrice1 = 0;
-    var candlePrice2 = 0;
-    var candleAmount = 0;
-    var candleAmount1 = 0;
-    var candleAmount2 = 0;
-    var ornamentPrice = 0;
-    var ornamentPrice1 = 0;
-    var ornamentPrice2 = 0;
-    var ornamentAmount = 0;
-    var ornamentAmount1 = 0;
-    var ornamentAmount2 = 0;
-    var lamettaPrice = 0;
-    var lamettaPrice1 = 0;
-    var lamettaPrice2 = 0;
-    var lamettaAmount = 0;
-    var lamettaAmount1 = 0;
-    var lamettaAmount2 = 0;
-    var standPrice = 0;
-    var deliveryPrice = 0;
-    var firstname = "";
-    var surname = "";
-    var adress = "";
-    var mail = "";
-    var extra = "";
+    let treePrice = 0;
+    let ballPrice = 0;
+    let ballPrice1 = 0;
+    let ballPrice2 = 0;
+    let ballAmount = 0;
+    let ballAmount1 = 0;
+    let ballAmount2 = 0;
+    let candlePrice = 0;
+    let candlePrice1 = 0;
+    let candlePrice2 = 0;
+    let candleAmount = 0;
+    let candleAmount1 = 0;
+    let candleAmount2 = 0;
+    let ornamentPrice = 0;
+    let ornamentPrice1 = 0;
+    let ornamentPrice2 = 0;
+    let ornamentAmount = 0;
+    let ornamentAmount1 = 0;
+    let ornamentAmount2 = 0;
+    let lamettaPrice = 0;
+    let lamettaPrice1 = 0;
+    let lamettaPrice2 = 0;
+    let lamettaAmount = 0;
+    let lamettaAmount1 = 0;
+    let lamettaAmount2 = 0;
+    let standPrice = 0;
+    let deliveryPrice = 0;
+    let firstname = "";
+    let surname = "";
+    let adress = "";
+    let mail = "";
+    let extra = "";
     //main function!!
     function createAllProducts() {
         document.getElementById("button").addEventListener("click", checkProgress);
-        var node = document.getElementById("fieldset");
-        var HTML;
+        let node = document.getElementById("fieldset");
+        let HTML;
         //Create Trees
         HTML += "<fieldset>";
         HTML += "<legend>Pick your tree</legend>";
-        for (var arrayNumber = 0; arrayNumber < A5.christmasTree.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.christmasTree.length; arrayNumber++) {
             HTML += "<input type='radio' name='trees' value='" + arrayNumber + A5.christmasTree[arrayNumber].name + " " + A5.christmasTree[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + A5.christmasTree[arrayNumber].name + " " + A5.christmasTree[arrayNumber].price + " €</label>";
         }
@@ -65,36 +65,36 @@ var A5;
         HTML += "<legend>Christmas balls</legend>";
         HTML += "<p>Main Color:</p>";
         HTML += "<select name='Select' id='balls'>";
-        for (var arrayNumber = 0; arrayNumber < A5.christmasBalls.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.christmasBalls.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.christmasBalls[arrayNumber].name + " " + A5.christmasBalls[arrayNumber].price + " €'>" + A5.christmasBalls[arrayNumber].name + " " + A5.christmasBalls[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountBalls'>";
-        for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create christmas balls 1
         HTML += "<p>Additional Color 1:</p>";
         HTML += "<select name='Select' id='balls1'>";
-        for (var arrayNumber = 0; arrayNumber < A5.christmasBalls.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.christmasBalls.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.christmasBalls[arrayNumber].name + " " + A5.christmasBalls[arrayNumber].price + " €'>" + A5.christmasBalls[arrayNumber].name + " " + A5.christmasBalls[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountBalls1'>";
-        for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create christmas balls 2
         HTML += "<p>Additional Color 2:</p>";
         HTML += "<select name='Select' id='balls2'>";
-        for (var arrayNumber = 0; arrayNumber < A5.christmasBalls.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.christmasBalls.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.christmasBalls[arrayNumber].name + " " + A5.christmasBalls[arrayNumber].price + " €'>" + A5.christmasBalls[arrayNumber].name + " " + A5.christmasBalls[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountBalls2'>";
-        for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
@@ -105,36 +105,36 @@ var A5;
         HTML += "<legend>Candles </legend>";
         HTML += "<p>Main Color:</p>";
         HTML += "<select name='Select' id='candles'>";
-        for (var arrayNumber = 0; arrayNumber < A5.candles.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.candles.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.candles[arrayNumber].name + " " + A5.candles[arrayNumber].price + " €'>" + A5.candles[arrayNumber].name + " " + A5.candles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountCandles'>";
-        for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create candles 1
         HTML += "<p>Additional Color 1:</p>";
         HTML += "<select name='Select' id='candles1'>";
-        for (var arrayNumber = 0; arrayNumber < A5.candles.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.candles.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.candles[arrayNumber].name + " " + A5.candles[arrayNumber].price + " €'>" + A5.candles[arrayNumber].name + " " + A5.candles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountCandles1'>";
-        for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create candles 2
         HTML += "<p>Additional Color 2:</p>";
         HTML += "<select name='Select' id='candles2'>";
-        for (var arrayNumber = 0; arrayNumber < A5.candles.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.candles.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.candles[arrayNumber].name + " " + A5.candles[arrayNumber].price + " €'>" + A5.candles[arrayNumber].name + " " + A5.candles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountCandles2'>";
-        for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
@@ -145,36 +145,36 @@ var A5;
         HTML += "<legend>Ornaments</legend>";
         HTML += "<p>Main Color:</p>";
         HTML += "<select name='Select' id='ornaments'>";
-        for (var arrayNumber = 0; arrayNumber < A5.ornaments.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.ornaments.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.ornaments[arrayNumber].name + " " + A5.ornaments[arrayNumber].price + " €'>" + A5.ornaments[arrayNumber].name + " " + A5.ornaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountOrnaments'>";
-        for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create ornaments 1
         HTML += "<p>Additional Color 1:</p>";
         HTML += "<select name='Select' id='ornaments1'>";
-        for (var arrayNumber = 0; arrayNumber < A5.ornaments.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.ornaments.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.ornaments[arrayNumber].name + " " + A5.ornaments[arrayNumber].price + " €'>" + A5.ornaments[arrayNumber].name + " " + A5.ornaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountOrnaments1'>";
-        for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create ornaments 2
         HTML += "<p>Additional Color 2:</p>";
         HTML += "<select name='Select' id='ornaments2'>";
-        for (var arrayNumber = 0; arrayNumber < A5.ornaments.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.ornaments.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.ornaments[arrayNumber].name + " " + A5.ornaments[arrayNumber].price + " €'>" + A5.ornaments[arrayNumber].name + " " + A5.ornaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountOrnaments2'>";
-        for (var amountNumber = 0; amountNumber < 5; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
@@ -185,12 +185,12 @@ var A5;
         HTML += "<legend>Lametta (200g pack)</legend>";
         HTML += "<p>Main Color:</p>";
         HTML += "<select name='Select' id='Lametta'>";
-        for (var arrayNumber = 0; arrayNumber < A5.lametta.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.lametta.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.lametta[arrayNumber].name + " " + A5.lametta[arrayNumber].price + " €'>" + A5.lametta[arrayNumber].name + " " + A5.lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountLametta'>";
-        for (var amountNumber = 0; amountNumber < 10; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 10; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
@@ -198,24 +198,24 @@ var A5;
         //Create lametta 1
         HTML += "<p>Additional Color 1:</p>";
         HTML += "<select name='Select' id='Lametta1'>";
-        for (var arrayNumber = 0; arrayNumber < A5.lametta.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.lametta.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.lametta[arrayNumber].name + " " + A5.lametta[arrayNumber].price + " €'>" + A5.lametta[arrayNumber].name + " " + A5.lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountLametta1'>";
-        for (var amountNumber = 0; amountNumber < 10; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 10; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create lametta 2
         HTML += "<p>Additional Color 2:</p>";
         HTML += "<select name='Select' id='Lametta2'>";
-        for (var arrayNumber = 0; arrayNumber < A5.lametta.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.lametta.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A5.lametta[arrayNumber].name + " " + A5.lametta[arrayNumber].price + " €'>" + A5.lametta[arrayNumber].name + " " + A5.lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<select name='Select' id='amountLametta2'>";
-        for (var amountNumber = 0; amountNumber < 10; amountNumber++) {
+        for (let amountNumber = 0; amountNumber < 10; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
@@ -224,7 +224,7 @@ var A5;
         //Create tree stands
         HTML += "<fieldset>";
         HTML += "<legend>Tree stand</legend>";
-        for (var arrayNumber = 0; arrayNumber < A5.treeStands.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.treeStands.length; arrayNumber++) {
             HTML += "<input type='radio' name='Radiogroup' value='" + arrayNumber + A5.treeStands[arrayNumber].name + " " + A5.treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + A5.treeStands[arrayNumber].name + " " + A5.treeStands[arrayNumber].price + " €</label>";
         }
@@ -233,7 +233,7 @@ var A5;
         //delivery options
         HTML += "<fieldset>";
         HTML += "<legend>Delivery options</legend>";
-        for (var arrayNumber = 0; arrayNumber < A5.delivery.length; arrayNumber++) {
+        for (let arrayNumber = 0; arrayNumber < A5.delivery.length; arrayNumber++) {
             HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + A5.delivery[arrayNumber].name + " " + A5.delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + A5.delivery[arrayNumber].name + " " + A5.delivery[arrayNumber].price + " €</label>";
         }
@@ -258,401 +258,401 @@ var A5;
     }
     //Handle Change Funktionen  
     function handleChange(_event) {
-        var target = _event.target;
+        let target = _event.target;
         //trees
         if (target.name == "trees") {
-            var node_1 = document.getElementById("treeshtml");
-            var value = target.value;
-            var priceIndex = parseInt(value.substr(0, 1));
+            let node = document.getElementById("treeshtml");
+            let value = target.value;
+            let priceIndex = parseInt(value.substr(0, 1));
             treePrice = A5.christmasTree[priceIndex].price;
             //console.log(priceTree);
-            var childNodeHTML = void 0;
+            let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
             childNodeHTML += " " + value.substr(1);
             childNodeHTML += "</a>";
-            node_1.innerHTML = childNodeHTML;
+            node.innerHTML = childNodeHTML;
         }
         //balls
         if (target.id == "balls") {
-            var node_2 = document.getElementById("ballhtml");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("ballhtml");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             ballPrice = A5.christmasBalls[_price].price;
-            var HTML_1;
-            HTML_1 = "";
-            HTML_1 += "<a>";
-            HTML_1 += " " + value.substr(1);
-            HTML_1 += "</a>";
-            node_2.innerHTML = HTML_1;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountBalls") {
-            var node_3 = document.getElementById("ballamounthtml");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("ballamounthtml");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             ballAmount = _number;
-            var HTML_2;
-            HTML_2 = "";
-            HTML_2 += "<a>";
-            HTML_2 += " " + target.value;
-            HTML_2 += "</a>";
-            node_3.innerHTML = HTML_2;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Additional Balls 1
         if (target.id == "balls1") {
-            var node_4 = document.getElementById("ballhtml1");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("ballhtml1");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             ballPrice1 = A5.christmasBalls[_price].price;
-            var HTML_3;
-            HTML_3 = "";
-            HTML_3 += "<a>";
-            HTML_3 += " " + value.substr(1);
-            HTML_3 += "</a>";
-            node_4.innerHTML = HTML_3;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountBalls1") {
-            var node_5 = document.getElementById("ballamounthtml1");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("ballamounthtml1");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             ballAmount1 = _number;
-            var HTML_4;
-            HTML_4 = "";
-            HTML_4 += "<a>";
-            HTML_4 += " " + target.value;
-            HTML_4 += "</a>";
-            node_5.innerHTML = HTML_4;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Additional Balls 2
         if (target.id == "balls2") {
-            var node_6 = document.getElementById("ballhtml2");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("ballhtml2");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             ballPrice2 = A5.christmasBalls[_price].price;
-            var HTML_5;
-            HTML_5 = "";
-            HTML_5 += "<a>";
-            HTML_5 += " " + value.substr(1);
-            HTML_5 += "</a>";
-            node_6.innerHTML = HTML_5;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountBalls2") {
-            var node_7 = document.getElementById("ballamounthtml2");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("ballamounthtml2");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             ballAmount2 = _number;
-            var HTML_6;
-            HTML_6 = "";
-            HTML_6 += "<a>";
-            HTML_6 += " " + target.value;
-            HTML_6 += "</a>";
-            node_7.innerHTML = HTML_6;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Kerzen
         if (target.id == "candles") {
-            var node_8 = document.getElementById("candlehtml");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("candlehtml");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             candlePrice = A5.candles[_price].price;
-            var HTML_7;
-            HTML_7 = "";
-            HTML_7 += "<a>";
-            HTML_7 += " " + value.substr(1);
-            HTML_7 += "</a>";
-            node_8.innerHTML = HTML_7;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountCandles") {
-            var node_9 = document.getElementById("candleamounthtml");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("candleamounthtml");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             candleAmount = _number;
-            var HTML_8;
-            HTML_8 = "";
-            HTML_8 += "<a>";
-            HTML_8 += " " + target.value;
-            HTML_8 += "</a>";
-            node_9.innerHTML = HTML_8;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Candles 1
         if (target.id == "candles1") {
-            var node_10 = document.getElementById("candlehtml1");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("candlehtml1");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             candlePrice1 = A5.candles[_price].price;
-            var HTML_9;
-            HTML_9 = "";
-            HTML_9 += "<a>";
-            HTML_9 += " " + value.substr(1);
-            HTML_9 += "</a>";
-            node_10.innerHTML = HTML_9;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountCandles1") {
-            var node_11 = document.getElementById("candleamounthtml1");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("candleamounthtml1");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             candleAmount1 = _number;
-            var HTML_10;
-            HTML_10 = "";
-            HTML_10 += "<a>";
-            HTML_10 += " " + target.value;
-            HTML_10 += "</a>";
-            node_11.innerHTML = HTML_10;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Candles 2
         if (target.id == "candles2") {
-            var node_12 = document.getElementById("candlehtml2");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("candlehtml2");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             candlePrice2 = A5.candles[_price].price;
-            var HTML_11;
-            HTML_11 = "";
-            HTML_11 += "<a>";
-            HTML_11 += " " + value.substr(1);
-            HTML_11 += "</a>";
-            node_12.innerHTML = HTML_11;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountCandles2") {
-            var node_13 = document.getElementById("candleamounthtml2");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("candleamounthtml2");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             candleAmount2 = _number;
-            var HTML_12;
-            HTML_12 = "";
-            HTML_12 += "<a>";
-            HTML_12 += " " + target.value;
-            HTML_12 += "</a>";
-            node_13.innerHTML = HTML_12;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Ornaments
         if (target.id == "ornaments") {
-            var node_14 = document.getElementById("ornamenthtml");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("ornamenthtml");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             ornamentPrice = A5.ornaments[_price].price;
-            var HTML_13;
-            HTML_13 = "";
-            HTML_13 += "<a>";
-            HTML_13 += " " + value.substr(1);
-            HTML_13 += "</a>";
-            node_14.innerHTML = HTML_13;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountOrnaments") {
-            var node_15 = document.getElementById("ornamentamounthtml");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("ornamentamounthtml");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             ornamentAmount = _number;
-            var HTML_14;
-            HTML_14 = "";
-            HTML_14 += "<a>";
-            HTML_14 += " " + target.value;
-            HTML_14 += "</a>";
-            node_15.innerHTML = HTML_14;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Ornaments 1
         if (target.id == "ornaments1") {
-            var node_16 = document.getElementById("ornamenthtml1");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("ornamenthtml1");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             ornamentPrice1 = A5.ornaments[_price].price;
-            var HTML_15;
-            HTML_15 = "";
-            HTML_15 += "<a>";
-            HTML_15 += " " + value.substr(1);
-            HTML_15 += "</a>";
-            node_16.innerHTML = HTML_15;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountOrnaments1") {
-            var node_17 = document.getElementById("ornamentamounthtml1");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("ornamentamounthtml1");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             ornamentAmount1 = _number;
-            var HTML_16;
-            HTML_16 = "";
-            HTML_16 += "<a>";
-            HTML_16 += " " + target.value;
-            HTML_16 += "</a>";
-            node_17.innerHTML = HTML_16;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Ornaments 2
         if (target.id == "ornaments2") {
-            var node_18 = document.getElementById("ornamenthtml2");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("ornamenthtml2");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             ornamentPrice2 = A5.ornaments[_price].price;
-            var HTML_17;
-            HTML_17 = "";
-            HTML_17 += "<a>";
-            HTML_17 += " " + value.substr(1);
-            HTML_17 += "</a>";
-            node_18.innerHTML = HTML_17;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountOrnaments2") {
-            var node_19 = document.getElementById("ornamentamounthtml2");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("ornamentamounthtml2");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             ornamentAmount2 = _number;
-            var HTML_18;
-            HTML_18 = "";
-            HTML_18 += "<a>";
-            HTML_18 += " " + target.value;
-            HTML_18 += "</a>";
-            node_19.innerHTML = HTML_18;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Lametta
         if (target.id == "Lametta") {
-            var node_20 = document.getElementById("lamettahtml");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("lamettahtml");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             lamettaPrice = A5.lametta[_price].price;
-            var HTML_19;
-            HTML_19 = "";
-            HTML_19 += "<a>";
-            HTML_19 += " " + value.substr(1);
-            HTML_19 += "</a>";
-            node_20.innerHTML = HTML_19;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountLametta") {
-            var node_21 = document.getElementById("lamettaamounthtml");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("lamettaamounthtml");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             lamettaAmount = _number;
-            var HTML_20;
-            HTML_20 = "";
-            HTML_20 += "<a>";
-            HTML_20 += " " + target.value;
-            HTML_20 += "</a>";
-            node_21.innerHTML = HTML_20;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Lametta 1
         if (target.id == "Lametta1") {
-            var node_22 = document.getElementById("lamettahtml1");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("lamettahtml1");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             lamettaPrice1 = A5.lametta[_price].price;
-            var HTML_21;
-            HTML_21 = "";
-            HTML_21 += "<a>";
-            HTML_21 += " " + value.substr(1);
-            HTML_21 += "</a>";
-            node_22.innerHTML = HTML_21;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountLametta1") {
-            var node_23 = document.getElementById("lamettaamounthtml1");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("lamettaamounthtml1");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             lamettaAmount1 = _number;
-            var HTML_22;
-            HTML_22 = "";
-            HTML_22 += "<a>";
-            HTML_22 += " " + target.value;
-            HTML_22 += "</a>";
-            node_23.innerHTML = HTML_22;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Lametta 2
         if (target.id == "Lametta2") {
-            var node_24 = document.getElementById("lamettahtml2");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("lamettahtml2");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             lamettaPrice2 = A5.lametta[_price].price;
-            var HTML_23;
-            HTML_23 = "";
-            HTML_23 += "<a>";
-            HTML_23 += " " + value.substr(1);
-            HTML_23 += "</a>";
-            node_24.innerHTML = HTML_23;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "amountLametta2") {
-            var node_25 = document.getElementById("lamettaamounthtml2");
-            var value = target.value;
-            var _number = parseInt(value.substr(1, 2));
+            let node = document.getElementById("lamettaamounthtml2");
+            let value = target.value;
+            let _number = parseInt(value.substr(1, 2));
             lamettaAmount2 = _number;
-            var HTML_24;
-            HTML_24 = "";
-            HTML_24 += "<a>";
-            HTML_24 += " " + target.value;
-            HTML_24 += "</a>";
-            node_25.innerHTML = HTML_24;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //tree stands
         if (target.name == "Radiogroup") {
-            var node_26 = document.getElementById("standhtml");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("standhtml");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             standPrice = A5.treeStands[_price].price;
-            var HTML_25;
-            HTML_25 = "";
-            HTML_25 += "<a>";
-            HTML_25 += " " + value.substr(1);
-            HTML_25 += "</a>";
-            node_26.innerHTML = HTML_25;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //delivery options
         if (target.name == "Radiogroup1") {
-            var node_27 = document.getElementById("deliveryhtml");
-            var value = target.value;
-            var _price = parseInt(value.substr(0, 1));
+            let node = document.getElementById("deliveryhtml");
+            let value = target.value;
+            let _price = parseInt(value.substr(0, 1));
             deliveryPrice = A5.delivery[_price].price;
-            var HTML_26;
-            HTML_26 = "";
-            HTML_26 += "<a>";
-            HTML_26 += " " + value.substr(1);
-            HTML_26 += "</a>";
-            node_27.innerHTML = HTML_26;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + value.substr(1);
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Buyer information
         if (target.id == "adress") {
-            var node_28 = document.getElementById("adresshtml");
+            let node = document.getElementById("adresshtml");
             adress = target.value;
-            var HTML_27;
-            HTML_27 = "";
-            HTML_27 += "<a>";
-            HTML_27 += " " + target.value;
-            HTML_27 += "</a>";
-            node_28.innerHTML = HTML_27;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "surname") {
-            var node_29 = document.getElementById("surnamehtml");
+            let node = document.getElementById("surnamehtml");
             surname = target.value;
-            var HTML_28;
-            HTML_28 = "";
-            HTML_28 += "<a>";
-            HTML_28 += " " + target.value;
-            HTML_28 += "</a>";
-            node_29.innerHTML = HTML_28;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "firstname") {
-            var node_30 = document.getElementById("firstnamehtml");
+            let node = document.getElementById("firstnamehtml");
             firstname = target.value;
-            var HTML_29;
-            HTML_29 = "";
-            HTML_29 += "<a>";
-            HTML_29 += " " + target.value;
-            HTML_29 += "</a>";
-            node_30.innerHTML = HTML_29;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "mail") {
-            var node_31 = document.getElementById("mailhtml");
+            let node = document.getElementById("mailhtml");
             mail = target.value;
-            var HTML_30;
-            HTML_30 = "";
-            HTML_30 += "<a>";
-            HTML_30 += " " + target.value;
-            HTML_30 += "</a>";
-            node_31.innerHTML = HTML_30;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         if (target.id == "extra") {
-            var node_32 = document.getElementById("extrahtml");
+            let node = document.getElementById("extrahtml");
             extra = target.value;
-            var HTML_31;
-            HTML_31 = "";
-            HTML_31 += "<a>";
-            HTML_31 += " " + target.value;
-            HTML_31 += "</a>";
-            node_32.innerHTML = HTML_31;
+            let HTML;
+            HTML = "";
+            HTML += "<a>";
+            HTML += " " + target.value;
+            HTML += "</a>";
+            node.innerHTML = HTML;
         }
         //Berechnung des Gesamtpreises
-        var node = document.getElementById("endpricehtml");
-        var HTML;
+        let node = document.getElementById("endpricehtml");
+        let HTML;
         HTML = "";
         HTML += "<a>";
         HTML += (treePrice + (ballPrice * ballAmount) + (ballPrice1 * ballAmount1) + (ballPrice2 * ballAmount2) + (candlePrice * candleAmount) + (candlePrice1 * candleAmount1) + (candlePrice2 * candleAmount2) + (ornamentPrice * ornamentAmount) + (ornamentPrice1 * ornamentAmount1) + (ornamentPrice2 * ornamentAmount2) + (lamettaPrice * lamettaAmount) + (lamettaPrice1 * lamettaAmount1) + (lamettaPrice2 * lamettaAmount2) + standPrice + deliveryPrice);

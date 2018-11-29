@@ -1,12 +1,12 @@
 "use strict";
-var Http = require("http"); //Http empfängt die importierten Daten von "http"
+const Http = require("http"); //Http empfängt die importierten Daten von "http"
 var L06_SendData;
 (function (L06_SendData) {
     console.log("Starting server"); //Starting server wird in Browser Konsole angezeigt
-    var port = process.env.PORT; //port vom typ number 
+    let port = process.env.PORT; //port vom typ number 
     if (port == undefined)
         port = 8100; //..dann ist port 8100!
-    var server = Http.createServer(); //verwandelt Computer in einen HTTP-Server und erstellt ein HTTP-Server-Objekt
+    let server = Http.createServer(); //verwandelt Computer in einen HTTP-Server und erstellt ein HTTP-Server-Objekt
     server.addListener("request", handleRequest); //Erstellt ein Listener auf dem Server. Verweist auf die Funktion handleRequest
     server.addListener("listening", handleListen); //Erstellt ein Listener auf dem Server. Verweist auf Funktion handleListen
     server.listen(port); //Ein Listener auf port wird erstellt

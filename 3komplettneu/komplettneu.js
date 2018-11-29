@@ -9,15 +9,15 @@ var Aufgabe3NEU;
 (function (Aufgabe3NEU) {
     document.addEventListener("DOMContentLoaded", mainFunction);
     document.addEventListener("keydown", drawWithSpace);
-    var color = ["yellow", "red", "blue", "green"];
-    var cardName = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "+2", "time out", "retour"];
-    var allCards = [{ color: "yellow", value: "0" }, { color: "red", value: "0" }, { color: "blue", value: "green" }, { color: "yellow", value: "0" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }];
-    var cardTray = [];
-    var playerCards = [];
-    for (var cardNum = 0; cardNum < color.length; cardNum++) {
-        for (var nameNum = 0; nameNum < cardName.length; nameNum++) {
-            for (var arrayAllCards = 0; arrayAllCards < 2; arrayAllCards++) {
-                var card = { color: color[cardNum], value: cardName[nameNum] }; //Es gibt color und value einen Wert, fasst es als Karte zusammen und gibt es zurück (push) in das AllCards array
+    let color = ["yellow", "red", "blue", "green"];
+    let cardName = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "+2", "time out", "retour"];
+    let allCards = [{ color: "yellow", value: "0" }, { color: "red", value: "0" }, { color: "blue", value: "green" }, { color: "yellow", value: "0" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }];
+    let cardTray = [];
+    let playerCards = [];
+    for (let cardNum = 0; cardNum < color.length; cardNum++) {
+        for (let nameNum = 0; nameNum < cardName.length; nameNum++) {
+            for (let arrayAllCards = 0; arrayAllCards < 2; arrayAllCards++) {
+                let card = { color: color[cardNum], value: cardName[nameNum] }; //Es gibt color und value einen Wert, fasst es als Karte zusammen und gibt es zurück (push) in das AllCards array
                 allCards.push(card);
             }
         }
@@ -25,8 +25,8 @@ var Aufgabe3NEU;
     console.log(allCards);
     function mainFunction() {
         //Zufällige Auswahl von Karten   
-        var numberOfCards;
-        var promptText = prompt("Please type in with how many cards you would like to play! (maximum of 7)");
+        let numberOfCards;
+        let promptText = prompt("Please type in with how many cards you would like to play! (maximum of 7)");
         numberOfCards = Number(promptText);
         if (numberOfCards <= 0) {
             numberOfCards = 7;
@@ -37,15 +37,15 @@ var Aufgabe3NEU;
         chooseRandomCards(numberOfCards);
         showMyCards();
         //Event Listener für sortieren und Karte vom Stapel ziehen
-        var button = document.getElementById("buttonhtml");
+        let button = document.getElementById("buttonhtml");
         button.addEventListener("click", sortCards);
-        var drawCard = document.getElementById("pilehtml");
+        let drawCard = document.getElementById("pilehtml");
         drawCard.addEventListener("click", drawFromPile);
     }
     //Funktion zur zufälligen Auswahl von Karten
     function chooseRandomCards(_displayCard) {
-        for (var displayCard = _displayCard; displayCard > 0; displayCard--) {
-            var randomCards = Math.floor(Math.random() * (allCards.length - 1)); //Karte wird zufällig ausgewählt und aus AllCards entfernt
+        for (let displayCard = _displayCard; displayCard > 0; displayCard--) {
+            let randomCards = Math.floor(Math.random() * (allCards.length - 1)); //Karte wird zufällig ausgewählt und aus AllCards entfernt
             playerCards.push(allCards[randomCards]); //Karte wird zu Spielerkarten hinzufügt
             allCards.splice(randomCards, 1); //Karte von AllCards Array löschen
         }
@@ -64,11 +64,11 @@ var Aufgabe3NEU;
     //Funktion Karten anzeigen lassen mit Hilfe von CSS
     function showMyCards() {
         document.getElementById("playerCardshtml").innerHTML = ""; //Nimmt die Info aus dem HTML Element um Karte an der richtigen Position anzeigen zu lassen
-        for (var showCard = 0; showCard < playerCards.length; showCard++) {
-            var div = document.createElement("div"); //Erstellt ein div 
+        for (let showCard = 0; showCard < playerCards.length; showCard++) {
+            let div = document.createElement("div"); //Erstellt ein div 
             document.getElementById("playerCardshtml").appendChild(div); //Verbindet div mit dem Eltern div. Div ist also ein Kind von Handkarten(div)
             div.innerHTML = playerCards[showCard].value; //fügt value zur Karte hinzu
-            var id = showCard.toString(); //erstellt eine ID zu showCard
+            let id = showCard.toString(); //erstellt eine ID zu showCard
             div.setAttribute("id", id); //Ausführung mit Hilfe von einem Attribut                 
             div.classList.add("playerCardshtml"); //Erstellt Klasse zu div Spielerkarten
             div.classList.add(playerCards[showCard].color); //Erstellt Klasse zu angezeigten Spielerkarten  
@@ -78,10 +78,10 @@ var Aufgabe3NEU;
     //Funktion Karte auf Ablage ablegen
     function layDownCard(_event) {
         document.getElementById("cardTrayhtml").innerHTML = "";
-        var chosenCard = _event.target;
-        var index = parseInt(chosenCard.id); //nimmt Zeichenkette und wandelt Sie in eine Ganzzahl um mit der unten gearbeitet wird.
+        let chosenCard = _event.target;
+        let index = parseInt(chosenCard.id); //nimmt Zeichenkette und wandelt Sie in eine Ganzzahl um mit der unten gearbeitet wird.
         cardTray.push(playerCards[index]);
-        var div = document.createElement("div");
+        let div = document.createElement("div");
         document.getElementById("cardTrayhtml").appendChild(div);
         div.innerHTML = playerCards[index].value;
         div.classList.add(playerCards[index].color);

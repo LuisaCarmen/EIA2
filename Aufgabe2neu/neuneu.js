@@ -1,454 +1,454 @@
 var Aufgabe2neu;
 (function (Aufgabe2neu) {
     //rote Karten
-    var r1 = {
+    let r1 = {
         color: "#DF0101",
         cardname: "0"
     };
-    var r2 = {
+    let r2 = {
         color: "#DF0101",
         cardname: "1"
     };
-    var r3 = {
+    let r3 = {
         color: "#DF0101",
         cardname: "1"
     };
-    var r4 = {
+    let r4 = {
         color: "#DF0101",
         cardname: "2"
     };
-    var r5 = {
+    let r5 = {
         color: "#DF0101",
         cardname: "2"
     };
-    var r6 = {
+    let r6 = {
         color: "#DF0101",
         cardname: "3"
     };
-    var r7 = {
+    let r7 = {
         color: "#DF0101",
         cardname: "3"
     };
-    var r8 = {
+    let r8 = {
         color: "#DF0101",
         cardname: "4"
     };
-    var r9 = {
+    let r9 = {
         color: "#DF0101",
         cardname: "4"
     };
-    var r10 = {
+    let r10 = {
         color: "#DF0101",
         cardname: "5"
     };
-    var r11 = {
+    let r11 = {
         color: "#DF0101",
         cardname: "5"
     };
-    var r12 = {
+    let r12 = {
         color: "#DF0101",
         cardname: "6"
     };
-    var r13 = {
+    let r13 = {
         color: "#DF0101",
         cardname: "6"
     };
-    var r14 = {
+    let r14 = {
         color: "#DF0101",
         cardname: "7"
     };
-    var r15 = {
+    let r15 = {
         color: "#DF0101",
         cardname: "7"
     };
-    var r16 = {
+    let r16 = {
         color: "#DF0101",
         cardname: "8"
     };
-    var r17 = {
+    let r17 = {
         color: "#DF0101",
         cardname: "8"
     };
-    var r18 = {
+    let r18 = {
         color: "#DF0101",
         cardname: "9"
     };
-    var r19 = {
+    let r19 = {
         color: "#DF0101",
         cardname: "9"
     };
-    var r20 = {
+    let r20 = {
         color: "#DF0101",
         cardname: "+2"
     };
-    var r21 = {
+    let r21 = {
         color: "#DF0101",
         cardname: "+2"
     };
-    var r22 = {
+    let r22 = {
         color: "#DF0101",
         cardname: "time out"
     };
-    var r23 = {
+    let r23 = {
         color: "#DF0101",
         cardname: "time out"
     };
-    var r24 = {
+    let r24 = {
         color: "#DF0101",
         cardname: "retour"
     };
-    var r25 = {
+    let r25 = {
         color: "#DF0101",
         cardname: "retour"
     };
     //Grüneten
-    var g1 = {
+    let g1 = {
         color: "81F79F",
         cardname: "0"
     };
-    var g2 = {
+    let g2 = {
         color: "81F79F",
         cardname: "1"
     };
-    var g3 = {
+    let g3 = {
         color: "#81F79F",
         cardname: "1"
     };
-    var g4 = {
+    let g4 = {
         color: "#81F79F",
         cardname: "2"
     };
-    var g5 = {
+    let g5 = {
         color: "#81F79F",
         cardname: "2"
     };
-    var g6 = {
+    let g6 = {
         color: "#81F79F",
         cardname: "3"
     };
-    var g7 = {
+    let g7 = {
         color: "#81F79F",
         cardname: "3"
     };
-    var g8 = {
+    let g8 = {
         color: "#81F79F",
         cardname: "4"
     };
-    var g9 = {
+    let g9 = {
         color: "#81F79F",
         cardname: "4"
     };
-    var g10 = {
+    let g10 = {
         color: "#81F79F",
         cardname: "5"
     };
-    var g11 = {
+    let g11 = {
         color: "#81F79F",
         cardname: "5"
     };
-    var g12 = {
+    let g12 = {
         color: "#81F79F",
         cardname: "6"
     };
-    var g13 = {
+    let g13 = {
         color: "#81F79F",
         cardname: "6"
     };
-    var g14 = {
+    let g14 = {
         color: "#81F79F",
         cardname: "7"
     };
-    var g15 = {
+    let g15 = {
         color: "#81F79F",
         cardname: "7"
     };
-    var g16 = {
+    let g16 = {
         color: "#81F79F",
         cardname: "8"
     };
-    var g17 = {
+    let g17 = {
         color: "#81F79F",
         cardname: "8"
     };
-    var g18 = {
+    let g18 = {
         color: "#81F79F",
         cardname: "9"
     };
-    var g19 = {
+    let g19 = {
         color: "#81F79F",
         cardname: "9"
     };
-    var g20 = {
+    let g20 = {
         color: "#81F79F",
         cardname: "+2"
     };
-    var g21 = {
+    let g21 = {
         color: "#81F79F",
         cardname: "+2"
     };
-    var g22 = {
+    let g22 = {
         color: "#81F79F",
         cardname: "time out"
     };
-    var g23 = {
+    let g23 = {
         color: "#81F79F",
         cardname: "time out"
     };
-    var g24 = {
+    let g24 = {
         color: "#81F79F",
         cardname: "retour"
     };
-    var g25 = {
+    let g25 = {
         color: "#81F79F",
         cardname: "retour"
     };
     //Gelbe Kar  
-    var y1 = {
+    let y1 = {
         color: "#F3F781",
         cardname: "0"
     };
-    var y2 = {
+    let y2 = {
         color: "#F3F781",
         cardname: "1"
     };
-    var y3 = {
+    let y3 = {
         color: "#F3F781",
         cardname: "1"
     };
-    var y4 = {
+    let y4 = {
         color: "#F3F781",
         cardname: "2"
     };
-    var y5 = {
+    let y5 = {
         color: "#F3F781",
         cardname: "2"
     };
-    var y6 = {
+    let y6 = {
         color: "#F3F781",
         cardname: "3"
     };
-    var y7 = {
+    let y7 = {
         color: "#F3F781",
         cardname: "3"
     };
-    var y8 = {
+    let y8 = {
         color: "#F3F781",
         cardname: "4"
     };
-    var y9 = {
+    let y9 = {
         color: "#F3F781",
         cardname: "4"
     };
-    var y10 = {
+    let y10 = {
         color: "#F3F781",
         cardname: "5"
     };
-    var y11 = {
+    let y11 = {
         color: "#F3F781",
         cardname: "5"
     };
-    var y12 = {
+    let y12 = {
         color: "#F3F781",
         cardname: "6"
     };
-    var y13 = {
+    let y13 = {
         color: "#F3F781",
         cardname: "6"
     };
-    var y14 = {
+    let y14 = {
         color: "#F3F781",
         cardname: "7"
     };
-    var y15 = {
+    let y15 = {
         color: "#F3F781",
         cardname: "7"
     };
-    var y16 = {
+    let y16 = {
         color: "#F3F781",
         cardname: "8"
     };
-    var y17 = {
+    let y17 = {
         color: "#F3F781",
         cardname: "8"
     };
-    var y18 = {
+    let y18 = {
         color: "#F3F781",
         cardname: "9"
     };
-    var y19 = {
+    let y19 = {
         color: "#F3F781",
         cardname: "9"
     };
-    var y20 = {
+    let y20 = {
         color: "#F3F781",
         cardname: "+2"
     };
-    var y21 = {
+    let y21 = {
         color: "#F3F781",
         cardname: "+2"
     };
-    var y22 = {
+    let y22 = {
         color: "#F3F781",
         cardname: "time out"
     };
-    var y23 = {
+    let y23 = {
         color: "#F3F781",
         cardname: "time out"
     };
-    var y24 = {
+    let y24 = {
         color: "#F3F781",
         cardname: "retour"
     };
-    var y25 = {
+    let y25 = {
         color: "#F3F781",
         cardname: "retour"
     };
     //Blaue Ka  
-    var b1 = {
+    let b1 = {
         color: "#2E9AFE",
         cardname: "0"
     };
-    var b2 = {
+    let b2 = {
         color: "#2E9AFE",
         cardname: "1"
     };
-    var b3 = {
+    let b3 = {
         color: "#2E9AFE",
         cardname: "1"
     };
-    var b4 = {
+    let b4 = {
         color: "#2E9AFE",
         cardname: "2"
     };
-    var b5 = {
+    let b5 = {
         color: "#2E9AFE",
         cardname: "2"
     };
-    var b6 = {
+    let b6 = {
         color: "#2E9AFE",
         cardname: "3"
     };
-    var b7 = {
+    let b7 = {
         color: "#2E9AFE",
         cardname: "3"
     };
-    var b8 = {
+    let b8 = {
         color: "#2E9AFE",
         cardname: "4"
     };
-    var b9 = {
+    let b9 = {
         color: "#2E9AFE",
         cardname: "4"
     };
-    var b10 = {
+    let b10 = {
         color: "#2E9AFE",
         cardname: "5"
     };
-    var b11 = {
+    let b11 = {
         color: "#2E9AFE",
         cardname: "5"
     };
-    var b12 = {
+    let b12 = {
         color: "#2E9AFE",
         cardname: "6"
     };
-    var b13 = {
+    let b13 = {
         color: "#2E9AFE",
         cardname: "6"
     };
-    var b14 = {
+    let b14 = {
         color: "#2E9AFE",
         cardname: "7"
     };
-    var b15 = {
+    let b15 = {
         color: "#2E9AFE",
         cardname: "7"
     };
-    var b16 = {
+    let b16 = {
         color: "#2E9AFE",
         cardname: "8"
     };
-    var b17 = {
+    let b17 = {
         color: "#2E9AFE",
         cardname: "8"
     };
-    var b18 = {
+    let b18 = {
         color: "#2E9AFE",
         cardname: "9"
     };
-    var b19 = {
+    let b19 = {
         color: "#2E9AFE",
         cardname: "9"
     };
-    var b20 = {
+    let b20 = {
         color: "#2E9AFE",
         cardname: "+2"
     };
-    var b21 = {
+    let b21 = {
         color: "#2E9AFE",
         cardname: "+2"
     };
-    var b22 = {
+    let b22 = {
         color: "#2E9AFE",
         cardname: "time out"
     };
-    var b23 = {
+    let b23 = {
         color: "#2E9AFE",
         cardname: "time out"
     };
-    var b24 = {
+    let b24 = {
         color: "#2E9AFE",
         cardname: "retour"
     };
-    var b25 = {
+    let b25 = {
         color: "#2E9AFE",
         cardname: "retour"
     };
     //Schwarze Kn 
-    var s1 = {
+    let s1 = {
         color: "black",
         cardname: "+4"
     };
-    var s2 = {
+    let s2 = {
         color: "black",
         cardname: "+4"
     };
-    var s3 = {
+    let s3 = {
         color: "black",
         cardname: "+4"
     };
-    var s4 = {
+    let s4 = {
         color: "black",
         cardname: "+4"
     };
-    var s5 = {
+    let s5 = {
         color: "black",
         cardname: "wish"
     };
-    var s6 = {
+    let s6 = {
         color: "black",
         cardname: "wish"
     };
-    var s7 = {
+    let s7 = {
         color: "black",
         cardname: "wish"
     };
-    var s8 = {
+    let s8 = {
         color: "black",
         cardname: "wish"
     };
-    var AllCards = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25,
+    let AllCards = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25,
         g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25,
         y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, y20, y21, y22, y23, y24, y25,
         b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25,
         s1, s2, s3, s4, s5, s6, s7, s8];
     //Hauptfunktion
     function game() {
-        var Anzahl;
-        var Eingabe = prompt("Gebe ein mit wie vielen Karten du spielen möchtest!");
+        let Anzahl;
+        let Eingabe = prompt("Gebe ein mit wie vielen Karten du spielen möchtest!");
         Anzahl = Number(Eingabe);
-        for (var Zahl = 0; Zahl < Anzahl; Zahl++) {
-            var randomKarte = ZufaelligeNummer(AllCards.length);
+        for (let Zahl = 0; Zahl < Anzahl; Zahl++) {
+            let randomKarte = ZufaelligeNummer(AllCards.length);
             placeDiv(AllCards[randomKarte].color, AllCards[randomKarte].cardname, Zahl);
             AllCards.splice(randomKarte, 1);
             continue;
@@ -459,12 +459,12 @@ var Aufgabe2neu;
     }
     //function placeDiv, erstellt Dokument in HTML, div ist kind von body
     function placeDiv(_color, Karte, Eingabe) {
-        var div = document.createElement("div");
+        let div = document.createElement("div");
         document.body.appendChild(div);
         div.setAttribute("id", "a" + Eingabe);
         document.getElementById("a" + Eingabe).innerHTML += Karte;
         //CSS Style Deklaration
-        var s = div.style;
+        let s = div.style;
         s.border = "solid black";
         s.position = "absolute";
         s.backgroundColor = _color;

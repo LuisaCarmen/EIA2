@@ -58,7 +58,7 @@ namespace A4 {
         //Create Trees
         HTML += "<fieldset>";
         HTML += "<legend>Design your tree</legend>";
-        HTML += "<select name='Select' id='trees'>";
+        HTML += "<select name='Select' id='trees'  >";
         for (let arrayNumber: number = 0; arrayNumber < christmasTree.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + christmasTree[arrayNumber].name + " " + christmasTree[arrayNumber].price + " €'>" + christmasTree[arrayNumber].name + " " + christmasTree[arrayNumber].price + " €</option>";
@@ -155,7 +155,7 @@ namespace A4 {
         HTML += "<fieldset>";
         HTML += "<legend>Tree stand</legend>";
         for (let arrayNumber: number = 0; arrayNumber < treeStands.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup' value='" + arrayNumber + treeStands[arrayNumber].name + " " + treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
+            HTML += "<input type='checkbox' name='Radiogroup' value='" + arrayNumber + treeStands[arrayNumber].name + " " + treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + treeStands[arrayNumber].name + " " + treeStands[arrayNumber].price + " €</label>";
         }
         HTML += "</fieldset>";
@@ -168,7 +168,7 @@ namespace A4 {
         HTML += "<fieldset>";
         HTML += "<legend>Delivery options</legend>";
         for (let arrayNumber: number = 0; arrayNumber < delivery.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
+            HTML += "<input type='checkbox' name='Radiogroup1' value='" + arrayNumber + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €</label>";
         }
         HTML += "</fieldset>";

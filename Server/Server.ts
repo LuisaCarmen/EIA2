@@ -26,3 +26,4 @@ namespace L06_SendData {       //Objekte werden in einer Hierarchie angeordnet u
         _response.end(); //_response wird beendet
     }
 }
+
