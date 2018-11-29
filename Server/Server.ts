@@ -17,12 +17,16 @@ namespace L06_SendData {       //Objekte werden in einer Hierarchie angeordnet u
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { //Funktion handleRequest wird ausgeführt. Daten von _request werden von dem Http Element Incoming Message genommen. Daten von _response werden von dem Http Element ServerResponse genommen.
         console.log("I hear voices!");    //Auf der Konsole wird "I hear voices" angezeigt
+        
 
         _response.setHeader("content-type", "text/html; charset=utf-8");  //erstellt einen Header
         _response.setHeader("Access-Control-Allow-Origin", "*"); //erstellt weitere Header Elemente
 
-        _response.write(_request.url); //  _response greift auf die URL von _request zu.
+        _response.write(_request.url); 
         
+        console.log(_request.url); 
+        
+         
         _response.end(); //_response wird beendet
     }
 }

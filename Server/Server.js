@@ -17,7 +17,8 @@ var L06_SendData;
         console.log("I hear voices!"); //Auf der Konsole wird "I hear voices" angezeigt
         _response.setHeader("content-type", "text/html; charset=utf-8"); //erstellt einen Header
         _response.setHeader("Access-Control-Allow-Origin", "*"); //erstellt weitere Header Elemente
-        _response.write(_request.url); //  _response greift auf die URL von _request zu.
+        _response.write(_request.url);
+        console.log(_request.url);
         _response.end(); //_response wird beendet
     }
 })(L06_SendData || (L06_SendData = {}));

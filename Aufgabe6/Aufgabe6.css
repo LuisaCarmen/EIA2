@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+h1 {
+	margin-top: 2em;
+	margin-left: 13em;
+	color: white;
+}
+
+#h3 {
+	margin-top: 1em;
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+h3 {
+	margin: 0.3em;
+}
+
+#fieldset {
+	margin-top: 2em;
+	margin-left: 7em;
+	width: 600px;
+	border: thin solid black;
+	background-Color: #B40404;
+	border-radius: 20px;
+	color: white;
+}
+
+legend {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+#div {
+	position: absolute;
+	top: 150px; left : 1010px;
+	width: 300px;
+	border: thin solid black;
+	padding-bottom: 170px;
+	padding-left: 15px;
+	background-Color: #B40404;
+	border-radius: 20px;
+	color: white;
+	left: 1010px;
+}
+
+button {
+	background-color: white;
+	color: black;
+	border-radius: 20px;
+	height: 2em;
+	position: absolute;
+	top: 370px;
+	left: 820px;
+	position: fixed;
+}
+
+#notSelectedYet {
+	position: absolute;
+	top: 400px;
+	left: 780px;
+	width: 200px;
+	height: 50px;
+	background-Color: white;
+	padding-left: 0px;
+	color: red;
+	border: solid thin black;
+	position: fixed;
+}
+
+label::after {
+	content: "";
+	display: block;
+}
+
+select {
+	border-radius: 20px;
+	width: 30em;
+}
+
+#amountBalls {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountBalls1 {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountBalls2 {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountCandles {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountCandles1 {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountCandles2 {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountOrnaments {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountOrnaments1 {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountOrnaments2 {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountLametta {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountLametta1 {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
+
+#amountLametta2 {
+	position: absolute;
+	margin-left: 2em;
+	width: 5em;
+}
