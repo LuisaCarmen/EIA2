@@ -1,25 +1,31 @@
 "use strict";
-const Http = require("http"); //Http empfängt die importierten Daten von "http"
-var L06_SendData;
-(function (L06_SendData) {
-    console.log("Starting server"); //Starting server wird in Browser Konsole angezeigt
-    let port = process.env.PORT; //port vom typ number 
+const Http = require("http");
+const Url = require("url");
+var L06_SendData1;
+(function (L06_SendData1) {
+    console.log("Starting server");
+    let port = process.env.PORT;
     if (port == undefined)
-        port = 8100; //..dann ist port 8100!
-    let server = Http.createServer(); //verwandelt Computer in einen HTTP-Server und erstellt ein HTTP-Server-Objekt
-    server.addListener("request", handleRequest); //Erstellt ein Listener auf dem Server. Verweist auf die Funktion handleRequest
-    server.addListener("listening", handleListen); //Erstellt ein Listener auf dem Server. Verweist auf Funktion handleListen
-    server.listen(port); //Ein Listener auf port wird erstellt
+        port = 8100;
+    let server = Http.createServer();
+    server.addListener("request", handleRequest);
+    server.addListener("listening", handleListen);
     function handleListen() {
-        console.log("Listening"); //Auf der Konsole wird das wort Listening angezeigt
+        console.log("Listening");
     }
     function handleRequest(_request, _response) {
-        console.log("I hear voices!"); //Auf der Konsole wird "I hear voices" angezeigt
-        _response.setHeader("content-type", "text/html; charset=utf-8"); //erstellt einen Header
-        _response.setHeader("Access-Control-Allow-Origin", "*"); //erstellt weitere Header Elemente
-        _response.write(_request.url);
+        console.log("I hear voices!");
+        _response.setHeader("content-type", "text/html; charset=utf-8");
+        _response.setHeader("Access-Control-Allow-Origin", "*");
         console.log(_request.url);
-        _response.end(); //_response wird beendet
+        let url = Url.parse(_request.url, true).query;
+        console.log(url);
+        for (let key in url) {
+            console.log(url[key]);
+            console.log(key);
+            _response.write(key + " = " + url[key] + "<br>");
+        }
+        _response.end();
     }
-})(L06_SendData || (L06_SendData = {}));
+})(L06_SendData1 || (L06_SendData1 = {}));
 //# sourceMappingURL=Server.js.map
