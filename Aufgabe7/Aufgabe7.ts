@@ -16,6 +16,8 @@ namespace A7 {
     document.addEventListener("DOMContentLoaded", createAllProducts);
     document.addEventListener("DOMContentLoaded", changedMind);
 
+    let stuff: string = "http://localhost:8100";
+    
     function changedMind(_event: Event): void {
         let fieldset: HTMLElement = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
@@ -86,7 +88,7 @@ namespace A7 {
         HTML += "<fieldset>";
         HTML += "<legend>Pick your tree</legend>";
         for (let arrayNumber: number = 0; arrayNumber < christmasTree.length; arrayNumber++) {
-            HTML += "<input type='radio' name='trees' value='" + arrayNumber + christmasTree[arrayNumber].name + " " + christmasTree[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
+            HTML += "<input type='radio' name='Christmas Tree' value='" + arrayNumber + christmasTree[arrayNumber].name + " " + christmasTree[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + christmasTree[arrayNumber].name + " " + christmasTree[arrayNumber].price + " €</label>";
         }
         HTML += "</fieldset>";
@@ -98,7 +100,7 @@ namespace A7 {
         HTML += "<fieldset>";
         HTML += "<legend>Christmas balls</legend>";
         HTML += "<p>Main Color:</p>";
-        HTML += "<select name='Select' id='balls'>";
+        HTML += "<select name='Christmas Balls' id='balls'>";
         for (let arrayNumber: number = 0; arrayNumber < christmasBalls.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + christmasBalls[arrayNumber].name + " " + christmasBalls[arrayNumber].price + " €'>" + christmasBalls[arrayNumber].name + " " + christmasBalls[arrayNumber].price + " €</option>";
@@ -106,7 +108,7 @@ namespace A7 {
         HTML += "</select>";
 
 
-        HTML += "<select name='Select' id='amountBalls'>";
+        HTML += "<select name='Amount Balls' id='amountBalls'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -117,7 +119,7 @@ namespace A7 {
         //Create christmas balls 1
         HTML += "<p>Additional Color 1:</p>";
 
-        HTML += "<select name='Select' id='balls1'>";
+        HTML += "<select name='Additional Balls 1' id='balls1'>";
         for (let arrayNumber: number = 0; arrayNumber < christmasBalls.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + christmasBalls[arrayNumber].name + " " + christmasBalls[arrayNumber].price + " €'>" + christmasBalls[arrayNumber].name + " " + christmasBalls[arrayNumber].price + " €</option>";
@@ -125,7 +127,7 @@ namespace A7 {
         HTML += "</select>";
 
 
-        HTML += "<select name='Select' id='amountBalls1'>";
+        HTML += "<select name='Amount Balls 1' id='amountBalls1'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -136,7 +138,7 @@ namespace A7 {
         //Create christmas balls 2
         HTML += "<p>Additional Color 2:</p>";
 
-        HTML += "<select name='Select' id='balls2'>";
+        HTML += "<select name='Additional Balls 2' id='balls2'>";
         for (let arrayNumber: number = 0; arrayNumber < christmasBalls.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + christmasBalls[arrayNumber].name + " " + christmasBalls[arrayNumber].price + " €'>" + christmasBalls[arrayNumber].name + " " + christmasBalls[arrayNumber].price + " €</option>";
@@ -144,7 +146,7 @@ namespace A7 {
         HTML += "</select>";
 
 
-        HTML += "<select name='Select' id='amountBalls2'>";
+        HTML += "<select name='Amount Balls 2' id='amountBalls2'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -164,14 +166,14 @@ namespace A7 {
 
         HTML += "<legend>Candles </legend>";
         HTML += "<p>Main Color:</p>";
-        HTML += "<select name='Select' id='candles'>";
+        HTML += "<select name='Candles' id='candles'>";
         for (let arrayNumber: number = 0; arrayNumber < candles.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + candles[arrayNumber].name + " " + candles[arrayNumber].price + " €'>" + candles[arrayNumber].name + " " + candles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
 
-        HTML += "<select name='Select' id='amountCandles'>";
+        HTML += "<select name='Amount candles' id='amountCandles'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -181,14 +183,14 @@ namespace A7 {
 
         //Create candles 1
         HTML += "<p>Additional Color 1:</p>";
-        HTML += "<select name='Select' id='candles1'>";
+        HTML += "<select name='Additional candles 1' id='candles1'>";
         for (let arrayNumber: number = 0; arrayNumber < candles.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + candles[arrayNumber].name + " " + candles[arrayNumber].price + " €'>" + candles[arrayNumber].name + " " + candles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
 
-        HTML += "<select name='Select' id='amountCandles1'>";
+        HTML += "<select name='Amount Candles 1' id='amountCandles1'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -198,14 +200,14 @@ namespace A7 {
 
         //Create candles 2
         HTML += "<p>Additional Color 2:</p>";
-        HTML += "<select name='Select' id='candles2'>";
+        HTML += "<select name='Additional candles 2' id='candles2'>";
         for (let arrayNumber: number = 0; arrayNumber < candles.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + candles[arrayNumber].name + " " + candles[arrayNumber].price + " €'>" + candles[arrayNumber].name + " " + candles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
 
-        HTML += "<select name='Select' id='amountCandles2'>";
+        HTML += "<select name='Amount Candles 2' id='amountCandles2'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -221,14 +223,14 @@ namespace A7 {
         HTML += "<fieldset>";
         HTML += "<legend>Ornaments</legend>";
         HTML += "<p>Main Color:</p>";
-        HTML += "<select name='Select' id='ornaments'>";
+        HTML += "<select name='Ornament' id='ornaments'>";
         for (let arrayNumber: number = 0; arrayNumber < ornaments.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + ornaments[arrayNumber].name + " " + ornaments[arrayNumber].price + " €'>" + ornaments[arrayNumber].name + " " + ornaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
 
-        HTML += "<select name='Select' id='amountOrnaments'>";
+        HTML += "<select name='Amount Ornament' id='amountOrnaments'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -240,14 +242,14 @@ namespace A7 {
 
         //Create ornaments 1
         HTML += "<p>Additional Color 1:</p>";
-        HTML += "<select name='Select' id='ornaments1'>";
+        HTML += "<select name='Additional ornament 1' id='ornaments1'>";
         for (let arrayNumber: number = 0; arrayNumber < ornaments.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + ornaments[arrayNumber].name + " " + ornaments[arrayNumber].price + " €'>" + ornaments[arrayNumber].name + " " + ornaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
 
-        HTML += "<select name='Select' id='amountOrnaments1'>";
+        HTML += "<select name='Amount Ornament 1' id='amountOrnaments1'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -258,14 +260,14 @@ namespace A7 {
 
         //Create ornaments 2
         HTML += "<p>Additional Color 2:</p>";
-        HTML += "<select name='Select' id='ornaments2'>";
+        HTML += "<select name='Additional ornament 2' id='ornaments2'>";
         for (let arrayNumber: number = 0; arrayNumber < ornaments.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + ornaments[arrayNumber].name + " " + ornaments[arrayNumber].price + " €'>" + ornaments[arrayNumber].name + " " + ornaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
 
-        HTML += "<select name='Select' id='amountOrnaments2'>";
+        HTML += "<select name='Amount ornament 2' id='amountOrnaments2'>";
         for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -279,14 +281,14 @@ namespace A7 {
         HTML += "<fieldset>";
         HTML += "<legend>Lametta (200g pack)</legend>";
         HTML += "<p>Main Color:</p>";
-        HTML += "<select name='Select' id='Lametta'>";
+        HTML += "<select name='Lametta' id='Lametta'>";
         for (let arrayNumber: number = 0; arrayNumber < lametta.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " €'>" + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
 
-        HTML += "<select name='Select' id='amountLametta'>";
+        HTML += "<select name='Amount lametta' id='amountLametta'>";
         for (let amountNumber: number = 0; amountNumber < 10; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -297,14 +299,14 @@ namespace A7 {
 
         //Create lametta 1
         HTML += "<p>Additional Color 1:</p>";
-        HTML += "<select name='Select' id='Lametta1'>";
+        HTML += "<select name='Additional lametta 1' id='Lametta1'>";
         for (let arrayNumber: number = 0; arrayNumber < lametta.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " €'>" + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
 
-        HTML += "<select name='Select' id='amountLametta1'>";
+        HTML += "<select name='Amount Lametta 1' id='amountLametta1'>";
         for (let amountNumber: number = 0; amountNumber < 10; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -314,14 +316,14 @@ namespace A7 {
 
         //Create lametta 2
         HTML += "<p>Additional Color 2:</p>";
-        HTML += "<select name='Select' id='Lametta2'>";
+        HTML += "<select name='Additional lametta 2' id='Lametta2'>";
         for (let arrayNumber: number = 0; arrayNumber < lametta.length; arrayNumber++) {
 
             HTML += "<option value='" + arrayNumber + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " €'>" + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
 
-        HTML += "<select name='Select' id='amountLametta2'>";
+        HTML += "<select name='Amount Lametta 2' id='amountLametta2'>";
         for (let amountNumber: number = 0; amountNumber < 10; amountNumber++) {
 
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
@@ -335,7 +337,7 @@ namespace A7 {
         HTML += "<fieldset>";
         HTML += "<legend>Tree stand</legend>";
         for (let arrayNumber: number = 0; arrayNumber < treeStands.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup' value='" + arrayNumber + treeStands[arrayNumber].name + " " + treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
+            HTML += "<input type='radio' name='Tree Stand' value='" + arrayNumber + treeStands[arrayNumber].name + " " + treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + treeStands[arrayNumber].name + " " + treeStands[arrayNumber].price + " €</label>";
         }
         HTML += "</fieldset>";
@@ -348,7 +350,7 @@ namespace A7 {
         HTML += "<fieldset>";
         HTML += "<legend>Delivery options</legend>";
         for (let arrayNumber: number = 0; arrayNumber < delivery.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
+            HTML += "<input type='radio' name='Delivery Option' value='" + arrayNumber + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €</label>";
         }
         HTML += "</fieldset>";
@@ -363,17 +365,17 @@ namespace A7 {
         HTML += "<input id='surname' type='text' name='Surname' placeholder='Surname'/>";
         HTML += "<br><br>";
 
-        HTML += "<input id='firstname' type='text' name='name' placeholder='Name'/>";
+        HTML += "<input id='firstname' type='text' name='Name' placeholder='Name'/>";
         HTML += "<br><br>";
 
-        HTML += "<input id='mail' type='email' name='mail' placeholder='E-mail'/>";
+        HTML += "<input id='mail' type='email' name='Mail' placeholder='E-mail'/>";
         HTML += "<br><br>";
 
-        HTML += "<textarea id='adress' name='Area' cols='30' rows='4' placeholder='Please enter your adress' >";
+        HTML += "<textarea id='adress' name='Adress' cols='30' rows='4' placeholder='Please enter your adress' >";
         HTML += "</textarea>";
         HTML += "<br><br>";
 
-        HTML += "<textarea id='extra' name='Area' cols='30' rows='4' placeholder='Extra information for the seller' >";
+        HTML += "<textarea id='extra' name='Additional information' cols='30' rows='4' placeholder='Extra information for the seller' >";
         HTML += "</textarea>";
 
 
@@ -405,7 +407,7 @@ namespace A7 {
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
 
         //trees
-        if (target.name == "trees") {
+        if (target.name == "Christmas Tree") {
             let node: HTMLElement = document.getElementById("treeshtml");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
@@ -836,7 +838,7 @@ namespace A7 {
 
 
         //tree stands
-        if (target.name == "Radiogroup") {
+        if (target.name == "Tree Stand") {
             let node: HTMLElement = document.getElementById("standhtml");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
@@ -854,7 +856,7 @@ namespace A7 {
 
 
         //delivery options
-        if (target.name == "Radiogroup1") {
+        if (target.name == "Delivery Option") {
             let node: HTMLElement = document.getElementById("deliveryhtml");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
@@ -970,6 +972,20 @@ namespace A7 {
         }
     }
     
+   
     
+     function sendRequestWithCustomData(_color: string): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", stuff + "?color=" + _color, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
 
-}
+    function handleStateChange(_event: ProgressEvent): void {
+        var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+        }
+
+}}

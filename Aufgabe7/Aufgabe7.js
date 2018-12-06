@@ -10,6 +10,7 @@ var A7;
 (function (A7) {
     document.addEventListener("DOMContentLoaded", createAllProducts);
     document.addEventListener("DOMContentLoaded", changedMind);
+    let stuff = "http://localhost:8100";
     function changedMind(_event) {
         let fieldset = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
@@ -55,7 +56,7 @@ var A7;
         HTML += "<fieldset>";
         HTML += "<legend>Pick your tree</legend>";
         for (let arrayNumber = 0; arrayNumber < A7.christmasTree.length; arrayNumber++) {
-            HTML += "<input type='radio' name='trees' value='" + arrayNumber + A7.christmasTree[arrayNumber].name + " " + A7.christmasTree[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
+            HTML += "<input type='radio' name='Christmas Tree' value='" + arrayNumber + A7.christmasTree[arrayNumber].name + " " + A7.christmasTree[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + A7.christmasTree[arrayNumber].name + " " + A7.christmasTree[arrayNumber].price + " €</label>";
         }
         HTML += "</fieldset>";
@@ -64,36 +65,36 @@ var A7;
         HTML += "<fieldset>";
         HTML += "<legend>Christmas balls</legend>";
         HTML += "<p>Main Color:</p>";
-        HTML += "<select name='Select' id='balls'>";
+        HTML += "<select name='Christmas Balls' id='balls'>";
         for (let arrayNumber = 0; arrayNumber < A7.christmasBalls.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.christmasBalls[arrayNumber].name + " " + A7.christmasBalls[arrayNumber].price + " €'>" + A7.christmasBalls[arrayNumber].name + " " + A7.christmasBalls[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountBalls'>";
+        HTML += "<select name='Amount Balls' id='amountBalls'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create christmas balls 1
         HTML += "<p>Additional Color 1:</p>";
-        HTML += "<select name='Select' id='balls1'>";
+        HTML += "<select name='Additional Balls 1' id='balls1'>";
         for (let arrayNumber = 0; arrayNumber < A7.christmasBalls.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.christmasBalls[arrayNumber].name + " " + A7.christmasBalls[arrayNumber].price + " €'>" + A7.christmasBalls[arrayNumber].name + " " + A7.christmasBalls[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountBalls1'>";
+        HTML += "<select name='Amount Balls 1' id='amountBalls1'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create christmas balls 2
         HTML += "<p>Additional Color 2:</p>";
-        HTML += "<select name='Select' id='balls2'>";
+        HTML += "<select name='Additional Balls 2' id='balls2'>";
         for (let arrayNumber = 0; arrayNumber < A7.christmasBalls.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.christmasBalls[arrayNumber].name + " " + A7.christmasBalls[arrayNumber].price + " €'>" + A7.christmasBalls[arrayNumber].name + " " + A7.christmasBalls[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountBalls2'>";
+        HTML += "<select name='Amount Balls 2' id='amountBalls2'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -104,36 +105,36 @@ var A7;
         HTML += "<fieldset>";
         HTML += "<legend>Candles </legend>";
         HTML += "<p>Main Color:</p>";
-        HTML += "<select name='Select' id='candles'>";
+        HTML += "<select name='Candles' id='candles'>";
         for (let arrayNumber = 0; arrayNumber < A7.candles.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.candles[arrayNumber].name + " " + A7.candles[arrayNumber].price + " €'>" + A7.candles[arrayNumber].name + " " + A7.candles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountCandles'>";
+        HTML += "<select name='Amount candles' id='amountCandles'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create candles 1
         HTML += "<p>Additional Color 1:</p>";
-        HTML += "<select name='Select' id='candles1'>";
+        HTML += "<select name='Additional candles 1' id='candles1'>";
         for (let arrayNumber = 0; arrayNumber < A7.candles.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.candles[arrayNumber].name + " " + A7.candles[arrayNumber].price + " €'>" + A7.candles[arrayNumber].name + " " + A7.candles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountCandles1'>";
+        HTML += "<select name='Amount Candles 1' id='amountCandles1'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create candles 2
         HTML += "<p>Additional Color 2:</p>";
-        HTML += "<select name='Select' id='candles2'>";
+        HTML += "<select name='Additional candles 2' id='candles2'>";
         for (let arrayNumber = 0; arrayNumber < A7.candles.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.candles[arrayNumber].name + " " + A7.candles[arrayNumber].price + " €'>" + A7.candles[arrayNumber].name + " " + A7.candles[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountCandles2'>";
+        HTML += "<select name='Amount Candles 2' id='amountCandles2'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -144,36 +145,36 @@ var A7;
         HTML += "<fieldset>";
         HTML += "<legend>Ornaments</legend>";
         HTML += "<p>Main Color:</p>";
-        HTML += "<select name='Select' id='ornaments'>";
+        HTML += "<select name='Ornament' id='ornaments'>";
         for (let arrayNumber = 0; arrayNumber < A7.ornaments.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.ornaments[arrayNumber].name + " " + A7.ornaments[arrayNumber].price + " €'>" + A7.ornaments[arrayNumber].name + " " + A7.ornaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountOrnaments'>";
+        HTML += "<select name='Amount Ornament' id='amountOrnaments'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create ornaments 1
         HTML += "<p>Additional Color 1:</p>";
-        HTML += "<select name='Select' id='ornaments1'>";
+        HTML += "<select name='Additional ornament 1' id='ornaments1'>";
         for (let arrayNumber = 0; arrayNumber < A7.ornaments.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.ornaments[arrayNumber].name + " " + A7.ornaments[arrayNumber].price + " €'>" + A7.ornaments[arrayNumber].name + " " + A7.ornaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountOrnaments1'>";
+        HTML += "<select name='Amount Ornament 1' id='amountOrnaments1'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create ornaments 2
         HTML += "<p>Additional Color 2:</p>";
-        HTML += "<select name='Select' id='ornaments2'>";
+        HTML += "<select name='Additional ornament 2' id='ornaments2'>";
         for (let arrayNumber = 0; arrayNumber < A7.ornaments.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.ornaments[arrayNumber].name + " " + A7.ornaments[arrayNumber].price + " €'>" + A7.ornaments[arrayNumber].name + " " + A7.ornaments[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountOrnaments2'>";
+        HTML += "<select name='Amount ornament 2' id='amountOrnaments2'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -184,12 +185,12 @@ var A7;
         HTML += "<fieldset>";
         HTML += "<legend>Lametta (200g pack)</legend>";
         HTML += "<p>Main Color:</p>";
-        HTML += "<select name='Select' id='Lametta'>";
+        HTML += "<select name='Lametta' id='Lametta'>";
         for (let arrayNumber = 0; arrayNumber < A7.lametta.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.lametta[arrayNumber].name + " " + A7.lametta[arrayNumber].price + " €'>" + A7.lametta[arrayNumber].name + " " + A7.lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountLametta'>";
+        HTML += "<select name='Amount lametta' id='amountLametta'>";
         for (let amountNumber = 0; amountNumber < 10; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -197,24 +198,24 @@ var A7;
         HTML += "<br>";
         //Create lametta 1
         HTML += "<p>Additional Color 1:</p>";
-        HTML += "<select name='Select' id='Lametta1'>";
+        HTML += "<select name='Additional lametta 1' id='Lametta1'>";
         for (let arrayNumber = 0; arrayNumber < A7.lametta.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.lametta[arrayNumber].name + " " + A7.lametta[arrayNumber].price + " €'>" + A7.lametta[arrayNumber].name + " " + A7.lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountLametta1'>";
+        HTML += "<select name='Amount Lametta 1' id='amountLametta1'>";
         for (let amountNumber = 0; amountNumber < 10; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
         HTML += "</select>";
         //Create lametta 2
         HTML += "<p>Additional Color 2:</p>";
-        HTML += "<select name='Select' id='Lametta2'>";
+        HTML += "<select name='Additional lametta 2' id='Lametta2'>";
         for (let arrayNumber = 0; arrayNumber < A7.lametta.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + A7.lametta[arrayNumber].name + " " + A7.lametta[arrayNumber].price + " €'>" + A7.lametta[arrayNumber].name + " " + A7.lametta[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
-        HTML += "<select name='Select' id='amountLametta2'>";
+        HTML += "<select name='Amount Lametta 2' id='amountLametta2'>";
         for (let amountNumber = 0; amountNumber < 10; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -225,7 +226,7 @@ var A7;
         HTML += "<fieldset>";
         HTML += "<legend>Tree stand</legend>";
         for (let arrayNumber = 0; arrayNumber < A7.treeStands.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup' value='" + arrayNumber + A7.treeStands[arrayNumber].name + " " + A7.treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
+            HTML += "<input type='radio' name='Tree Stand' value='" + arrayNumber + A7.treeStands[arrayNumber].name + " " + A7.treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + A7.treeStands[arrayNumber].name + " " + A7.treeStands[arrayNumber].price + " €</label>";
         }
         HTML += "</fieldset>";
@@ -234,7 +235,7 @@ var A7;
         HTML += "<fieldset>";
         HTML += "<legend>Delivery options</legend>";
         for (let arrayNumber = 0; arrayNumber < A7.delivery.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + A7.delivery[arrayNumber].name + " " + A7.delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
+            HTML += "<input type='radio' name='Delivery Option' value='" + arrayNumber + A7.delivery[arrayNumber].name + " " + A7.delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
             HTML += "<label for='check" + arrayNumber + "'>" + A7.delivery[arrayNumber].name + " " + A7.delivery[arrayNumber].price + " €</label>";
         }
         HTML += "</fieldset>";
@@ -244,14 +245,14 @@ var A7;
         HTML += "<legend>Buyer Information</legend>";
         HTML += "<input id='surname' type='text' name='Surname' placeholder='Surname'/>";
         HTML += "<br><br>";
-        HTML += "<input id='firstname' type='text' name='name' placeholder='Name'/>";
+        HTML += "<input id='firstname' type='text' name='Name' placeholder='Name'/>";
         HTML += "<br><br>";
-        HTML += "<input id='mail' type='email' name='mail' placeholder='E-mail'/>";
+        HTML += "<input id='mail' type='email' name='Mail' placeholder='E-mail'/>";
         HTML += "<br><br>";
-        HTML += "<textarea id='adress' name='Area' cols='30' rows='4' placeholder='Please enter your adress' >";
+        HTML += "<textarea id='adress' name='Adress' cols='30' rows='4' placeholder='Please enter your adress' >";
         HTML += "</textarea>";
         HTML += "<br><br>";
-        HTML += "<textarea id='extra' name='Area' cols='30' rows='4' placeholder='Extra information for the seller' >";
+        HTML += "<textarea id='extra' name='Additional information' cols='30' rows='4' placeholder='Extra information for the seller' >";
         HTML += "</textarea>";
         HTML += "</fieldset>";
         node.innerHTML += HTML;
@@ -260,7 +261,7 @@ var A7;
     function handleChange(_event) {
         let target = _event.target;
         //trees
-        if (target.name == "trees") {
+        if (target.name == "Christmas Tree") {
             let node = document.getElementById("treeshtml");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
@@ -574,7 +575,7 @@ var A7;
             node.innerHTML = HTML;
         }
         //tree stands
-        if (target.name == "Radiogroup") {
+        if (target.name == "Tree Stand") {
             let node = document.getElementById("standhtml");
             let value = target.value;
             let _price = parseInt(value.substr(0, 1));
@@ -587,7 +588,7 @@ var A7;
             node.innerHTML = HTML;
         }
         //delivery options
-        if (target.name == "Radiogroup1") {
+        if (target.name == "Delivery Option") {
             let node = document.getElementById("deliveryhtml");
             let value = target.value;
             let _price = parseInt(value.substr(0, 1));
@@ -667,6 +668,19 @@ var A7;
         }
         else {
             document.getElementById("notSelectedYet").innerHTML = "All done, thank you for your order!";
+        }
+    }
+    function sendRequestWithCustomData(_color) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", stuff + "?color=" + _color, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
+    function handleStateChange(_event) {
+        var xhr = _event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
         }
     }
 })(A7 || (A7 = {}));
