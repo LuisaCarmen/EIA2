@@ -969,5 +969,7 @@ namespace A7 {
             document.getElementById("notSelectedYet").innerHTML = "All done, thank you for your order!";
         }
     }
+    
+    
 
 }
