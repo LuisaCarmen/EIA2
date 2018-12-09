@@ -52,7 +52,18 @@ button {
 	position: absolute;
 	top: 370px;
 	left: 820px;
-	position: fixed;
+	
+}
+
+#button1 {
+	background-color: white;
+	color: black;
+	border-radius: 20px;
+	height: 2em;
+	position: absolute;
+	top: 5px;
+	left: 70px;
+	
 }
 
 #notSelectedYet {
@@ -65,7 +76,7 @@ button {
 	padding-left: 0px;
 	color: red;
 	border: solid thin black;
-	position: fixed;
+
 }
 
 label::after {
@@ -149,3 +160,10 @@ select {
 	margin-left: 2em;
 	width: 5em;
 }
+
+#submit {color: white;}
+
+
+#asyncForm {position: absolute;
+            left: 770px;
+            top: 200px;}

@@ -10,7 +10,7 @@ var A7;
 (function (A7) {
     document.addEventListener("DOMContentLoaded", createAllProducts);
     document.addEventListener("DOMContentLoaded", changedMind);
-    let stuff = "http://localhost:8100";
+    document.addEventListener("DOMContentLoaded", init);
     function changedMind(_event) {
         let fieldset = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
@@ -47,6 +47,7 @@ var A7;
     let adress = "";
     let mail = "";
     let extra = "";
+    let address = "https://eia2-18.herokuapp.com";
     //main function!!
     function createAllProducts() {
         document.getElementById("button").addEventListener("click", checkProgress);
@@ -55,10 +56,11 @@ var A7;
         //Create Trees
         HTML += "<fieldset>";
         HTML += "<legend>Pick your tree</legend>";
+        HTML += "<select name='Christmas Tree' id='picktree'>";
         for (let arrayNumber = 0; arrayNumber < A7.christmasTree.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Christmas Tree' value='" + arrayNumber + A7.christmasTree[arrayNumber].name + " " + A7.christmasTree[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
-            HTML += "<label for='check" + arrayNumber + "'>" + A7.christmasTree[arrayNumber].name + " " + A7.christmasTree[arrayNumber].price + " €</label>";
+            HTML += "<option value='" + arrayNumber + A7.christmasTree[arrayNumber].name + " " + A7.christmasTree[arrayNumber].price + " €'>" + A7.christmasTree[arrayNumber].name + " " + A7.christmasTree[arrayNumber].price + " €</option>";
         }
+        HTML += "</select>";
         HTML += "</fieldset>";
         HTML += "<br>";
         //Create christmas balls
@@ -224,20 +226,22 @@ var A7;
         HTML += "<br>";
         //Create tree stands
         HTML += "<fieldset>";
-        HTML += "<legend>Tree stand</legend>";
+        HTML += "<legend>Tree Stand</legend>";
+        HTML += "<select name='Tree Stand' id='pickstand'>";
         for (let arrayNumber = 0; arrayNumber < A7.treeStands.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Tree Stand' value='" + arrayNumber + A7.treeStands[arrayNumber].name + " " + A7.treeStands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
-            HTML += "<label for='check" + arrayNumber + "'>" + A7.treeStands[arrayNumber].name + " " + A7.treeStands[arrayNumber].price + " €</label>";
+            HTML += "<option value='" + arrayNumber + A7.treeStands[arrayNumber].name + " " + A7.treeStands[arrayNumber].price + " €'>" + A7.treeStands[arrayNumber].name + " " + A7.treeStands[arrayNumber].price + " €</option>";
         }
+        HTML += "</select>";
         HTML += "</fieldset>";
         HTML += "<br>";
         //delivery options
         HTML += "<fieldset>";
-        HTML += "<legend>Delivery options</legend>";
+        HTML += "<legend>Delivery Options</legend>";
+        HTML += "<select name='delivery' id='deliveryoptions'>";
         for (let arrayNumber = 0; arrayNumber < A7.delivery.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Delivery Option' value='" + arrayNumber + A7.delivery[arrayNumber].name + " " + A7.delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
-            HTML += "<label for='check" + arrayNumber + "'>" + A7.delivery[arrayNumber].name + " " + A7.delivery[arrayNumber].price + " €</label>";
+            HTML += "<option value='" + arrayNumber + A7.delivery[arrayNumber].name + " " + A7.delivery[arrayNumber].price + " €'>" + A7.delivery[arrayNumber].name + " " + A7.delivery[arrayNumber].price + " €</option>";
         }
+        HTML += "</select>";
         HTML += "</fieldset>";
         HTML += "<br>";
         //buyer info
@@ -261,7 +265,7 @@ var A7;
     function handleChange(_event) {
         let target = _event.target;
         //trees
-        if (target.name == "Christmas Tree") {
+        if (target.id == "picktree") {
             let node = document.getElementById("treeshtml");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
@@ -575,7 +579,7 @@ var A7;
             node.innerHTML = HTML;
         }
         //tree stands
-        if (target.name == "Tree Stand") {
+        if (target.id == "pickstand") {
             let node = document.getElementById("standhtml");
             let value = target.value;
             let _price = parseInt(value.substr(0, 1));
@@ -588,7 +592,7 @@ var A7;
             node.innerHTML = HTML;
         }
         //delivery options
-        if (target.name == "Delivery Option") {
+        if (target.id == "deliveryoptions") {
             let node = document.getElementById("deliveryhtml");
             let value = target.value;
             let _price = parseInt(value.substr(0, 1));
@@ -670,9 +674,166 @@ var A7;
             document.getElementById("notSelectedYet").innerHTML = "All done, thank you for your order!";
         }
     }
+    //Aufgabe 7.2
+    function init(_event) {
+        document.getElementById("button").addEventListener("click", checkProgress);
+        setupAsyncForm();
+    }
+    function setupAsyncForm() {
+        let button = document.querySelector("[type=button]");
+        button.addEventListener("click", handleClickOnAsync);
+    }
+    function handleClickOnAsync(_event) {
+        let checkout = [];
+        let items = document.getElementsByTagName("input");
+        //trees 
+        let pickedTree = document.getElementById("picktree");
+        let color1 = "Your order:    Tree: " + pickedTree.value.substr(1);
+        sendRequestWithCustomData(color1);
+        checkout.push(color1);
+        //balls
+        let pickedBalls = document.getElementById("balls");
+        let color2 = "Balls: " + pickedBalls.value.substr(1);
+        sendRequestWithCustomData(color2);
+        checkout.push(color2);
+        let pickedBallsAmount = document.getElementById("amountBalls");
+        let color3 = "Ball amount: " + pickedBallsAmount.value.substr(1);
+        sendRequestWithCustomData(color3);
+        checkout.push(color3);
+        let pickedBalls1 = document.getElementById("balls1");
+        let color4 = "Additional Balls 1: " + pickedBalls1.value.substr(1);
+        sendRequestWithCustomData(color4);
+        checkout.push(color4);
+        let pickedBallsAmount1 = document.getElementById("amountBalls1");
+        let color5 = "Balls amount 1: " + pickedBallsAmount1.value.substr(1);
+        sendRequestWithCustomData(color5);
+        checkout.push(color5);
+        let pickedBalls2 = document.getElementById("balls2");
+        let color6 = "Additional Balls 2: " + pickedBalls2.value.substr(1);
+        sendRequestWithCustomData(color6);
+        checkout.push(color6);
+        let pickedBallsAmount2 = document.getElementById("amountBalls2");
+        let color7 = "Balls amount 2: " + pickedBallsAmount2.value.substr(1);
+        sendRequestWithCustomData(color7);
+        checkout.push(color7);
+        //candles
+        let pickedCandles = document.getElementById("candles");
+        let color8 = "Candles: " + pickedCandles.value.substr(1);
+        sendRequestWithCustomData(color8);
+        checkout.push(color8);
+        let pickedCandlesAmount = document.getElementById("amountCandles");
+        let color9 = "Candles amount: " + pickedCandlesAmount.value.substr(1);
+        sendRequestWithCustomData(color9);
+        checkout.push(color9);
+        let pickedCandles1 = document.getElementById("candles1");
+        let color10 = "Additional Candles 1: " + pickedCandles1.value.substr(1);
+        sendRequestWithCustomData(color10);
+        checkout.push(color10);
+        let pickedCandlesAmount1 = document.getElementById("amountCandles1");
+        let color11 = "Candles amount 1: " + pickedCandlesAmount1.value.substr(1);
+        sendRequestWithCustomData(color11);
+        checkout.push(color11);
+        let pickedCandles2 = document.getElementById("candles2");
+        let color12 = "Additional Candles 2: " + pickedCandles2.value.substr(1);
+        sendRequestWithCustomData(color12);
+        checkout.push(color12);
+        let pickedCandlesAmount2 = document.getElementById("amountCandles2");
+        let color13 = "Candles amount 2: " + pickedCandlesAmount2.value.substr(1);
+        sendRequestWithCustomData(color13);
+        checkout.push(color13);
+        //ornaments
+        let pickedOrnaments = document.getElementById("ornaments");
+        let color14 = "Ornaments: " + pickedOrnaments.value.substr(1);
+        sendRequestWithCustomData(color14);
+        checkout.push(color14);
+        let pickedOrnamentsAmount = document.getElementById("amountOrnaments");
+        let color15 = "Ornaments amount: " + pickedOrnamentsAmount.value.substr(1);
+        sendRequestWithCustomData(color15);
+        checkout.push(color15);
+        let pickedOrnaments1 = document.getElementById("ornaments1");
+        let color16 = "Additional Ornaments 1: " + pickedOrnaments1.value.substr(1);
+        sendRequestWithCustomData(color16);
+        checkout.push(color16);
+        let pickedOrnamentsAmount1 = document.getElementById("amountOrnaments1");
+        let color17 = "Ornaments amount 1: " + pickedOrnamentsAmount1.value.substr(1);
+        sendRequestWithCustomData(color17);
+        checkout.push(color17);
+        let pickedOrnaments2 = document.getElementById("ornaments2");
+        let color18 = "Additional Ornaments 2: " + pickedOrnaments2.value.substr(1);
+        sendRequestWithCustomData(color18);
+        checkout.push(color18);
+        let pickedOrnamentsAmount2 = document.getElementById("amountOrnaments2");
+        let color19 = "Ornaments amount 2: " + pickedOrnamentsAmount2.value.substr(1);
+        sendRequestWithCustomData(color19);
+        checkout.push(color19);
+        //lametta
+        let pickedLametta = document.getElementById("Lametta");
+        let color20 = "Lametta: " + pickedLametta.value.substr(1);
+        sendRequestWithCustomData(color20);
+        checkout.push(color20);
+        let pickedLamettaAmount = document.getElementById("amountLametta");
+        let color21 = "Lametta amount: " + pickedLamettaAmount.value.substr(1);
+        sendRequestWithCustomData(color21);
+        checkout.push(color21);
+        let pickedLametta1 = document.getElementById("Lametta1");
+        let color22 = "Additional Lametta 1: " + pickedLametta1.value.substr(1);
+        sendRequestWithCustomData(color22);
+        checkout.push(color22);
+        let pickedLamettaAmount1 = document.getElementById("amountLametta1");
+        let color23 = "Lametta amount 1: " + pickedLamettaAmount1.value.substr(1);
+        sendRequestWithCustomData(color23);
+        checkout.push(color23);
+        let pickedLametta2 = document.getElementById("Lametta2");
+        let color24 = "Additional Lametta 2: " + pickedLametta2.value.substr(1);
+        sendRequestWithCustomData(color24);
+        checkout.push(color24);
+        let pickedLamettaAmount2 = document.getElementById("amountLametta2");
+        let color25 = "Lametta amount 2: " + pickedLamettaAmount2.value.substr(1);
+        sendRequestWithCustomData(color25);
+        checkout.push(color25);
+        //stand
+        let pickedStand = document.getElementById("pickstand");
+        let color26 = "Stand: " + pickedStand.value.substr(1);
+        sendRequestWithCustomData(color26);
+        checkout.push(color26);
+        //adress
+        let pickedAdress = document.getElementById("adress");
+        let color28 = "Adress: " + pickedAdress.value.substr(1);
+        sendRequestWithCustomData(color28);
+        checkout.push(color28);
+        //surname
+        let pickedSurname = document.getElementById("surname");
+        let color29 = "Surname: " + pickedSurname.value.substr(1);
+        sendRequestWithCustomData(color29);
+        checkout.push(color29);
+        //name
+        let pickedName = document.getElementById("firstname");
+        let color30 = "Name: " + pickedName.value.substr(1);
+        sendRequestWithCustomData(color30);
+        checkout.push(color30);
+        //mail
+        let pickedMail = document.getElementById("mail");
+        let color31 = "Mail: " + pickedMail.value.substr(1);
+        sendRequestWithCustomData(color31);
+        checkout.push(color31);
+        //extra
+        let pickedExtra = document.getElementById("extra");
+        let color32 = "Extra: " + pickedExtra.value.substr(1);
+        sendRequestWithCustomData(color32);
+        checkout.push(color32);
+        for (let i = 0; i < items.length; i++) {
+            let article = items[i];
+            if (Number(article.value) > 0) {
+                let color = article.name + " " + article.value + " " + article.title + " " + (Number(article.getAttribute("price")) * Number(article.value)) + " Euro";
+                sendRequestWithCustomData(color);
+                checkout.push(color);
+            }
+        }
+        alert(checkout);
+    }
     function sendRequestWithCustomData(_color) {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", stuff + "?color=" + _color, true);
+        xhr.open("GET", address + "?article=" + _color, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
