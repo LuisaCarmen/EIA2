@@ -1,5 +1,22 @@
 #Frage1 {max-width: 100%;
              border: none; 
-             }
+             z-index: 30;}
 
-body {background-color: black;}
+body {background-color: black;
+       }
+
+#continue1 {color: transparent;
+            position: absolute;
+            z-index: 10;
+            bottom: -0.5em;
+            right: 1em;
+            font-size: 3em;
+            }
+            
+#back1 {color: transparent;
+            position: absolute;
+            z-index: 10;
+            bottom: -0.5em;
+            left: 1em;
+            font-size: 3em;
+            }
