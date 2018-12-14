@@ -12,7 +12,7 @@ body {background-color: black;}
             font-size: 3em;
             }
             
-            #back1 {color: transparent;
+            #back1 {color: transparent; 
             position: absolute;
             z-index: 10;
             bottom: -0.5em;
