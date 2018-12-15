@@ -1,14 +1,18 @@
 var DatabaseClient;
 (function (DatabaseClient) {
     window.addEventListener("load", init);
-    let serverAddress = "http://localhost:8100";
-    //let serverAddress: string = "https://<your>.herokuapp.com/";    
+    //let serverAddress: string = "http://localhost:8100";
+    let serverAddress = "";
     function init(_event) {
         console.log("Init");
         let insertButton = document.getElementById("insert");
+        //Refresh Button
         let refreshButton = document.getElementById("refresh");
+        let findButton = document.getElementById("find");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
+        //Eventlistener
+        findButton.addEventListener("click", findStudent);
     }
     function insert(_event) {
         let inputs = document.getElementsByTagName("input");
@@ -23,7 +27,7 @@ var DatabaseClient;
         let query = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
-    function find(_event) {
+    function findStudent(_event) {
         let search = document.getElementById("number");
         let query = "command=find";
         query += "&matrikel=" + search.value;

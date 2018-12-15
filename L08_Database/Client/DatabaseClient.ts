@@ -1,14 +1,18 @@
 namespace DatabaseClient {
     window.addEventListener("load", init);
-    let serverAddress: string = "http://localhost:8100";
-    //let serverAddress: string = "https://<your>.herokuapp.com/";    
+    //let serverAddress: string = "http://localhost:8100";
+    let serverAddress: string = "";    
 
     function init(_event: Event): void {
         console.log("Init");
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
+        //Refresh Button
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
+        let findButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("find");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
+        //Eventlistener
+        findButton.addEventListener("click", findStudent);
     }
 
     function insert(_event: Event): void {
@@ -25,16 +29,15 @@ namespace DatabaseClient {
         let query: string = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
-    
-    function find(_event: Event): void{
+
+    function findStudent(_event: Event): void {
         let search: HTMLInputElement = <HTMLInputElement>document.getElementById("number");
-        let query: string ="command=find";
-        query+= "&matrikel=" + search.value ;
+        let query: string = "command=find";
+        query += "&matrikel=" + search.value ;
         console.log(query);
         sendRequest(query, handleFindResponse);
         }
-    
-
+      
     function sendRequest(_query: string, _callback: EventListener): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
         xhr.open("GET", serverAddress + "?" + _query, true);

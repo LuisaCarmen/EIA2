@@ -5,7 +5,7 @@
 import * as Mongo from "mongodb";
 console.log("Database starting");
 
-let databaseURL: string = "";
+let databaseURL: string = "mongodb://localhost:27017";
 let databaseName: string = "Test";
 let db: Mongo.Db;
 let students: Mongo.Collection;
@@ -13,8 +13,8 @@ let students: Mongo.Collection;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
     //    databaseURL = "mongodb://username:password@hostname:port/database";
-    databaseURL = "mongodb://<dbuser>:<dbpassword>@ds159112.mlab.com:59112/eia2";
-    databaseName = "eia2";
+    databaseURL = "https://mongodbrowser.herokuapp.com/?u=testuser&p=testpassword1&a=ds159112.mlab.com:59112/eia2&n=eia2&c=data";
+    databaseName = "students";  
 }
 
 // try to connect to database, then activate callback "handleConnect" 
@@ -36,13 +36,31 @@ export function insert(_doc: StudentData): void {
     students.insertOne(_doc, handleInsert);
 }
 
+
+
 // insertion-handler receives an error object as standard parameter
 function handleInsert(_e: Mongo.MongoError): void {
     console.log("Database insertion returned -> " + _e);
 }
+//function "find" for Matrikelnummer
+export function find(_matrikel: matrikel, _callback: Function): void {
+    console.log(_matrikel);
+    var cursor: Mongo.Cursor = students.find(_matrikel);
+    cursor.toArray(prepareAnswer);
+    
+
+function prepareAnswer(_e: Mongo.MongoError, studentArray: StudentData[]): void {
+        if (_e)
+            _callback("Error" + _e);
+        else
+            // stringify creates a json-string, passed it back to _callback
+            _callback(JSON.stringify(studentArray));
+        }
+    }
+
 
 // try to fetch all documents from database, then activate callback
-export function findAll(_callback: Function): void {
+    export function findAll(_callback: Function): void {
     // cursor points to the retreived set of documents in memory
     var cursor: Mongo.Cursor = students.find();
     // try to convert to array, then activate callback "prepareAnswer"
