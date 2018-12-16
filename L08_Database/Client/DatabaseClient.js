@@ -6,12 +6,10 @@ var DatabaseClient;
     function init(_event) {
         console.log("Init");
         let insertButton = document.getElementById("insert");
-        //Refresh Button
         let refreshButton = document.getElementById("refresh");
         let findButton = document.getElementById("find");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
-        //Eventlistener
         findButton.addEventListener("click", find);
     }
     function insert(_event) {
@@ -28,7 +26,7 @@ var DatabaseClient;
         sendRequest(query, handleFindResponse);
     }
     function find(_event) {
-        let search = document.getElementById("find");
+        let search = document.getElementById("number");
         let query = "command=find";
         query += "&matrikel=" + search.value;
         console.log(query);
