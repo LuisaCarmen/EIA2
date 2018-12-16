@@ -28,7 +28,7 @@ var DatabaseClient;
         sendRequest(query, handleFindResponse);
     }
     function findStudent(_event) {
-        let search = document.getElementById("number");
+        let search = document.getElementById("find");
         let query = "command=find";
         query += "&matrikel=" + search.value;
         console.log(query);

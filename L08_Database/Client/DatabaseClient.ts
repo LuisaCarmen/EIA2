@@ -31,7 +31,7 @@ namespace DatabaseClient {
     }
 
     function findStudent(_event: Event): void {
-        let search: HTMLInputElement = <HTMLInputElement>document.getElementById("number");
+        let search: HTMLInputElement = <HTMLInputElement>document.getElementById("find");
         let query: string = "command=find";
         query += "&matrikel=" + search.value ;
         console.log(query);
