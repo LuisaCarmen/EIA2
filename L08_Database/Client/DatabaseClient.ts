@@ -12,7 +12,7 @@ namespace DatabaseClient {
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
         //Eventlistener
-        findButton.addEventListener("click", findStudent);
+        findButton.addEventListener("click", find);
     }
 
     function insert(_event: Event): void {
@@ -30,7 +30,7 @@ namespace DatabaseClient {
         sendRequest(query, handleFindResponse);
     }
 
-    function findStudent(_event: Event): void {
+    function find(_event: Event): void {
         let search: HTMLInputElement = <HTMLInputElement>document.getElementById("find");
         let query: string = "command=find";
         query += "&matrikel=" + search.value ;

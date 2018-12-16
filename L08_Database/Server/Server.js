@@ -34,7 +34,7 @@ function handleRequest(_request, _response) {
         case "refresh":
             Database.findAll(findCallback);
             break;
-        case "findStudent":
+        case "find":
             let matrikel = {
                 matrikel: parseInt(query["matrikel"])
             };

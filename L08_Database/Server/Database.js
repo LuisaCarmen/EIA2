@@ -36,7 +36,6 @@ exports.insert = insert;
 function handleInsert(_e) {
     console.log("Database insertion returned -> " + _e);
 }
-//function "find" for Matrikelnummer
 function find(_matrikel, _callback) {
     console.log(_matrikel);
     var cursor = students.find(_matrikel);

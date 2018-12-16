@@ -43,7 +43,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
         case "refresh":
             Database.findAll(findCallback);
             break;
-        case "findStudent":
+        case "find":
             let matrikel: matrikel1 = {
                 matrikel: parseInt(query["matrikel"])
                 };

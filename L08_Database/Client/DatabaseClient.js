@@ -12,7 +12,7 @@ var DatabaseClient;
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
         //Eventlistener
-        findButton.addEventListener("click", findStudent);
+        findButton.addEventListener("click", find);
     }
     function insert(_event) {
         let inputs = document.getElementsByTagName("input");
@@ -27,7 +27,7 @@ var DatabaseClient;
         let query = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
-    function findStudent(_event) {
+    function find(_event) {
         let search = document.getElementById("find");
         let query = "command=find";
         query += "&matrikel=" + search.value;
