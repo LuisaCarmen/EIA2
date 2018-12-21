@@ -4,3 +4,7 @@
 
 body {background-color: black;}
 
+#continuestart {position: absolute;
+                color: white;
+                top: 10px;
+                left: 20px;}
