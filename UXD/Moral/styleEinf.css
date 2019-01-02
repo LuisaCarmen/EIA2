@@ -15,7 +15,7 @@ background {opacity: 2;
 	color: white;
 }
 
-h1{
+.schrift{
 	font-family:'Roboto', sans-serif;
 	font-size: 2.2em;
 	color: white;
@@ -56,5 +56,7 @@ h2{
                 color: white;
                 top: 31em;
                 left: 19em;}
-     
+                
+  
+   
 	
