@@ -1,8 +1,9 @@
-#Frage2 {max-width: 100%;
+#Frage1 {max-width: 100%;
              border: none; 
-             }
+             z-index: 30;}
 
-body {background-color: black;}
+body {background-color: black;
+       }
 
 #continue1 {color: transparent;
             position: absolute;
@@ -10,12 +11,32 @@ body {background-color: black;}
             bottom: -0.5em;
             right: 1em;
             font-size: 3em;
-            }
+              }
             
-            #back1 {color: transparent; 
+#back1 {color: transparent;
             position: absolute;
             z-index: 10;
             bottom: -0.5em;
             left: 1em;
             font-size: 3em;
             }
+            
+#bild1 {position: absolute;
+        left: 12em;
+        top: 4.4em;
+        max-width: 20%;
+        border-radius: 1em;}
+        
+        
+h2 {font-family: 'Waiting for the Sunrise', cursive;
+position: absolute;
+left: 40%;
+color: white;
+font-size: 2em;}
+
+div {font-family: 'Waiting for the Sunrise', cursive;
+position: absolute;
+left: 39%;
+color: white;
+font-size: 2em;
+top: 5em;}

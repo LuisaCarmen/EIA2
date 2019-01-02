@@ -20,3 +20,23 @@ body {background-color: black;
             left: 1em;
             font-size: 3em;
             }
+            
+#bild1 {position: absolute;
+        left: 9.7em;
+        top: 4.4em;
+        max-width: 25%;
+        border-radius: 1em;}
+        
+        
+h2 {font-family: 'Waiting for the Sunrise', cursive;
+position: absolute;
+left: 40%;
+color: white;
+font-size: 2em;}
+
+div {font-family: 'Waiting for the Sunrise', cursive;
+position: absolute;
+left: 39%;
+color: white;
+font-size: 2em;
+top: 5em;}
