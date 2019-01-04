@@ -3,3 +3,45 @@
              }
 
 body {background-color: black;}
+
+ h1 {color: white;
+        font-family: 'Waiting for the Sunrise', cursive;
+        position: absolute;
+        font-size: 6em;
+        left: 30%;
+        bottom: 60%;}
+        
+#gut {
+        font-family: 'Waiting for the Sunrise', cursive;
+        position: absolute;
+        font-size:1em;
+        left: 13%;
+        bottom: 25%;
+        font-weight: bold;}       
+        
+ #schlecht {
+        font-family: 'Waiting for the Sunrise', cursive;
+        position: absolute;
+        font-size: 1em;
+        right: 13%;
+        bottom: 20%;
+        font-weight: bold;}             
+        
+#klasse {font-family: 'Waiting for the Sunrise', cursive;
+        position: absolute;
+        font-weight: bold;
+        font-size: 2em;
+        color: black;
+        left: 23%;
+        top: 32%; }
+
+
+
+
+#schade {font-family: 'Waiting for the Sunrise', cursive;
+        position: absolute;
+        font-weight: bold;
+        font-size: 2em;
+        bottom: 7%;
+        right: 22%;
+        color:black;}

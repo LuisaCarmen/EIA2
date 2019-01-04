@@ -65,7 +65,7 @@ namespace Aufgabe9 {
 
   //Schneeflocken
     function snowflakes(): void {
-        for (let i: number = 0; i < 100; i++) {
+        for (let i: number = 0; i < 250; i++) {
             let x: number = Math.random() * crc2.canvas.width;
             let y: number = Math.random() * crc2.canvas.height;
             drawSnowflake(x, y);
@@ -146,13 +146,13 @@ namespace Aufgabe9 {
 
         crc2.fillStyle = "brown";
         crc2.strokeStyle = "brown";
-        crc2.lineWidth = 4;
+        crc2.lineWidth = 2;
 
         crc2.beginPath();
-        crc2.moveTo(_x + 5, _y + 7.5);
-        crc2.lineTo(_x - 5, _y + 7.5);
-        crc2.lineTo(_x - 5, _y - 12.5);
-        crc2.lineTo(_x + 5, _y - 12.5);
+        crc2.moveTo(_x + 5, _y + 9);
+        
+        
+      
         crc2.closePath();
         crc2.fill();
         crc2.stroke();
@@ -162,9 +162,9 @@ namespace Aufgabe9 {
         crc2.lineWidth = 1;
 
         crc2.beginPath();
-        crc2.moveTo(_x - 30, _y - 10);//linke ecke
-        crc2.lineTo(_x, _y - 80);//höhe
-        crc2.lineTo(_x + 30, _y - 10);//rechte ecke
+        crc2.moveTo(_x - 20, _y - 8);//linke ecke
+        crc2.lineTo(_x, _y - 70);//höhe
+        crc2.lineTo(_x + 20, _y - 8);//rechte ecke
         crc2.closePath();
         crc2.fill();
         crc2.stroke();
@@ -182,24 +182,24 @@ namespace Aufgabe9 {
     
     function sled(): void {
         
-        for (let i: number = 0; i < 2; i++) {
+   
             
             crc2.strokeStyle = "#8B4513";
             crc2.lineWidth = 4;
 
             crc2.beginPath();
-            crc2.moveTo((i * 100) + 100, 610);
-            crc2.lineTo((i * 100) + 130, 585); //unten
-            crc2.moveTo((i * 100) + 110, 602); //mittelinks
-            crc2.lineTo((i * 100) + 100, 590); //mittelinks
-            crc2.moveTo((i * 100) + 120, 594); //mitterechts
-            crc2.lineTo((i * 100) + 111, 581);
-            crc2.moveTo((i * 100) + 90, 598); //sitz
-            crc2.lineTo((i * 100) + 120, 573);
-            crc2.moveTo((i * 100) + 100, 610);
-            crc2.quadraticCurveTo((i * 100) + 80, 630, (i * 100) + 80, 575); //kurve
+            crc2.moveTo(100, 610);
+            crc2.lineTo(130, 585); //unten
+            crc2.moveTo(110, 602); //mittelinks
+            crc2.lineTo(100, 590); //mittelinks
+            crc2.moveTo( 120, 594); //mitterechts
+            crc2.lineTo(111, 581);
+            crc2.moveTo( 90, 598); //sitz
+            crc2.lineTo(120, 573);
+            crc2.moveTo(100, 610);
+            crc2.quadraticCurveTo( 80, 630, 80, 575); //kurve
             crc2.stroke();
-        }
+       
     }
 
     function sled2(): void {
@@ -231,22 +231,22 @@ namespace Aufgabe9 {
             crc2.lineWidth = 3;
 
             crc2.beginPath();
-            crc2.moveTo((i * 100) + 88, 595); //bein oberschenkel
-            crc2.lineTo((i * 100) + 107, 580); //
-            crc2.lineTo((i * 100) + 110, 560); //
-            crc2.lineTo((i * 100) + 85, 576); //länge arm links
-            crc2.moveTo((i * 100) + 110, 562); //arm rechts
-            crc2.lineTo((i * 100) + 80, 578); //arm links
-            crc2.moveTo((i * 100) + 90, 595); //armlang
-            crc2.lineTo((i * 100) + 99, 610); //bein unterschenkel
+            crc2.moveTo(88, 595); //bein oberschenkel
+            crc2.lineTo(107, 580); //
+            crc2.lineTo(110, 560); //
+            crc2.lineTo(85, 576); //länge arm links
+            crc2.moveTo(110, 562); //arm rechts
+            crc2.lineTo(80, 578); //arm links
+            crc2.moveTo(90, 595); //armlang
+            crc2.lineTo( 99, 610); //bein unterschenkel
             crc2.stroke();
 
             crc2.strokeStyle = "#000000";
             crc2.fillStyle = "#000000";
             crc2.lineWidth = 3;
             crc2.beginPath();
-            crc2.moveTo((i * 100) + 109, 570); //hals
-            crc2.arc((i * 100) + 105, 550, 6, 0, 2 * Math.PI); //kopf
+            crc2.moveTo( 109, 570); //hals
+            crc2.arc( 105, 550, 6, 0, 2 * Math.PI); //kopf
             crc2.fill();
             crc2.stroke();
         }
