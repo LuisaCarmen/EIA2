@@ -18,7 +18,7 @@
 
 <h2>Frage 2:</h2>
 
-<div>Eine ältere Dame braucht Hilfe, um mit ihrem Rollstuhl über einen Bordstein zu kommen. Wie reagierst du?</div>
+<div>Eine ältere Dame braucht Hilfe, um mit ihrem Rollstuhl über die Straße zu kommen. Wie reagierst du?</div>
  <img   src="Frageseite11.png" id="Frage1" >
   <img   src="menschen-im-alter.jpg" id="bild1" >
 
@@ -27,5 +27,341 @@
 <a id="continue1" href="https://luisacarmen.github.io/EIA2/UXD/Frage3/Frage3.html">Continue</a>
 
 <a id="back1" href="https://luisacarmen.github.io/EIA2/UXD/Frage1/Frage1.html">Continue</a>
+
+<!-- Auswahl A -->
+<style>
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: transparent;
+  top: -17em;
+  left: -1.8em;
+  
+  
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 800px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 70%;
+  left: 50%;
+  margin-left: -200px;
+}
+
+
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+</head>
+<body style="text-align:center">
+
+
+
+<div class="popup" onclick="myFunction()"><p id="AB">AB </p>
+  <span class="popuptext" id="myPopup">
+  
+            A: Ich schaue ob ihr jemand anders zur Hilfe kommt, wenn nicht, helfe ich ihr!
+             
+         
+             
+            <p class="schrift"> Auswählen:<input type="checkbox" name="Checkbox1" value="check1" id="check1"/></p>
+ 
+		
+  </span>
+</div>
+
+<script>
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+
+
+
+<!-- Auswahl B -->
+
+<style>
+.popup2 {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: transparent;
+  top: -18.5em;
+  left: 0em;
+  
+  
+}
+
+/* The actual popup */
+.popup2 .popuptext2 {
+  visibility: hidden;
+  width: 800px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 70%;
+  left: 0%;
+  margin-left: -250px;
+  
+}
+
+
+
+/* Toggle this class - hide and show the popup */
+.popup2 .show2 {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+</head>
+<body style="text-align:center">
+
+
+
+<div class="popup2" onclick="myFunction2()"><p id="AB">AB </p>
+  <span class="popuptext2" id="myPopup2">
+  
+            B: Ich gehe weiter, ich habe für so etwas meistens keine Zeit, irgendjemand wird ihr schon helfen!
+             
+           <p class="schrift">  Achtung, falls du diese Antwort wählst, 
+           könnte die alte Dame lange auf Hilfe warten und kommt vielleicht nicht sicher über die Straße.</p>
+             
+            <p class="schrift"> Trotzdem auswählen:<input type="checkbox" name="Checkbox1" value="check1" id="check1"/></p>
+ 
+		
+  </span>
+</div>
+
+<script>
+// When the user clicks on div, open the popup
+function myFunction2() {
+  var popup = document.getElementById("myPopup2");
+  popup.classList.toggle("show2");
+}
+</script>
+
+
+
+
+<!-- Auswahl C -->
+<style>
+.popup3 {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: transparent;
+  top: -18.5em;
+  left: 1.5em;
+  
+  
+}
+
+/* The actual popup */
+.popup3 .popuptext3 {
+  visibility: hidden;
+  width: 800px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 70%;
+  left: 0%;
+  margin-left: -400px;
+  
+}
+
+
+
+
+.popup3 .show3 {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+</head>
+<body style="text-align:center">
+
+
+
+<div class="popup3" onclick="myFunction3()"><p id="AB">AB </p>
+  <span class="popuptext3" id="myPopup3">
+  
+            C: Ich gehe sofort zu ihr und helfe natürlich!
+             
+          
+             
+            <p class="schrift">Auswählen:<input type="checkbox" name="Checkbox1" value="check1" id="check1"/></p>
+ 
+		
+  </span>
+</div>
+
+<script>
+// When the user clicks on div, open the popup
+function myFunction3() {
+  var popup = document.getElementById("myPopup3");
+  popup.classList.toggle("show3");
+}
+</script>
+
+
+
+
+
+
+
+<!-- Auswahl D-->
+
+<style>
+.popup4 {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: transparent;
+  top: -16.8em;
+  left: 3.5em;
+  
+  
+}
+
+/* The actual popup */
+.popup4 .popuptext4 {
+  visibility: hidden;
+  width: 800px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 70%;
+  left: 0%;
+  margin-left: -600px;
+  
+}
+
+
+
+/* Toggle this class - hide and show the popup */
+.popup4 .show4{
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+</head>
+<body style="text-align:center">
+
+
+
+<div class="popup4" onclick="myFunction4()"><p id="AB">AB </p>
+  <span class="popuptext4" id="myPopup4">
+  
+            D: Ich schaue ihr eine Weile lang zu, wenn sie es nicht alleine schaffen sollte, helfe ich ihr!
+             
+           
+              <p class="schrift">  Falls du diese Antwort wählst, 
+           könnte die alte Dame zu langsam sein und ein Auto kann sie erwischen.</p>
+            <p class="schrift">Auswählen:<input type="checkbox" name="Checkbox1" value="check1" id="check1"/></p>
+ 
+		
+  </span>
+</div>
+
+<script>
+// When the user clicks on div, open the popup
+function myFunction4() {
+  var popup = document.getElementById("myPopup4");
+  popup.classList.toggle("show4");
+}
+</script>
+
+
 </body>
 </html>
