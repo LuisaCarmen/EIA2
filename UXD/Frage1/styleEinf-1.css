@@ -1,0 +1,47 @@
+html{
+	background: url(background_1.png) no-repeat center center fixed;
+	background-size: cover;
+	text-align: center;
+}
+
+#logo{
+	width: 90%;
+	height: 30%;
+}
+
+.betont{
+	font-family: 'Waiting for the Sunrise', cursive;
+	font-size: 2.2em;
+	color: white;
+}
+
+h1{
+	font-family:'Roboto', sans-serif;
+	font-size: 2.2em;
+	color: white;
+}
+
+div{
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.9em;
+	color: white;
+	font-weight: lighter;
+	margin-left: 28%;
+	margin-right: 28%;
+	text-align: justify;
+	
+	
+}
+h2{
+	font-family: 'Waiting for the Sunrise', cursive;
+	font-size: 4.8em;
+	color: white;
+	animation: blink .4s linear infinite;
+}
+@keyframes blink {
+  0%   {color:white;}
+  50%   {color:red;}
+  100% {color: yellow;}
+}
+
+	

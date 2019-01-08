@@ -1,9 +1,8 @@
 html{
 	background: url(background_1.PNG) no-repeat center center fixed;
-	background-size: 100%;
+	background-size: cover;
 	text-align: center;
 }
-
 
 background {opacity: 2;
 	
@@ -58,4 +57,4 @@ h2{
                 left: 19em;}
                 
   
-   
+   #background {position: absolute;}
