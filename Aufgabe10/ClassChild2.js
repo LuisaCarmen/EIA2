@@ -1,0 +1,1 @@
+//# sourceMappingURL=ClassChild2.js.map
