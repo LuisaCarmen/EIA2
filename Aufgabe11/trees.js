@@ -1,8 +1,8 @@
 var aufgabe11;
 (function (aufgabe11) {
-    class Trees {
+    class Trees extends aufgabe11.DrawNotMove {
         draw() {
-            aufgabe11.crc2.fillStyle = "#brown";
+            aufgabe11.crc2.fillStyle = "brown";
             aufgabe11.crc2.strokeStyle = "brown";
             aufgabe11.crc2.lineWidth = 2;
             aufgabe11.crc2.beginPath();

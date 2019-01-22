@@ -2,11 +2,10 @@ namespace aufgabe11 {
     window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
     let fps: number = 25;
-    let snowflakes: Snow[] = [];
-    let child1: ChildPull[] = [];
-    let child2: ChildDrive[] = [];
-    let trees: Trees[] = [];
+   
     let imgData: ImageData;
+    
+    let everything: DrawNotMove[] = [];
 
     function init(_event: Event): void {
 
@@ -30,36 +29,25 @@ namespace aufgabe11 {
             snow.dx = Math.random() * 2 + 4;
             snow.color = "#FFFFFF";
 
-            snowflakes.push(snow);
+            everything.push(snow);
         }
 
 
 
 
 
-        for (let i: number = 0; i < 6; i++) {
-            let child: ChildPull = new ChildPull();
-            child.x = 0;
+        for (let i: number = 0; i < 10; i++) {
+            let child: Kids = new Kids();
+            child.x = 0;  
             child.y = Math.random() * 200 + 750;
             child.dx = Math.random() * 3;
             child.dy = - child.dx;
-
-            child1.push(child);
-
-        }
-
-
-        
-        for (let i: number = 0; i < 6; i++) {
-            let child: ChildDrive = new ChildDrive();
-            child.x = 360;
-            child.y = Math.random() * 0 + 750;
-            child.dx = Math.random() * 3 - 5;
-            child.dy = - child.dx;
-
-            child2.push(child);
+            child.state = "drive";
+            everything.push(child);
 
         }
+
+
 
         
 
@@ -75,7 +63,7 @@ namespace aufgabe11 {
             crc2.bezierCurveTo(120, 300, 600, 410, 350, 290);
 
             if (crc2.isPointInPath(tree.x, tree.y)) {
-                trees.push(tree);
+                everything.push(tree);
             }
             else {
                 i--;
@@ -174,32 +162,16 @@ namespace aufgabe11 {
 
 
     function update(): void {
-
         window.setTimeout(update, 1000 / fps);
         crc2.putImageData(imgData, 0, 0);
 
-        for (let i: number = 0; i < snowflakes.length; i++) {
-            let snow: Snow = snowflakes[i];
-            snow.move();
-            snow.draw();
+        for (let i: number = 0; i < everything.length; i++) {
+            everything[i].move();
+            everything[i].draw();
         }
 
-        for (let i: number = 0; i < 5; i++) {
-            let children1: ChildPull = child1[i];
-            children1.move();
-            children1.draw();
-        }
-        for (let i: number = 0; i < 4; i++) {
-            let children2: ChildDrive = child2[i];
-            children2.move();
-            children2.draw();
-        }
-
-        for (let i: number = 0; i < 8; i++) {
-            let tree: Trees = trees[i];
-            tree.draw();
-        }
-
+        
     }
+
 
 }

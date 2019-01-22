@@ -1,22 +1,16 @@
 namespace aufgabe11 {
-
-    export class DrawAll {
-        x: number;
-        y: number;
+    
+    
+    export class Move extends DrawNotMove {
+        
         dx: number;
         dy: number;
         color: string;
-
-
-
-        draw(): void {
-
-        }
-
         move(): void {
-
+            
+            super.move();
+            this.x += this.dx;
+            this.y += this.dy;
         }
-
-      
     }
 }

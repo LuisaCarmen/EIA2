@@ -1,11 +1,10 @@
 var aufgabe11;
 (function (aufgabe11) {
-    class Snow {
+    class Snow extends aufgabe11.Move {
         move() {
+            super.move();
             this.dy = 2;
             this.dx = Math.random() * 4 - 2;
-            this.x += this.dx;
-            this.y += this.dy;
             if (this.y > 600) {
                 this.y = 0;
             }

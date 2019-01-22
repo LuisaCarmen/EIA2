@@ -1,13 +1,11 @@
 namespace aufgabe11 {
-    export class Trees  {
-        x: number;
-        y: number;
-        color: string;
+    export class Trees  extends DrawNotMove {
+      
  
         draw(): void {
 
 
-            crc2.fillStyle = "#brown";
+            crc2.fillStyle = "brown";
             crc2.strokeStyle = "brown";
             crc2.lineWidth = 2;
 
