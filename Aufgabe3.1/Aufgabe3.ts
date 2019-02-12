@@ -10,7 +10,7 @@ namespace Aufgabe3aufgabe {
 
 
      
-        interface Cards {
+        interface Cards { 
             color: string;
             cardname: string;
         }

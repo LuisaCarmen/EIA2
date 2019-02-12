@@ -4,7 +4,6 @@ var aufgabe10;
     let fps = 25;
     let snowflakes = [];
     let child1 = [];
-    let child2 = [];
     let imgData;
     function init(_event) {
         let canvas = document.getElementsByTagName("canvas")[0];
@@ -16,7 +15,7 @@ var aufgabe10;
         cloud2();
         cloud3();
         trees();
-        imgData = aufgabe10.crc2.getImageData(0, 0, 700, 1100);
+        imgData = aufgabe10.crc2.getImageData(0, 0, 500, 800);
         for (let i = 0; i < 50; i++) {
             let snow = new aufgabe10.Snow();
             snow.x = Math.random() * aufgabe10.crc2.canvas.width;
@@ -25,49 +24,31 @@ var aufgabe10;
             snow.color = "#FFFFFF";
             snowflakes.push(snow);
         }
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 5; i++) {
             let children1 = new aufgabe10.Child1();
-            children1.x = (Math.random() * aufgabe10.crc2.canvas.width);
-            children1.y = (Math.random() * aufgabe10.crc2.canvas.height);
-            children1.dx = Math.random() * 2 - 4;
-            children1.dy = Math.random() * 2 + 4;
+            children1.x = 600;
+            children1.y = Math.random() * +800;
+            children1.dx = Math.random() * 1 - 4;
+            children1.dy = -children1.dx;
             child1.push(children1);
-        }
-        for (let i = 0; i < 8; i++) {
-            let children2 = new aufgabe10.Child2();
-            children2.x = Math.random() * aufgabe10.crc2.canvas.width;
-            children2.y = Math.random() * aufgabe10.crc2.canvas.height;
-            children2.dx = Math.random() * 4 - 2;
-            children2.dy = Math.random() * 4 + 2;
-            child2.push(children2);
         }
         update();
     }
-    //Himmel
     function sky() {
         aufgabe10.crc2.fillStyle = "#58D3F7";
+        aufgabe10.crc2.fillRect(0, 0, aufgabe10.crc2.canvas.width, 110);
         aufgabe10.crc2.beginPath();
-        aufgabe10.crc2.moveTo(0, 800);
-        aufgabe10.crc2.bezierCurveTo(0, 550, 220, 200, 810, 150);
-        aufgabe10.crc2.lineTo(500, 0);
-        aufgabe10.crc2.lineTo(0, 0);
+        aufgabe10.crc2.moveTo(0, 110);
+        aufgabe10.crc2.lineTo(0, 400);
+        aufgabe10.crc2.lineTo(500, 110);
         aufgabe10.crc2.closePath();
-        aufgabe10.crc2.lineWidth = 2;
-        aufgabe10.crc2.stroke();
         aufgabe10.crc2.fill();
     }
     //Rodelhang
     function hill() {
-        aufgabe10.crc2.fillStyle = "#ffffff";
-        aufgabe10.crc2.strokeStyle = "#ffffff";
         aufgabe10.crc2.beginPath();
-        aufgabe10.crc2.moveTo(0, 500);
-        aufgabe10.crc2.bezierCurveTo(170, 400, 250, 310, 460, 230);
-        aufgabe10.crc2.lineTo(360, 800);
-        aufgabe10.crc2.lineTo(0, 1000);
+        aufgabe10.crc2.moveTo(200, 800);
         aufgabe10.crc2.closePath();
-        aufgabe10.crc2.lineWidth = 2;
-        aufgabe10.crc2.stroke();
         aufgabe10.crc2.fill();
     }
     //Sonne links oben
@@ -117,8 +98,8 @@ var aufgabe10;
             let x = Math.random() * aufgabe10.crc2.canvas.width;
             let y = Math.random() * aufgabe10.crc2.canvas.height;
             aufgabe10.crc2.beginPath();
-            aufgabe10.crc2.moveTo(0, 500);
-            aufgabe10.crc2.bezierCurveTo(110, 500, 220, 410, 360, 330);
+            aufgabe10.crc2.moveTo(0, 600);
+            aufgabe10.crc2.bezierCurveTo(25, 205, 505, 370, 290, 230);
             if (aufgabe10.crc2.isPointInPath(x, y)) {
                 drawTrees(x, y);
             }
@@ -137,8 +118,8 @@ var aufgabe10;
         aufgabe10.crc2.fill();
         aufgabe10.crc2.stroke();
         aufgabe10.crc2.fillStyle = "green";
-        aufgabe10.crc2.strokeStyle = "green";
-        aufgabe10.crc2.lineWidth = 1;
+        aufgabe10.crc2.strokeStyle = "#006400";
+        aufgabe10.crc2.lineWidth = 3;
         aufgabe10.crc2.beginPath();
         aufgabe10.crc2.moveTo(_x - 20, _y - 8); //linke ecke
         aufgabe10.crc2.lineTo(_x, _y - 70); //höhe
@@ -158,15 +139,10 @@ var aufgabe10;
             snow.move();
             snow.draw();
         }
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < child1.length; i++) {
             let children1 = child1[i];
             children1.move();
             children1.draw();
-        }
-        for (let i = 0; i < 5; i++) {
-            let children2 = child2[i];
-            children2.move();
-            children2.draw();
         }
     }
 })(aufgabe10 || (aufgabe10 = {}));

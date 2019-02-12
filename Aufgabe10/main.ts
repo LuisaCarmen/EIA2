@@ -4,8 +4,10 @@ namespace aufgabe10 {
     let fps: number = 25;
     let snowflakes: Snow[] = [];
     let child1: Child1[] = [];
-    let child2: Child2[] = [];
     let imgData: ImageData;
+   
+    
+ 
 
 
     function init(_event: Event): void {
@@ -21,7 +23,7 @@ namespace aufgabe10 {
         cloud3();
         trees();
 
-        imgData = crc2.getImageData(0, 0, 700, 1100);
+        imgData = crc2.getImageData(0, 0, 500, 800);
 
         for (let i: number = 0; i < 50; i++) {
             let snow: Snow = new Snow();
@@ -33,25 +35,20 @@ namespace aufgabe10 {
             snowflakes.push(snow);
         }
 
-        for (let i: number = 0; i < 8; i++) {
+
+
+        for (let i: number = 0; i < 5; i++) {
             let children1: Child1 = new Child1();
-            children1.x = (Math.random() * crc2.canvas.width);
-            children1.y = (Math.random() * crc2.canvas.height);
-            children1.dx = Math.random() * 2- 4;
-            children1.dy = Math.random() *2 + 4;
+            children1.x = 600;
+            children1.y = Math.random() * + 800;
+            children1.dx = Math.random() * 1 - 4;
+            children1.dy = - children1.dx;
 
             child1.push(children1);
+
         }
 
-        for (let i: number = 0; i < 8; i++) {
-            let children2: Child2 = new Child2();
-            children2.x = Math.random() * crc2.canvas.width;
-            children2.y = Math.random() * crc2.canvas.height;
-            children2.dx = Math.random() * 4 - 2;
-            children2.dy = Math.random() * 4 + 2;
 
-            child2.push(children2);
-        }
 
 
         update();
@@ -59,37 +56,30 @@ namespace aufgabe10 {
 
 
 
+   
 
-    //Himmel
+
     function sky(): void {
-
         crc2.fillStyle = "#58D3F7";
-        crc2.beginPath();
-        crc2.moveTo(0, 800);
-        crc2.bezierCurveTo(0, 550, 220, 200, 810, 150);
-        crc2.lineTo(500, 0);
-        crc2.lineTo(0, 0);
-        crc2.closePath();
-        crc2.lineWidth = 2;
-        crc2.stroke();
-        crc2.fill();
+        crc2.fillRect(0, 0, crc2.canvas.width, 110);
 
+        crc2.beginPath();
+        crc2.moveTo(0, 110);
+        crc2.lineTo(0, 400);
+        crc2.lineTo(500, 110);
+        crc2.closePath();
+
+        crc2.fill();
     }
 
     //Rodelhang
     function hill(): void {
 
-        crc2.fillStyle = "#ffffff";
-        crc2.strokeStyle = "#ffffff";
         crc2.beginPath();
-        crc2.moveTo(0, 500);
-        crc2.bezierCurveTo(170, 400, 250, 310, 460, 230);
-        crc2.lineTo(360, 800);
-        crc2.lineTo(0, 1000);
+        crc2.moveTo(200, 800);
         crc2.closePath();
-        crc2.lineWidth = 2;
-        crc2.stroke();
         crc2.fill();
+
     }
 
     //Sonne links oben
@@ -149,8 +139,8 @@ namespace aufgabe10 {
             let y: number = Math.random() * crc2.canvas.height;
 
             crc2.beginPath();
-            crc2.moveTo(0, 500);
-            crc2.bezierCurveTo(110, 500, 220, 410, 360, 330);
+            crc2.moveTo(0, 600);
+            crc2.bezierCurveTo(25, 205, 505, 370, 290, 230);
 
             if (crc2.isPointInPath(x, y)) {
                 drawTrees(x, y);
@@ -178,8 +168,8 @@ namespace aufgabe10 {
         crc2.stroke();
 
         crc2.fillStyle = "green";
-        crc2.strokeStyle = "green";
-        crc2.lineWidth = 1;
+        crc2.strokeStyle = "#006400";
+        crc2.lineWidth = 3;
 
         crc2.beginPath();
         crc2.moveTo(_x - 20, _y - 8); //linke ecke
@@ -211,18 +201,23 @@ namespace aufgabe10 {
             snow.draw();
         }
 
-        for (let i: number = 0; i < 5; i++) {
+        for (let i: number = 0; i < child1.length; i++) {
             let children1: Child1 = child1[i];
             children1.move();
             children1.draw();
         }
-        for (let i: number = 0; i < 5; i++) {
-            let children2: Child2 = child2[i];
-            children2.move();
-            children2.draw();
-        }
+
+
+        
+
+
 
 
     }
+
+
+
+
+
 
 }

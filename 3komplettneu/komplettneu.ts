@@ -10,32 +10,32 @@ namespace Aufgabe3NEU {
     document.addEventListener("DOMContentLoaded", mainFunction);
     document.addEventListener("keydown", drawWithSpace);
 
-    interface unoCards {
+    interface UNOcards {
         color: string;
         value: string;
     }
 
     let color: string[] = ["yellow", "red", "blue", "green"];
     let cardName: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "+2", "time out", "retour"];
-    let allCards: unoCards[] = [{ color: "yellow", value: "0" }, { color: "red", value: "0" }, { color: "blue", value: "green" }, { color: "yellow", value: "0" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }];
-    let cardTray: unoCards[] = [];
-    let playerCards: unoCards[] = [];
+    let allCards: UNOcards[] = [{ color: "yellow", value: "0" }, { color: "red", value: "0" }, { color: "blue", value: "green" }, { color: "yellow", value: "0" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "+4" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }, { color: "black", value: "wish" }];
+    let cardTray: UNOcards[] = [];
+    let playerCards: UNOcards[] = [];
 
     for (let cardNum: number = 0; cardNum < color.length; cardNum++) {                               //Wenn Nummer kleiner als die Länge des Arrays color ist, addiere +1 und gehe weiter im Array
         for (let nameNum: number = 0; nameNum < cardName.length; nameNum++) {                        //Wenn Nummer kleiner als die Länge des Arrays cardName ist, addiere +1 und gehe weiter im Array
             for (let arrayAllCards: number = 0; arrayAllCards < 2; arrayAllCards++) {                //Wenn die Anzahl von Werten kleiner ist als 2, addiere +1 und gehe weiter im Array
-                let card: unoCards = { color: color[cardNum], value: cardName[nameNum] };            //Es gibt color und value einen Wert, fasst es als Karte zusammen und gibt es zurück (push) in das AllCards array
+                let card: UNOcards = { color: color[cardNum], value: cardName[nameNum] };            //Es gibt color und value einen Wert, fasst es als Karte zusammen und gibt es zurück (push) in das AllCards array
                 allCards.push(card);
             }
         }
     }
     console.log(allCards);
 
-    
+
 
     function mainFunction(): void {
-        
-     //Zufällige Auswahl von Karten   
+
+        //Zufällige Auswahl von Karten   
         let numberOfCards: number;
         let promptText: string = prompt("Please type in with how many cards you would like to play! (maximum of 7)");
         numberOfCards = Number(promptText);
@@ -50,11 +50,11 @@ namespace Aufgabe3NEU {
 
         chooseRandomCards(numberOfCards);
         showMyCards();
-        
-        
-        
-        
-      //Event Listener für sortieren und Karte vom Stapel ziehen
+
+
+
+
+        //Event Listener für sortieren und Karte vom Stapel ziehen
         let button: HTMLElement = document.getElementById("buttonhtml");
         button.addEventListener("click", sortCards);
 
@@ -63,7 +63,7 @@ namespace Aufgabe3NEU {
 
     }
 
-     //Funktion zur zufälligen Auswahl von Karten
+    //Funktion zur zufälligen Auswahl von Karten
     function chooseRandomCards(_displayCard: number): void {
         for (let displayCard: number = _displayCard; displayCard > 0; displayCard--) {           //Löscht eine Karte wenn displayCard größer als 0 ist, bei jedem Durchlauf.
             let randomCards: number = Math.floor(Math.random() * (allCards.length - 1));         //Karte wird zufällig ausgewählt und aus AllCards entfernt
@@ -114,15 +114,15 @@ namespace Aufgabe3NEU {
         div.innerHTML = playerCards[index].value;
         div.classList.add(playerCards[index].color);
         playerCards.splice(index, 1);
-         showMyCards();
+        showMyCards();
     }
 
 
-  //Funktion Karten nach Farbe sortieren
+    //Funktion Karten nach Farbe sortieren
     function sortCards(): void {
         console.log(playerCards);
         document.getElementById("playerCardshtml").innerHTML = "";
-       playerCards.sort(function(one: unoCards, two: unoCards): number {
+        playerCards.sort(function(one: UNOcards, two: UNOcards): number {
             if (one.color > two.color) {
                 return 1;
             }
