@@ -5,14 +5,36 @@ namespace aufgabe10 {
     let snowflakes: Snow[] = [];
     let child1: Child1[] = [];
     let imgData: ImageData;
-   
-    
- 
+    let snowballs: Snowball1[] = [];
+    let score: number = 0;
 
 
-    function init(_event: Event): void {
+
+    function init(): void {
+
+        child1 = [];
+        snowballs = [];
+
+        document.getElementsByTagName("canvas")[0].style.display = "none";
+        document.getElementById("score").style.display = "none";
+        document.getElementsByTagName("div")[0].style.display = "initial";
+        document.getElementById("start").addEventListener("click", main);
+    }
+
+
+
+    function main(_event: Event): void {
+
+        score = 0;
+        document.getElementsByTagName("div")[0].style.display = "none";
+        document.getElementById("score").style.display = "initial";
+        document.getElementsByTagName("canvas")[0].style.display = "initial";
+
 
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+
+        canvas.addEventListener("click", throwSnowball);
+
         crc2 = canvas.getContext("2d");
 
         sky();
@@ -25,6 +47,11 @@ namespace aufgabe10 {
 
         imgData = crc2.getImageData(0, 0, 500, 800);
 
+
+        for (let i: number = 0; i < 5; i++) {
+            createChild();
+        }
+
         for (let i: number = 0; i < 50; i++) {
             let snow: Snow = new Snow();
             snow.x = Math.random() * crc2.canvas.width;
@@ -33,20 +60,14 @@ namespace aufgabe10 {
             snow.color = "#FFFFFF";
 
             snowflakes.push(snow);
-        }
 
-
-
-        for (let i: number = 0; i < 5; i++) {
-            let children1: Child1 = new Child1();
-            children1.x = 600;
-            children1.y = Math.random() * + 800;
-            children1.dx = Math.random() * 1 - 4;
-            children1.dy = - children1.dx;
-
-            child1.push(children1);
+            
 
         }
+
+
+
+
 
 
 
@@ -55,8 +76,30 @@ namespace aufgabe10 {
     }
 
 
+    function createChild(): void {
+        for (let i: number = 0; i < 1; i++) {
+            let children1: Child1 = new Child1();
+            children1.x = 600;
+            children1.y = Math.random() * + 800;
+            children1.dx = Math.random() * 1 - 2.5;
+            children1.dy = - children1.dx;
+            children1.state = "ridedown";
+            child1.push(children1);
 
-   
+        }
+    }
+
+
+    function throwSnowball(_event: MouseEvent): void {
+        let x: number = _event.clientX;
+        let y: number = _event.clientY;
+        let ball: Snowball1 = new Snowball1();
+        ball.x = x;
+        ball.y = y;
+        ball.timer = 25;
+        snowballs.push(ball);
+    }
+
 
 
     function sky(): void {
@@ -208,16 +251,53 @@ namespace aufgabe10 {
         }
 
 
-        
 
+        for (let i: number = 0; i < child1.length; i++) {
+            child1[i].move();
+            child1[i].draw();
+            if (child1[i].x < -10 || child1[i].y > (crc2.canvas.height + 10)) {
+                child1.splice(i, 1);
+                createChild();
+                console.log("length:" + child1.length);
+            }
+        }
+
+
+
+        for (let i: number = 0; i < snowballs.length; i++) {
+            if (snowballs[i].timer > 0) {
+                snowballs[i].draw();
+                //snowballs[i].checkIfHit(childrenArray[i].x, childrenArray[i].y);
+            }
+            else {
+                if (snowballs[i].timer == 0) {
+                    snowballs[i].draw();
+                    console.log("timer:" + snowballs[i].timer);
+                    for (let i2: number = 0; i2 < child1.length; i2++) {
+                        console.log("TASDGFSDF:" + Child1.length);
+                        if (snowballs[i].checkIfHit(child1[i2].x, child1[i2].y) == true && child1[i2].state == "ridedown") {
+                            child1[i2].state = "dead";
+                            score += child1[i2].getSpeed() * 10;
+                            console.log("score:" + score);
+                        }
+                        else {
+                            console.log("else");
+                        }
+                    }
+                }
+
+            }
+
+
+
+
+
+        }
+
+
+        document.getElementById("score").innerText = score.toString();
 
 
 
     }
-
-
-
-
-
-
 }

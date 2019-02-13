@@ -5,8 +5,23 @@ var aufgabe10;
     let snowflakes = [];
     let child1 = [];
     let imgData;
-    function init(_event) {
+    let snowballs = [];
+    let score = 0;
+    function init() {
+        child1 = [];
+        snowballs = [];
+        document.getElementsByTagName("canvas")[0].style.display = "none";
+        document.getElementById("score").style.display = "none";
+        document.getElementsByTagName("div")[0].style.display = "initial";
+        document.getElementById("start").addEventListener("click", main);
+    }
+    function main(_event) {
+        score = 0;
+        document.getElementsByTagName("div")[0].style.display = "none";
+        document.getElementById("score").style.display = "initial";
+        document.getElementsByTagName("canvas")[0].style.display = "initial";
         let canvas = document.getElementsByTagName("canvas")[0];
+        canvas.addEventListener("click", throwSnowball);
         aufgabe10.crc2 = canvas.getContext("2d");
         sky();
         hill();
@@ -16,6 +31,9 @@ var aufgabe10;
         cloud3();
         trees();
         imgData = aufgabe10.crc2.getImageData(0, 0, 500, 800);
+        for (let i = 0; i < 5; i++) {
+            createChild();
+        }
         for (let i = 0; i < 50; i++) {
             let snow = new aufgabe10.Snow();
             snow.x = Math.random() * aufgabe10.crc2.canvas.width;
@@ -24,15 +42,27 @@ var aufgabe10;
             snow.color = "#FFFFFF";
             snowflakes.push(snow);
         }
-        for (let i = 0; i < 5; i++) {
+        update();
+    }
+    function createChild() {
+        for (let i = 0; i < 1; i++) {
             let children1 = new aufgabe10.Child1();
             children1.x = 600;
             children1.y = Math.random() * +800;
-            children1.dx = Math.random() * 1 - 4;
+            children1.dx = Math.random() * 1 - 2.5;
             children1.dy = -children1.dx;
+            children1.state = "ridedown";
             child1.push(children1);
         }
-        update();
+    }
+    function throwSnowball(_event) {
+        let x = _event.clientX;
+        let y = _event.clientY;
+        let ball = new aufgabe10.Snowball1();
+        ball.x = x;
+        ball.y = y;
+        ball.timer = 25;
+        snowballs.push(ball);
     }
     function sky() {
         aufgabe10.crc2.fillStyle = "#58D3F7";
@@ -144,6 +174,38 @@ var aufgabe10;
             children1.move();
             children1.draw();
         }
+        for (let i = 0; i < child1.length; i++) {
+            child1[i].move();
+            child1[i].draw();
+            if (child1[i].x < -10 || child1[i].y > (aufgabe10.crc2.canvas.height + 10)) {
+                child1.splice(i, 1);
+                createChild();
+                console.log("length:" + child1.length);
+            }
+        }
+        for (let i = 0; i < snowballs.length; i++) {
+            if (snowballs[i].timer > 0) {
+                snowballs[i].draw();
+            }
+            else {
+                if (snowballs[i].timer == 0) {
+                    snowballs[i].draw();
+                    console.log("timer:" + snowballs[i].timer);
+                    for (let i2 = 0; i2 < child1.length; i2++) {
+                        console.log("TASDGFSDF:" + aufgabe10.Child1.length);
+                        if (snowballs[i].checkIfHit(child1[i2].x, child1[i2].y) == true && child1[i2].state == "ridedown") {
+                            child1[i2].state = "dead";
+                            score += child1[i2].getSpeed() * 10;
+                            console.log("score:" + score);
+                        }
+                        else {
+                            console.log("else");
+                        }
+                    }
+                }
+            }
+        }
+        document.getElementById("score").innerText = score.toString();
     }
 })(aufgabe10 || (aufgabe10 = {}));
 //# sourceMappingURL=main.js.map

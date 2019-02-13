@@ -2,6 +2,8 @@ namespace aufgabe10 {
 
 
     export class Child1 {
+
+        state: string;
         x: number;
         y: number;
         dx: number;
@@ -10,7 +12,25 @@ namespace aufgabe10 {
 
 
 
-         draw(): void {
+        getSpeed(): number {
+            return Math.floor(this.dx * this.dy * -12);
+        }
+
+
+        draw(): void {
+
+            if (this.state == "ridedown") {
+                this.drawChild();
+            }
+
+            if (this.state == "dead") {
+                this.drawSled();
+            }
+        }
+
+
+
+        drawSled(): void {
 
             crc2.strokeStyle = "brown";
             crc2.lineWidth = 3;
@@ -26,6 +46,27 @@ namespace aufgabe10 {
 
             crc2.strokeStyle = "#000000";
             crc2.lineWidth = 3;
+
+        }
+
+
+
+        drawChild(): void {
+
+
+
+            crc2.strokeStyle = "brown";
+            crc2.lineWidth = 3;
+            crc2.beginPath();
+            crc2.moveTo(this.x, this.y);
+            crc2.lineTo(this.x + 30, this.y - 30);
+            crc2.moveTo(this.x, this.y);
+            crc2.quadraticCurveTo(this.x - 30, this.y + 20, this.x - 20, this.y - 10);
+            crc2.stroke();
+            crc2.strokeStyle = "#000000";
+            crc2.lineWidth = 3;
+
+
 
             crc2.beginPath();
             crc2.moveTo(this.x, this.y);
@@ -55,9 +96,10 @@ namespace aufgabe10 {
                 this.y = Math.random() * 250 + 150;
             }
             this.draw();
-        
-          
+
+
         }
+
 
 
 

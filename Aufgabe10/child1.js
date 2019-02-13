@@ -1,7 +1,30 @@
 var aufgabe10;
 (function (aufgabe10) {
     class Child1 {
+        getSpeed() {
+            return Math.floor(this.dx * this.dy * -12);
+        }
         draw() {
+            if (this.state == "ridedown") {
+                this.drawChild();
+            }
+            if (this.state == "dead") {
+                this.drawSled();
+            }
+        }
+        drawSled() {
+            aufgabe10.crc2.strokeStyle = "brown";
+            aufgabe10.crc2.lineWidth = 3;
+            aufgabe10.crc2.beginPath();
+            aufgabe10.crc2.moveTo(this.x, this.y);
+            aufgabe10.crc2.lineTo(this.x + 30, this.y - 30);
+            aufgabe10.crc2.moveTo(this.x, this.y);
+            aufgabe10.crc2.quadraticCurveTo(this.x - 30, this.y + 20, this.x - 20, this.y - 10);
+            aufgabe10.crc2.stroke();
+            aufgabe10.crc2.strokeStyle = "#000000";
+            aufgabe10.crc2.lineWidth = 3;
+        }
+        drawChild() {
             aufgabe10.crc2.strokeStyle = "brown";
             aufgabe10.crc2.lineWidth = 3;
             aufgabe10.crc2.beginPath();
