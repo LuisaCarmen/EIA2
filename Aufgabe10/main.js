@@ -31,7 +31,7 @@ var aufgabe10;
         cloud3();
         trees();
         imgData = aufgabe10.crc2.getImageData(0, 0, 500, 800);
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 8; i++) {
             createChild();
         }
         for (let i = 0; i < 50; i++) {
@@ -45,15 +45,13 @@ var aufgabe10;
         update();
     }
     function createChild() {
-        for (let i = 0; i < 1; i++) {
-            let children1 = new aufgabe10.Child1();
-            children1.x = 600;
-            children1.y = Math.random() * +800;
-            children1.dx = Math.random() * 1 - 2.5;
-            children1.dy = -children1.dx;
-            children1.state = "ridedown";
-            child1.push(children1);
-        }
+        let children1 = new aufgabe10.Child1();
+        children1.x = 600;
+        children1.y = Math.random() * +800;
+        children1.dx = Math.random() * 1 - 2.5;
+        children1.dy = -children1.dx;
+        children1.state = "ridedown";
+        child1.push(children1);
     }
     function throwSnowball(_event) {
         let x = _event.clientX;

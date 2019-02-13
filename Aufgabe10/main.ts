@@ -48,7 +48,7 @@ namespace aufgabe10 {
         imgData = crc2.getImageData(0, 0, 500, 800);
 
 
-        for (let i: number = 0; i < 5; i++) {
+        for (let i: number = 0; i < 8; i++) {
             createChild();
         }
 
@@ -77,7 +77,7 @@ namespace aufgabe10 {
 
 
     function createChild(): void {
-        for (let i: number = 0; i < 1; i++) {
+        
             let children1: Child1 = new Child1();
             children1.x = 600;
             children1.y = Math.random() * + 800;
@@ -86,7 +86,7 @@ namespace aufgabe10 {
             children1.state = "ridedown";
             child1.push(children1);
 
-        }
+        
     }
 
 
