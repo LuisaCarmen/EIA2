@@ -390,11 +390,11 @@ namespace aufgabe10 {
                     }
                 }
 
-                if (snowballs.length < 2) {
+                if (snowballs.length < 25) {
                     document.getElementById("balls").innerHTML = "Snowball amount:" + ballCount.toString() + "";
 
                 }
-                if (snowballs.length > 2) {
+                if (snowballs.length > 25) {
                     endscreen();
 
                 }

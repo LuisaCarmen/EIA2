@@ -73,12 +73,9 @@
             let scores: number[] = [];
             let dataArray: StudentData[] = JSON.parse(xhr.response);
             dataArray.sort(playerDataSort);
-            let helpString: string = "";
-            for (let i: number = 0; i < 10; i++) {
-                let place: number = 1 + i;
-
-                helpString += "<h3>" + place + ". " + dataArray[i].name + " | Score:" + dataArray[i].score + "<br>";
+            for (let i: number = 0; i < dataArray.length; i++) {
+                console.log(dataArray[i].name);
+                output.innerHTML += "<p id='showScores'><strong>Name: </strong>" + dataArray[i].name + "<br><strong>Score: </strong>" + dataArray[i].score + "</p>";
             }
-            output.innerHTML = helpString;
         }
     }
