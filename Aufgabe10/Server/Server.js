@@ -27,7 +27,7 @@ function handleRequest(_request, _response) {
                 name: query["name"],
                 score: parseInt(query["score"]) };
             Database.insert(student);
-            respond(_response, "storing data");
+            respond(_response, "Please refresh your window and click on Highscore-List to see how good you are.");
             break;
         case "refresh":
             Database.findAll(findCallback);
