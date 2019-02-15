@@ -29,7 +29,7 @@ var aufgabe10;
         document.getElementById("retry").style.display = "none";
         document.getElementById("highscore").style.display = "none";
         document.getElementById("refresh").style.display = "none";
-        document.getElementById("erklarung").style.display = "none";
+        document.getElementById("text").style.display = "none";
         document.getElementById("start").style.display = "none";
         document.getElementById("score").style.display = "initial";
         document.getElementById("malus").style.display = "initial";
@@ -161,7 +161,7 @@ var aufgabe10;
         children1.y = Math.random() * +800;
         children1.dx = Math.random() * 1 - 2.5;
         children1.dy = -children1.dx;
-        children1.state = "ridedown";
+        children1.state = "down";
         child1.push(children1);
     }
     function throwSnowball(_event) {
@@ -203,7 +203,7 @@ var aufgabe10;
         document.getElementsByTagName("div")[0].style.display = "none";
         document.getElementById("endscreen").style.display = "initial";
         document.getElementById("malus").style.display = "none";
-        document.getElementById("Baelle").style.display = "none";
+        document.getElementById("balls").style.display = "none";
         document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
         document.getElementById("refresh").addEventListener("click", highscores);
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
@@ -221,7 +221,7 @@ var aufgabe10;
     function update() {
         if (document.getElementsByTagName("canvas")[0].getAttribute("style") == "display: initial;") {
             let ballCount = snowballs.length;
-            document.getElementById("Baelle").innerHTML = "Snowball amount:" + ballCount.toString() + "";
+            document.getElementById("balls").innerHTML = "Snowball amount:" + ballCount.toString() + "";
             window.setTimeout(update, 1000 / fps);
             aufgabe10.crc2.putImageData(imgData, 0, 0);
             document.getElementById("score").innerText = score.toString();
@@ -251,23 +251,18 @@ var aufgabe10;
                 else if (snowballs[i].timer == 0) {
                     snowballs[i].draw();
                     for (let i2 = 0; i2 < child1.length; i2++) {
-                        if (snowballs[i].checkIfHit(child1[i2].x, child1[i2].y) == true && child1[i2].state == "ridedown") {
-                            score += child1[i2].getSpeed() * 10;
-                            child1[i2].state = "dead";
-                            console.log("hit");
+                        if (snowballs[i].checkIfHit(child1[i2].x, child1[i2].y) == true && child1[i2].state == "down") {
+                            score += child1[i2].calculateSpeed() * 10;
+                            child1[i2].state = "shot";
                         }
-                        if (snowballs[i].checkIfHitUp(child1[i2].x, child1[i2].y) == true && child1[i2].state == "pullup") {
-                            score += child1[i2].getSpeed() * 10;
-                            child1[i2].state = "dead";
-                            console.log("hit");
-                        }
-                        else {
-                            console.log("else");
+                        if (snowballs[i].checkIfHitUp(child1[i2].x, child1[i2].y) == true && child1[i2].state == "up") {
+                            score += child1[i2].calculateSpeed() * 10;
+                            child1[i2].state = "shot";
                         }
                     }
                 }
                 if (snowballs.length < 2) {
-                    document.getElementById("Baelle").innerHTML = "Snowball amount:" + ballCount.toString() + "";
+                    document.getElementById("balls").innerHTML = "Snowball amount:" + ballCount.toString() + "";
                 }
                 if (snowballs.length > 2) {
                     endscreen();

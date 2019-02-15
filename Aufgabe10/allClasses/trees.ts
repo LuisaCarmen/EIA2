@@ -1,5 +1,6 @@
 namespace aufgabe10 {
-    export class Tree extends NotMoving{
+    export class Tree extends NotMoving {
+        
         
  
         draw(): void {

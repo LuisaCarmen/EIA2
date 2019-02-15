@@ -4,56 +4,66 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="style.css">
 
-<script src="allClasses/child1.js" type="text/javascript" charset="utf-8"></script>
-<script src="allClasses/snowball.js" type="text/javascript" charset="utf-8"></script>
-<script src="allClasses/NotMoving.js" type="text/javascript" charset="utf-8"></script>
-<script src="allClasses/Moving.js" type="text/javascript" charset="utf-8"></script>
+<script src="allClasses/child1.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="allClasses/snowball.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="allClasses/NotMoving.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="allClasses/Moving.js" type="text/javascript"
+	charset="utf-8"></script>
 <script src="allClasses/snow.js" type="text/javascript" charset="utf-8"></script>
 <script src="main.js" type="text/javascript" charset="utf-8"></script>
-<script src="Client/DatabaseClient.js" type="text/javascript" charset="utf-8"></script>
+<script src="Client/DatabaseClient.js" type="text/javascript"
+	charset="utf-8"></script>
 
 <title>Rodeln</title>
 </head>
 <body>
 
 
-<div id="mainscreen">
-<h1>SNOW SLOPE TERMINATOR</h1>
-	<p id="erklarung"> RULES <br>
-	You have 25 snowballs to hit as many kids off their sleds as you can. The faster the kids, the more points you'll get. Go wild! Don't forget to add your name to the highscore list at the end.</p>
+	<div id="mainscreen">
+		<h1>SNOW SLOPE TERMINATOR</h1>
+		<p id="text">
+			RULES <br> You have 25 snowballs to hit as many kids off their
+			sleds as you can. The faster the kids, the more points you'll get. Go
+			wild! Don't forget to add your name to the highscore list at the end.
+		</p>
 		<p id="start">Start Game</p>
 		<p id="refresh">Highscore-List</p>
-	
-</div>
+	</div>
 
-<div id="Baelle"></div>
-<p id="malus">Maluspunkte:</p>
-<p id="score"></p>
+	<div id="balls"></div>
+
+	<p id="malus">Maluspunkte:</p>
+
+	<p id="score"></p>
+
 	<div id="endscreen">
-		<p id="your">Your score</p>
+		<p>Your score</p>
 		<p id="endscore"></p>
+
 		<form>
-			
+
 			<fieldset>
-                <legend>Your name:</legend>
+				<legend>Your name:</legend>
 				<input name="text" placeholder="Type in your name" id="textInput"></input>
 			</fieldset>
-			
-			
+
 			<p id="insert">Send</p>
 		</form>
-
-
 	</div>
+
+
 	<p id="retry">PLAY</p>
-	
+
 	<div id="highscore">
 		<p>Highscore-List</p>
 		<div id="scores"></div>
-</div>
-		
+	</div>
 
-		
-		<canvas width=500 height=800></canvas>
+
+
+	<canvas width=500 height=800></canvas>
 </body>
 </html>

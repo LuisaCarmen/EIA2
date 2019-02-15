@@ -11,12 +11,12 @@ namespace aufgabe10 {
         color: string;
 
 
-            getSpeed(): number {
-            if (this.state == "ridedown") {
-                return Math.floor(this.dx * this.dy * -1 * 200);
+            calculateSpeed(): number {
+            if (this.state == "down") {
+                return Math.floor(this.dx * this.dy * -1 * 20);
             }
-            if (this.state == "pullup") {
-                return Math.floor(this.dx * this.dy * -1 * 100);
+            if (this.state == "up") {
+                return Math.floor(this.dx * this.dy * -1 * 15);
             }
         }
        
@@ -24,15 +24,15 @@ namespace aufgabe10 {
 
         draw(): void {
 
-            if (this.state == "ridedown") {
+            if (this.state == "down") {
                 this.drawChild();
             }
 
-            if (this.state == "dead") {
+            if (this.state == "shot") {
                 this.drawSled();
             }
 
-            if (this.state == "pullup") {
+            if (this.state == "up") {
                 this.drawChildUp();
             }
         }
@@ -113,7 +113,7 @@ namespace aufgabe10 {
             crc2.stroke();
 
             crc2.strokeStyle = "#000000";
-            crc2.lineWidth = 2.25;
+            crc2.lineWidth = 3;
 
             crc2.beginPath();
             crc2.moveTo(this.x + 50, this.y - 40);
@@ -124,7 +124,7 @@ namespace aufgabe10 {
             crc2.lineTo(this.x + 47, this.y - 60);
             crc2.lineTo(this.x + 30, this.y - 40);
             crc2.moveTo(this.x + 52, this.y - 80);
-            crc2.lineTo(this.x + 60, this.y - 60);
+        
             crc2.stroke();
 
             crc2.strokeStyle = "#000000";
@@ -141,20 +141,20 @@ namespace aufgabe10 {
 
 
         move(): void {
-            if (this.state == "ridedown") {
+            if (this.state == "down") {
                 if (this.x < 0 || this.y > crc2.canvas.height) {
-                    this.state = "pullup";
+                    this.state = "up";
                 }
             }
-            if (this.state == "pullup" && this.x > crc2.canvas.width) {
-                this.state = "ridedown";
+            if (this.state == "up" && this.x > crc2.canvas.width) {
+                this.state = "down";
             }
 
-            if (this.state == "pullup") {
+            if (this.state == "up") {
                 this.x -= (this.dx / 2);
                 this.y -= (this.dy / 2);
             }
-            if (this.state == "ridedown" || this.state == "dead") {
+            if (this.state == "down" || this.state == "shot") {
                 this.x += this.dx;
                 this.y += this.dy;
             }
