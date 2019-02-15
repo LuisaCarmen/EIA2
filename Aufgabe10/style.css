@@ -1,12 +1,9 @@
-
-
-
-
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans');
-
 html {
-	font-family: 'IBM Plex Sans', sans-serif;
 	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
 }
 
 div {
@@ -14,25 +11,77 @@ div {
 	height: 100%;
 }
 
-#score {
-	padding: 0.25em 0.5em;
-	border: solid 3px darkred;
-	margin-top: 0px;
-	margin-left: 0px;
+p {
+	padding: 1em 3em;
+	border: solid 3px maroon;
+	border-radius: 20px; margin : auto;
+	margin-bottom: 20px;
 	width: 200px;
 	text-align: center;
-	width: 200px;
-	background-color: #e6e6e6;
+	margin: auto;
+}
+
+#start {
+	border: solid 3px maroon;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+#Baelle {
+	margin-top: 220px;
+	margin-right: 360px;
+	width: 400px;
+	float: right;
+	font-size: 35px;
+}
+
+#insert {
+	margin-top: 10px;
+}
+
+#erklarung {
+	width: 500px;
+	border: solid 2px black;
+	color: #282828;
+}
+
+#scores {
+	text-align: center;
+	top: 500px;
+	right: 200px;
+	margin-top: 20px;
 }
 
 
-p {
+#score {
+	position: absolute;
+	top: 400px;
+	right: 410px;
+	padding: 0.25em 0.5em;
+	color: maroon;
+	margin-top: 5px;
+	margin-left: 0px;
+	width: 350px;
+	text-align: center;
+}
+
+#malus {
+	position: absolute;
+	top: 340px;
+	right: 450px;
+}
+
+fieldset {
 	padding: 1em 3em;
-	border: solid 3px darkred;
+	border: solid 3px maroon;
 	margin: auto;
-	margin-bottom: 50px;
+	border-radius: 20px;
+	margin-bottom: 20px;
 	width: 200px;
 	text-align: center;
-	width: 200px;
-	background-color: #e6e6e6;
+}
+
+#mainscreen {
+	top: 500px;
 }
