@@ -305,7 +305,7 @@ namespace aufgabe10 {
         document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
 
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
-       
+      // document.getElementById("insert").addEventListener("click", highscores);
 
     }
 
@@ -317,6 +317,7 @@ namespace aufgabe10 {
         document.getElementsByTagName("div")[0].style.display = "none";
         document.getElementById("endscreen").style.display = "none";
         document.getElementById("highscore").style.display = "initial";
+           document.getElementById("scores").style.display = "initial";
         document.getElementById("refresh").addEventListener("click", highscores);
         document.getElementById("malus").style.display = "none";
     }
