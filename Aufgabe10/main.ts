@@ -305,7 +305,7 @@ namespace aufgabe10 {
         document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
 
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
-        document.getElementById("refresh").addEventListener("click", highscores);
+       
 
     }
 
