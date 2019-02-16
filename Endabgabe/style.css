@@ -1,0 +1,87 @@
+html {
+	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+}
+
+div {
+	width: 100%;
+	height: 100%;
+}
+
+p {
+	padding: 1em 3em;
+	border: solid 3px maroon;
+	border-radius: 20px; margin : auto;
+	margin-bottom: 20px;
+	width: 200px;
+	text-align: center;
+	margin: auto;
+}
+
+#start {
+	border: solid 3px maroon;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+#balls {
+	margin-top: 220px;
+	margin-right: 360px;
+	width: 400px;
+	float: right;
+	font-size: 35px;
+}
+
+#insert {
+	margin-top: 10px;
+}
+
+#text {
+	width: 500px;
+	border: solid 2px black;
+	color: #282828;
+}
+
+#scores {
+	text-align: center;
+	top: 500px;
+	right: 200px;
+	margin-top: 20px;
+}
+
+
+#score {
+	position: absolute;
+	top: 400px;
+	right: 410px;
+	padding: 0.25em 0.5em;
+	color: maroon;
+	margin-top: 5px;
+	margin-left: 0px;
+	width: 350px;
+	text-align: center;
+}
+
+#malus {
+	position: absolute;
+	top: 340px;
+	right: 450px;
+}
+
+fieldset {
+	padding: 1em 3em;
+	border: solid 3px maroon;
+	margin: auto;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	width: 200px;
+	text-align: center;
+}
+
+#mainWindow {
+	top: 500px;
+}
