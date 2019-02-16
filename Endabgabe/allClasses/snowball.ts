@@ -13,7 +13,6 @@ namespace endabgabe {
         draw(): void {
 
             if (this.time >= 0) {
-                console.log(">=0");
                 crc2.fillStyle = "#E6E6E6";
                 crc2.strokeStyle = "#E6E6E6";
                 crc2.lineWidth = 1;
@@ -25,7 +24,7 @@ namespace endabgabe {
                 crc2.fill();
                 crc2.stroke();
                 this.time--;
-                console.log(this.time);
+
             }
 
 
@@ -47,7 +46,7 @@ namespace endabgabe {
         }
 
         checkIfHitUp(_x: number, _y: number): boolean {
-           
+
             crc2.lineWidth = 50;
             crc2.beginPath();
             crc2.moveTo(_x, _y);

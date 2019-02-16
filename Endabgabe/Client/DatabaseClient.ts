@@ -70,11 +70,9 @@
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let output: HTMLElement = document.getElementById("scores");
-            let scores: number[] = [];
             let dataArray: StudentData[] = JSON.parse(xhr.response);
             dataArray.sort(playerDataSort);
             for (let i: number = 0; i < dataArray.length; i++) {
-                console.log(dataArray[i].name);
                 output.innerHTML += "<p id='showScores'><strong>Name: </strong>" + dataArray[i].name + "<br><strong>Score: </strong>" + dataArray[i].score + "</p>";
             }
         }

@@ -4,7 +4,6 @@ var endabgabe;
         move() { }
         draw() {
             if (this.time >= 0) {
-                console.log(">=0");
                 endabgabe.crc2.fillStyle = "#E6E6E6";
                 endabgabe.crc2.strokeStyle = "#E6E6E6";
                 endabgabe.crc2.lineWidth = 1;
@@ -15,7 +14,6 @@ var endabgabe;
                 endabgabe.crc2.fill();
                 endabgabe.crc2.stroke();
                 this.time--;
-                console.log(this.time);
             }
         }
         checkIfHit(_x, _y) {

@@ -7,6 +7,7 @@ var endabgabe;
     let imgData;
     let snowballs = [];
     let score = 0;
+    //init funktion, startbildschirm, start und highscores anzeigen lassen
     function init() {
         child1 = [];
         snowballs = [];
@@ -20,6 +21,7 @@ var endabgabe;
         document.getElementById("start").addEventListener("click", main);
         document.getElementById("refresh").addEventListener("click", highscores);
     }
+    //mainscreen erstellen, canvas und score anzeigen lassen
     function main(_event) {
         score = 0;
         child1 = [];
@@ -164,6 +166,7 @@ var endabgabe;
         children1.state = "down";
         child1.push(children1);
     }
+    //Schneeball werfen und in das array pushen
     function throwBall(_event) {
         let x = _event.clientX;
         let y = _event.clientY;
@@ -179,7 +182,6 @@ var endabgabe;
     }
     let address = "https://eia2-18.herokuapp.com/";
     function sendRequestWithCustomData() {
-        console.log("requestcustom");
         let xhr = new XMLHttpRequest();
         let sendString = "";
         sendString += "name:" + document.getElementById("textInput").getAttribute("value") + "&" + "score:" + score;
@@ -195,6 +197,7 @@ var endabgabe;
             console.log("response: " + xhr.response);
         }
     }
+    //Endbildschirm mit Namensfeld und send button, score wird angezeigt
     function endscreen() {
         document.getElementById("endscore").innerText = score.toString();
         document.getElementById("endscore").setAttribute("value", score.toString());
@@ -208,6 +211,7 @@ var endabgabe;
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
         // document.getElementById("insert").addEventListener("click", highscores);
     }
+    //Highscore Bildschi   
     function highscores() {
         document.getElementById("endscore").innerText = score.toString();
         document.getElementById("endscore").setAttribute("value", score.toString());
@@ -243,7 +247,6 @@ var endabgabe;
                 if (child1[i].x < -10 || child1[i].y > (endabgabe.crc2.canvas.height + 10)) {
                     child1.splice(i, 1);
                     designChild();
-                    console.log("length:" + child1.length);
                 }
             }
             for (let i = 0; i < snowballs.length; i++) {

@@ -11,7 +11,7 @@ namespace endabgabe {
 
 
 
-
+    //init funktion, startbildschirm, start und highscores anzeigen lassen
     function init(): void {
 
         child1 = [];
@@ -34,7 +34,7 @@ namespace endabgabe {
 
 
 
-
+    //mainscreen erstellen, canvas und score anzeigen lassen
     function main(_event: Event): void {
 
 
@@ -248,7 +248,7 @@ namespace endabgabe {
 
     }
 
-
+    //Schneeball werfen und in das array pushen
     function throwBall(_event: MouseEvent): void {
 
 
@@ -271,7 +271,6 @@ namespace endabgabe {
     let address: string = "https://eia2-18.herokuapp.com/";
 
     function sendRequestWithCustomData(): void {
-        console.log("requestcustom");
         let xhr: XMLHttpRequest = new XMLHttpRequest();
         let sendString: string = "";
         sendString += "name:" + document.getElementById("textInput").getAttribute("value") + "&" + "score:" + score;
@@ -289,8 +288,9 @@ namespace endabgabe {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
         }
-    }
+}
 
+    //Endbildschirm mit Namensfeld und send button, score wird angezeigt
     function endscreen(): void {
         document.getElementById("endscore").innerText = score.toString();
         document.getElementById("endscore").setAttribute("value", score.toString());
@@ -305,10 +305,10 @@ namespace endabgabe {
         document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
 
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
-      // document.getElementById("insert").addEventListener("click", highscores);
+        // document.getElementById("insert").addEventListener("click", highscores);
 
     }
-
+    //Highscore Bildschi   
     function highscores(): void {
         document.getElementById("endscore").innerText = score.toString();
         document.getElementById("endscore").setAttribute("value", score.toString());
@@ -317,7 +317,7 @@ namespace endabgabe {
         document.getElementsByTagName("div")[0].style.display = "none";
         document.getElementById("endscreen").style.display = "none";
         document.getElementById("highscore").style.display = "initial";
-          // document.getElementById("scores").style.display = "initial";
+        // document.getElementById("scores").style.display = "initial";
         document.getElementById("refresh").addEventListener("click", highscores);
         document.getElementById("malus").style.display = "none";
     }
@@ -364,7 +364,6 @@ namespace endabgabe {
                 if (child1[i].x < -10 || child1[i].y > (crc2.canvas.height + 10)) {
                     child1.splice(i, 1);
                     designChild();
-                    console.log("length:" + child1.length);
                 }
             }
 

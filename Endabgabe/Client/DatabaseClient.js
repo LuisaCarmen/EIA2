@@ -47,11 +47,9 @@ function handleFindResponse(_event) {
     let xhr = _event.target;
     if (xhr.readyState == XMLHttpRequest.DONE) {
         let output = document.getElementById("scores");
-        let scores = [];
         let dataArray = JSON.parse(xhr.response);
         dataArray.sort(playerDataSort);
         for (let i = 0; i < dataArray.length; i++) {
-            console.log(dataArray[i].name);
             output.innerHTML += "<p id='showScores'><strong>Name: </strong>" + dataArray[i].name + "<br><strong>Score: </strong>" + dataArray[i].score + "</p>";
         }
     }
