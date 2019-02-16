@@ -206,7 +206,7 @@ var aufgabe10;
         document.getElementById("balls").style.display = "none";
         document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
-        document.getElementById("insert").addEventListener("click", highscores);
+        document.getElementById("insert").addEventListener("click", init);
     }
     function highscores() {
         document.getElementById("endscore").innerText = score.toString();
