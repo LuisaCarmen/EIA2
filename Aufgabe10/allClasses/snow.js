@@ -1,6 +1,6 @@
 var aufgabe10;
 (function (aufgabe10) {
-    class Snow {
+    class Snow extends aufgabe10.Movement {
         move() {
             this.dy = 2;
             this.dx = Math.random() * 4 - 2;

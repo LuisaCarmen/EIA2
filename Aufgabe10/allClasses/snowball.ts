@@ -2,7 +2,7 @@
 namespace aufgabe10 {
 
 
-    export class Snowball1  {
+    export class Snowball1 extends Movement {
 
 
 

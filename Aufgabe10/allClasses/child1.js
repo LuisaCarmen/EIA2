@@ -1,6 +1,23 @@
 var aufgabe10;
 (function (aufgabe10) {
-    class Child1 {
+    class Base {
+        move() { }
+        draw() { }
+    }
+    aufgabe10.Base = Base;
+    class Movement extends Base {
+        move() {
+            this.y += this.dy;
+            this.x += this.dx;
+        }
+    }
+    aufgabe10.Movement = Movement;
+    class Child1 extends Movement {
+        // x: number;
+        // y: number;
+        // dx: number;
+        //dy: number;
+        // color: string;
         calculateSpeed() {
             if (this.state == "down") {
                 return Math.floor(this.dx * this.dy * -1 * 20);

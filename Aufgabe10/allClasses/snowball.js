@@ -1,6 +1,6 @@
 var aufgabe10;
 (function (aufgabe10) {
-    class Snowball1 {
+    class Snowball1 extends aufgabe10.Movement {
         move() { }
         draw() {
             if (this.timer >= 0) {

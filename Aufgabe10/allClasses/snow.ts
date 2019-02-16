@@ -1,5 +1,6 @@
 namespace aufgabe10 {
-    export class Snow {
+   
+    export class Snow extends Movement{
         x: number;
         y: number;
         dx: number;

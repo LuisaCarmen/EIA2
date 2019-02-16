@@ -1,17 +1,33 @@
 namespace aufgabe10 {
 
-
-    export class Child1  {
-
-        state: string;
+    export class Base {
         x: number;
         y: number;
+        color: string;
+        move(): void { }
+        draw(): void { }
+    }
+
+    export class Movement extends Base {
         dx: number;
         dy: number;
-        color: string;
+        move(): void {
+            this.y += this.dy;
+            this.x += this.dx;
+        }
+    }
+
+    export class Child1 extends Movement {
+
+       state: string;
+       // x: number;
+       // y: number;
+       // dx: number;
+        //dy: number;
+       // color: string;
 
 
-            calculateSpeed(): number {
+        calculateSpeed(): number {
             if (this.state == "down") {
                 return Math.floor(this.dx * this.dy * -1 * 20);
             }
@@ -19,7 +35,7 @@ namespace aufgabe10 {
                 return Math.floor(this.dx * this.dy * -1 * 15);
             }
         }
-       
+
 
 
         draw(): void {
@@ -105,9 +121,9 @@ namespace aufgabe10 {
             crc2.beginPath();
             crc2.moveTo(this.x, this.y);
             crc2.lineTo(this.x + 30, this.y - 25);
-            
-            
-            
+
+
+
             crc2.moveTo(this.x + 30, this.y - 25);
             crc2.quadraticCurveTo(this.x + 50, this.y - 40, this.x + 30, this.y - 40);
             crc2.stroke();
@@ -124,7 +140,7 @@ namespace aufgabe10 {
             crc2.lineTo(this.x + 47, this.y - 60);
             crc2.lineTo(this.x + 30, this.y - 40);
             crc2.moveTo(this.x + 52, this.y - 80);
-        
+
             crc2.stroke();
 
             crc2.strokeStyle = "#000000";
