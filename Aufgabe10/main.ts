@@ -303,7 +303,7 @@ namespace aufgabe10 {
         
         
         document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
-        document.getElementById("refresh").addEventListener("click", highscores);
+        document.getElementById("refresh").addEventListener("click", init);
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
 
     }
