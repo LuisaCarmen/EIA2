@@ -216,6 +216,7 @@ var aufgabe10;
         document.getElementsByTagName("div")[0].style.display = "none";
         document.getElementById("endscreen").style.display = "none";
         document.getElementById("highscore").style.display = "initial";
+        document.getElementById("refresh").addEventListener("click", highscores);
         document.getElementById("malus").style.display = "none";
     }
     function update() {
