@@ -205,8 +205,8 @@ var aufgabe10;
         document.getElementById("malus").style.display = "none";
         document.getElementById("balls").style.display = "none";
         document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
-        document.getElementById("refresh").addEventListener("click", init);
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
+        document.getElementById("insert").addEventListener("click", highscores);
     }
     function highscores() {
         document.getElementById("endscore").innerText = score.toString();

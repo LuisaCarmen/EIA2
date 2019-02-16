@@ -8,7 +8,7 @@ namespace aufgabe10 {
     let snowballs: Snowball1[] = [];
     let score: number = 0;
 
-   
+
 
 
 
@@ -37,10 +37,10 @@ namespace aufgabe10 {
 
     function main(_event: Event): void {
 
-      
+
 
         score = 0;
-       
+
         child1 = [];
         snowballs = [];
         document.getElementsByTagName("div")[0].style.display = "none";
@@ -53,7 +53,7 @@ namespace aufgabe10 {
         document.getElementById("score").style.display = "initial";
         document.getElementById("malus").style.display = "initial";
         document.getElementsByTagName("canvas")[0].style.display = "initial";
-         
+
 
 
 
@@ -250,17 +250,17 @@ namespace aufgabe10 {
 
 
     function throwSnowball(_event: MouseEvent): void {
-       
 
-            let x: number = _event.clientX;
-            let y: number = _event.clientY;
-            let ball: Snowball1 = new Snowball1();
-            ball.x = x;
-            ball.y = y;
-            ball.timer = 25;
-            snowballs.push(ball);
-        }
-    
+
+        let x: number = _event.clientX;
+        let y: number = _event.clientY;
+        let ball: Snowball1 = new Snowball1();
+        ball.x = x;
+        ball.y = y;
+        ball.timer = 25;
+        snowballs.push(ball);
+    }
+
 
 
     function handleChange(_event: Event): void {
@@ -300,11 +300,12 @@ namespace aufgabe10 {
         document.getElementById("endscreen").style.display = "initial";
         document.getElementById("malus").style.display = "none";
         document.getElementById("balls").style.display = "none";
-        
-        
+
+
         document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
-        document.getElementById("refresh").addEventListener("click", init);
+
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
+        document.getElementById("insert").addEventListener("click", highscores);
 
     }
 
@@ -338,7 +339,7 @@ namespace aufgabe10 {
 
             document.getElementById("score").innerText = score.toString();
 
-            
+
 
 
 
@@ -379,14 +380,14 @@ namespace aufgabe10 {
                         if (snowballs[i].checkIfHit(child1[i2].x, child1[i2].y) == true && child1[i2].state == "down") {
                             score += child1[i2].calculateSpeed() * 10;
                             child1[i2].state = "shot";
-                           
+
                         }
                         if (snowballs[i].checkIfHitUp(child1[i2].x, child1[i2].y) == true && child1[i2].state == "up") {
                             score += child1[i2].calculateSpeed() * 10;
                             child1[i2].state = "shot";
-                           
+
                         }
-                        
+
                     }
                 }
 
