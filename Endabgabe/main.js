@@ -207,6 +207,7 @@ var endabgabe;
         document.getElementById("endscreen").style.display = "initial";
         document.getElementById("malus").style.display = "none";
         document.getElementById("balls").style.display = "none";
+        document.getElementById("refresh").addEventListener("click", highscores);
         document.getElementsByTagName("body")[0].addEventListener("change", handleChange);
         document.getElementById("insert").addEventListener("click", sendRequestWithCustomData);
         // document.getElementById("insert").addEventListener("click", highscores);
@@ -221,7 +222,7 @@ var endabgabe;
         document.getElementById("endscreen").style.display = "none";
         document.getElementById("highscore").style.display = "initial";
         // document.getElementById("scores").style.display = "initial";
-        document.getElementById("refresh").addEventListener("click", highscores);
+        document.getElementById("highscore").addEventListener("click", highscores);
         document.getElementById("malus").style.display = "none";
     }
     function update() {
